@@ -3,5 +3,5 @@
   roles:
     - avinetworks.avicontroller-vmware
     - deployment
-  vars_files: 
-    - deployment/vars/controller1.yml
+      #  vars_files: 
+      #- deployment/vars/controller1.yml

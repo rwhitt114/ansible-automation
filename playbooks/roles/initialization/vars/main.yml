@@ -1,0 +1,5 @@
+---
+# vars file for initilization
+avi_config_file: "files/config.yml"
+avi_creds_file: "files/creds.yml"
+

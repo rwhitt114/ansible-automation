@@ -3,7 +3,7 @@
 - name: Deploy Avi Controller1
   deploy_controller:
     ovftool_path: '{{ ovftool_path }}'
-    vcenter_host: '{{ vcenter_host }}'
+    vcenter_host: '{{ item.vcenter_host }}'
     vcenter_user: '{{ vcenter_user }}'
     vcenter_password: '{{ vcenter_password }}'
     con_datacenter: '{{ datacenter }}'

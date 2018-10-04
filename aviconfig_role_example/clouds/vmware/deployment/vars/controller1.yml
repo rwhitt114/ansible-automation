@@ -1,0 +1,7 @@
+---
+# vars file for deployment
+vm_name: AviController1
+mgmt_ip: 192.168.38.71
+mgmt_mask: 255.255.255.0
+default_gw: 192.168.38.1
+

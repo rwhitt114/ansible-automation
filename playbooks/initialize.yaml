@@ -3,4 +3,6 @@
   roles:
     - role: avinetworks.avisdk
     - role: roles/initialization
+  vars_files:
+    - roles/initialization/files/creds.yml
 

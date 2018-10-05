@@ -1,5 +1,10 @@
 ---
 # tasks file for initilization
+- name: Update user password
+  avi_useraccount:
+    avi_credentials: '{{ avi_credentials }}'
+    old_password: "58NFaGDJm(PJH0G"
+    api_version: "17.2.13"
 - name: Configuring Avi vmware cloud
   debug: msg="vmware"
 - name: Avi Cloud | Setup VMWare Cloud with Write Access

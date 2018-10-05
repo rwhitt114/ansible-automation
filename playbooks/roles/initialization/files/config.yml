@@ -83,28 +83,23 @@ avi_config:
               addr: 192.168.38.90
               type: 'V4'
 
-
-#avi_cluster:
-#- name: Create Avi Cluster
-#  avi_cluster:
-#   avi_api_update_method: “put”
-#   avi_api_patch_op: “replace”
-#   tenant: “admin”
-#   name: “cluster-0-1"
-#   virtual_ip:
-#     type: “V4”
-#     addr: “x.x.x.”
-#   nodes:
-#       - ip:
-#           type: “V4”
-#           addr: “192.168.38.71"
-#         name: “10.144.73.44”
-#       - ip:
-#           type: “V4"
-#           addr: “10.144.73.56”
-#         name: “10.144.73.56"
-#       - ip:
-#           type: “V4”
-#           addr: “10.144.73.5"
-#        name: “10.144.73.5”
-
+  cluster:
+    - avi_api_update_method: PUT
+      tenant: admin
+      name: cluster-0-1
+      virtual_ip:
+        type: V4
+        addr: 192.168.38.75
+      nodes:
+         - ip:
+             type: V4
+             addr: 192.168.38.71
+           name: ctlr01
+      #       - ip:
+      #           type: “V4"
+      #           addr: “10.144.73.56”
+      #         name: “10.144.73.56"
+      #       - ip:
+      #           type: “V4”
+      #           addr: “10.144.73.5"
+      #        name: “10.144.73.5”

@@ -1,0 +1,8 @@
+- hosts: localhost
+  connection: local
+  vars_files:
+    - ../roles/config/applications/apps/prakash.yml
+  roles:
+    - role: avinetworks.avisdk
+    - role: ../roles/config/applications
+  gather_facts: no    

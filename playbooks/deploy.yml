@@ -1,0 +1,6 @@
+- hosts: localhost
+  connection: local
+  roles:
+    - avinetworks.avicontroller-vmware
+    - roles/deployment
+  gather_facts: no    

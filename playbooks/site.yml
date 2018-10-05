@@ -1,0 +1,4 @@
+---
+- import_playbook: ./deploy.yml
+- import_playbook: ./initialize.yml
+- import_playbook: ../apps/prakash.yml

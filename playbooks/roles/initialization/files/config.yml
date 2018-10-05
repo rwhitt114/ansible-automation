@@ -6,24 +6,29 @@ avi_config:
       dhcp_enabled: true
       license_type: "LIC_CORES"
       vcenter_configuration:
-        username: root
-        password: vmware
-        datacenter: "10GTest"
-        management_network: "/api/vimgrnwruntime?name=Mgmt_Arista_3"
+
+        username: 'administrator@mitchchen.com'
+        password: 'h6j5?HxL3zlSO$'
+        datacenter: "DC1"
+        management_network: "/api/vimgrnwruntime?name=VM Network"
         privilege: "WRITE_ACCESS"
-        vcenter_url: "10.10.2.10"
+
+        vcenter_url: "192.168.38.20"
 
   serviceenginegroup:
     - name: Default-Group
       cloud_ref: '/api/cloud?name=Default-Cloud'
-      vcenter_folder: Gaurav/grse
+
+      vcenter_folder: ge
       vcenter_clusters:
         cluster_refs:
-          - '/api/vimgrclusterruntime?name=Arista'
+
+          - '/api/vimgrclusterruntime?name=MyCluster1'
         include: True
       max_se: 4
       buffer_se: 1
-      se_name_prefix: grastogi
+
+      se_name_prefix: hpe
 
 
   systemconfiguration:
@@ -60,4 +65,20 @@ avi_config:
           - "/api/sslkeyandcertificate?name=System-Default-Portal-Cert-EC256"
         sslprofile_ref: "/api/sslprofile?name=System-Standard-Portal"
         use_uuid_from_input: false
+
+
+
+# avi_cluster:
+#   avi_credentials: avi_credentials
+#    vi_api_update_method: patch
+#    avi_api_patch_op: add
+#    nodes:
+#      - name: node2
+#        addr:
+#  	    type:
+#
+#      - name: node3
+#	    addr:
+#	    type:
+#    virtual_ip: "{{ item.virtual_ip | default(omit) }}"
 

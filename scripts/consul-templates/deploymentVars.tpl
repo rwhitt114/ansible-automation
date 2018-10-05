@@ -13,17 +13,17 @@ number_of_cpus: {{ key "avi/vcenter/number_of_cpus" }}
 memory: {{ key "avi/vcenter/memory" }}
 controllers:
   - name: {{ key "avi/controllers/1/name" }}
-    vcenter_host: {{ key "avi/controllers/1/vcenter/host}}
+    vcenter_host: {{ key "avi/controllers/1/vcenter/host" }}
     mgmt_ip: {{ key "avi/controllers/1/mgmt_ip" }}
     mgmt_mask: {{ key "avi/controllers/1/mgmt_mask" }}
     default_gw: {{ key "avi/controllers/1/default_gw" }}
   - name: {{ key "avi/controllers/2/name" }}
-    vcenter_host: {{ key "avi/controllers/2/vcenter/host}}
+    vcenter_host: {{ key "avi/controllers/2/vcenter/host" }}
     mgmt_ip: {{ key "avi/controllers/2/mgmt_ip" }}
     mgmt_mask: {{ key "avi/controllers/2/mgmt_mask" }}
     default_gw: {{ key "avi/controllers/2/default_gw" }}
   - name: {{ key "avi/controllers/3/name" }}
-    vcenter_host: {{ key "avi/controllers/3/vcenter/host}}
+    vcenter_host: {{ key "avi/controllers/3/vcenter/host" }}
     mgmt_ip: {{ key "avi/controllers/3/mgmt_ip" }}
     mgmt_mask: {{ key "avi/controllers/3/mgmt_mask" }}
     default_gw: {{ key "avi/controllers/3/default_gw" }}

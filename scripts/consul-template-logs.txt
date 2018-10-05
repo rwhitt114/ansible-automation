@@ -1,0 +1,959 @@
+2018/10/05 18:27:16.983357 [INFO] consul-template v0.19.5 (57b6c71)
+2018/10/05 18:27:16.983398 [INFO] (runner) creating new runner (dry: false, once: true)
+2018/10/05 18:27:16.983852 [DEBUG] (runner) final config: {"Consul":{"Address":"","Auth":{"Enabled":false,"Username":"","Password":""},"Retry":{"Attempts":12,"Backoff":250000000,"MaxBackoff":60000000000,"Enabled":true},"SSL":{"CaCert":"","CaPath":"","Cert":"","Enabled":false,"Key":"","ServerName":"","Verify":true},"Token":"","Transport":{"DialKeepAlive":30000000000,"DialTimeout":30000000000,"DisableKeepAlives":false,"IdleConnTimeout":90000000000,"MaxIdleConns":100,"MaxIdleConnsPerHost":2,"TLSHandshakeTimeout":10000000000}},"Dedup":{"Enabled":false,"MaxStale":2000000000,"Prefix":"consul-template/dedup/","TTL":15000000000},"Exec":{"Command":"","Enabled":false,"Env":{"Blacklist":[],"Custom":[],"Pristine":false,"Whitelist":[]},"KillSignal":2,"KillTimeout":30000000000,"ReloadSignal":null,"Splay":0,"Timeout":0},"KillSignal":2,"LogLevel":"trace","MaxStale":2000000000,"PidFile":"","ReloadSignal":1,"Syslog":{"Enabled":false,"Facility":"LOCAL0"},"Templates":[{"Backup":false,"Command":"","CommandTimeout":30000000000,"Contents":"","CreateDestDirs":true,"Destination":"../playbooks/roles/deployment/vars/main_test.yml","ErrMissingKey":false,"Exec":{"Command":"","Enabled":false,"Env":{"Blacklist":[],"Custom":[],"Pristine":false,"Whitelist":[]},"KillSignal":2,"KillTimeout":30000000000,"ReloadSignal":null,"Splay":0,"Timeout":30000000000},"Perms":0,"Source":"./consul-templates/deploymentVars.tpl","Wait":{"Enabled":false,"Min":0,"Max":0},"LeftDelim":"","RightDelim":""}],"Vault":{"Address":"","Enabled":false,"Grace":15000000000,"RenewToken":true,"Retry":{"Attempts":12,"Backoff":250000000,"MaxBackoff":60000000000,"Enabled":true},"SSL":{"CaCert":"","CaPath":"","Cert":"","Enabled":true,"Key":"","ServerName":"","Verify":true},"Transport":{"DialKeepAlive":30000000000,"DialTimeout":30000000000,"DisableKeepAlives":false,"IdleConnTimeout":90000000000,"MaxIdleConns":100,"MaxIdleConnsPerHost":2,"TLSHandshakeTimeout":10000000000},"UnwrapToken":false},"Wait":{"Enabled":false,"Min":0,"Max":0}}
+2018/10/05 18:27:16.983911 [INFO] (runner) creating watcher
+2018/10/05 18:27:16.984475 [INFO] (runner) starting
+2018/10/05 18:27:16.984486 [DEBUG] (runner) running initial templates
+2018/10/05 18:27:16.984490 [DEBUG] (runner) initiating run
+2018/10/05 18:27:16.984523 [DEBUG] (runner) checking template e2e293a4e9ad3bb8cd68e19166b89225
+2018/10/05 18:27:16.985700 [DEBUG] (runner) was not watching 26 dependencies
+2018/10/05 18:27:16.985731 [DEBUG] (watcher) adding kv.block(avi/ovftool_path)
+2018/10/05 18:27:16.985739 [TRACE] (watcher) kv.block(avi/ovftool_path) starting
+2018/10/05 18:27:16.985752 [DEBUG] (watcher) adding kv.block(avi/vcenter/user)
+2018/10/05 18:27:16.985757 [TRACE] (watcher) kv.block(avi/vcenter/user) starting
+2018/10/05 18:27:16.985763 [DEBUG] (watcher) adding kv.block(avi/vcenter/password)
+2018/10/05 18:27:16.985769 [TRACE] (watcher) kv.block(avi/vcenter/password) starting
+2018/10/05 18:27:16.985775 [DEBUG] (watcher) adding kv.block(avi/vcenter/folder)
+2018/10/05 18:27:16.985787 [TRACE] (watcher) kv.block(avi/vcenter/folder) starting
+2018/10/05 18:27:16.985807 [DEBUG] (watcher) adding kv.block(avi/vcenter/datacenter)
+2018/10/05 18:27:16.985814 [TRACE] (watcher) kv.block(avi/vcenter/datacenter) starting
+2018/10/05 18:27:16.985819 [DEBUG] (watcher) adding kv.block(avi/vcenter/cluster)
+2018/10/05 18:27:16.985824 [TRACE] (watcher) kv.block(avi/vcenter/cluster) starting
+2018/10/05 18:27:16.985829 [DEBUG] (watcher) adding kv.block(avi/vcenter/mgmt_network)
+2018/10/05 18:27:16.985834 [TRACE] (watcher) kv.block(avi/vcenter/mgmt_network) starting
+2018/10/05 18:27:16.985839 [DEBUG] (watcher) adding kv.block(avi/vcenter/ova_path)
+2018/10/05 18:27:16.985844 [TRACE] (watcher) kv.block(avi/vcenter/ova_path) starting
+2018/10/05 18:27:16.985849 [DEBUG] (watcher) adding kv.block(avi/vcenter/power_on)
+2018/10/05 18:27:16.985854 [TRACE] (watcher) kv.block(avi/vcenter/power_on) starting
+2018/10/05 18:27:16.985861 [DEBUG] (watcher) adding kv.block(avi/vcenter/number_of_cpus)
+2018/10/05 18:27:16.985886 [TRACE] (watcher) kv.block(avi/vcenter/number_of_cpus) starting
+2018/10/05 18:27:16.985894 [DEBUG] (watcher) adding kv.block(avi/vcenter/memory)
+2018/10/05 18:27:16.985899 [TRACE] (watcher) kv.block(avi/vcenter/memory) starting
+2018/10/05 18:27:16.985925 [DEBUG] (watcher) adding kv.block(avi/controllers/1/name)
+2018/10/05 18:27:16.985931 [TRACE] (watcher) kv.block(avi/controllers/1/name) starting
+2018/10/05 18:27:16.985936 [DEBUG] (watcher) adding kv.block(avi/controllers/1/vcenter/host)
+2018/10/05 18:27:16.985941 [TRACE] (watcher) kv.block(avi/controllers/1/vcenter/host) starting
+2018/10/05 18:27:16.985946 [DEBUG] (watcher) adding kv.block(avi/controllers/1/mgmt_ip)
+2018/10/05 18:27:16.985951 [TRACE] (watcher) kv.block(avi/controllers/1/mgmt_ip) starting
+2018/10/05 18:27:16.985979 [DEBUG] (watcher) adding kv.block(avi/controllers/1/mgmt_mask)
+2018/10/05 18:27:16.985987 [TRACE] (watcher) kv.block(avi/controllers/1/mgmt_mask) starting
+2018/10/05 18:27:16.985992 [DEBUG] (watcher) adding kv.block(avi/controllers/1/default_gw)
+2018/10/05 18:27:16.985997 [TRACE] (watcher) kv.block(avi/controllers/1/default_gw) starting
+2018/10/05 18:27:16.986002 [DEBUG] (watcher) adding kv.block(avi/controllers/2/name)
+2018/10/05 18:27:16.986007 [TRACE] (watcher) kv.block(avi/controllers/2/name) starting
+2018/10/05 18:27:16.986012 [DEBUG] (watcher) adding kv.block(avi/controllers/2/vcenter/host)
+2018/10/05 18:27:16.986017 [TRACE] (watcher) kv.block(avi/controllers/2/vcenter/host) starting
+2018/10/05 18:27:16.986022 [DEBUG] (watcher) adding kv.block(avi/controllers/2/mgmt_ip)
+2018/10/05 18:27:16.986027 [TRACE] (watcher) kv.block(avi/controllers/2/mgmt_ip) starting
+2018/10/05 18:27:16.986046 [DEBUG] (watcher) adding kv.block(avi/controllers/2/mgmt_mask)
+2018/10/05 18:27:16.986052 [TRACE] (watcher) kv.block(avi/controllers/2/mgmt_mask) starting
+2018/10/05 18:27:16.986057 [DEBUG] (watcher) adding kv.block(avi/controllers/2/default_gw)
+2018/10/05 18:27:16.986061 [TRACE] (watcher) kv.block(avi/controllers/2/default_gw) starting
+2018/10/05 18:27:16.986066 [DEBUG] (watcher) adding kv.block(avi/controllers/3/name)
+2018/10/05 18:27:16.986071 [TRACE] (watcher) kv.block(avi/controllers/3/name) starting
+2018/10/05 18:27:16.986085 [DEBUG] (watcher) adding kv.block(avi/controllers/3/vcenter/host)
+2018/10/05 18:27:16.986093 [TRACE] (watcher) kv.block(avi/controllers/3/vcenter/host) starting
+2018/10/05 18:27:16.986099 [DEBUG] (watcher) adding kv.block(avi/controllers/3/mgmt_ip)
+2018/10/05 18:27:16.986104 [TRACE] (watcher) kv.block(avi/controllers/3/mgmt_ip) starting
+2018/10/05 18:27:16.986119 [DEBUG] (watcher) adding kv.block(avi/controllers/3/mgmt_mask)
+2018/10/05 18:27:16.986125 [TRACE] (watcher) kv.block(avi/controllers/3/mgmt_mask) starting
+2018/10/05 18:27:16.986131 [DEBUG] (watcher) adding kv.block(avi/controllers/3/default_gw)
+2018/10/05 18:27:16.986136 [TRACE] (watcher) kv.block(avi/controllers/3/default_gw) starting
+2018/10/05 18:27:16.986142 [DEBUG] (runner) diffing and updating dependencies
+2018/10/05 18:27:16.986148 [DEBUG] (runner) watching 26 dependencies
+2018/10/05 18:27:16.986182 [TRACE] (view) kv.block(avi/controllers/3/default_gw) starting fetch
+2018/10/05 18:27:16.986211 [TRACE] kv.block(avi/controllers/3/default_gw): GET /v1/kv/avi/controllers/3/default_gw?stale=true&wait=1m0s
+2018/10/05 18:27:16.986832 [TRACE] (view) kv.block(avi/ovftool_path) starting fetch
+2018/10/05 18:27:16.986854 [TRACE] kv.block(avi/ovftool_path): GET /v1/kv/avi/ovftool_path?stale=true&wait=1m0s
+2018/10/05 18:27:16.987138 [TRACE] (view) kv.block(avi/vcenter/user) starting fetch
+2018/10/05 18:27:16.987172 [TRACE] kv.block(avi/vcenter/user): GET /v1/kv/avi/vcenter/user?stale=true&wait=1m0s
+2018/10/05 18:27:16.987420 [TRACE] (view) kv.block(avi/vcenter/folder) starting fetch
+2018/10/05 18:27:16.987434 [TRACE] kv.block(avi/vcenter/folder): GET /v1/kv/avi/vcenter/folder?stale=true&wait=1m0s
+2018/10/05 18:27:16.987702 [TRACE] (view) kv.block(avi/vcenter/datacenter) starting fetch
+2018/10/05 18:27:16.987719 [TRACE] kv.block(avi/vcenter/datacenter): GET /v1/kv/avi/vcenter/datacenter?stale=true&wait=1m0s
+2018/10/05 18:27:16.987936 [TRACE] (view) kv.block(avi/vcenter/cluster) starting fetch
+2018/10/05 18:27:16.987951 [TRACE] kv.block(avi/vcenter/cluster): GET /v1/kv/avi/vcenter/cluster?stale=true&wait=1m0s
+2018/10/05 18:27:16.990347 [TRACE] (view) kv.block(avi/vcenter/mgmt_network) starting fetch
+2018/10/05 18:27:16.990365 [TRACE] kv.block(avi/vcenter/mgmt_network): GET /v1/kv/avi/vcenter/mgmt_network?stale=true&wait=1m0s
+2018/10/05 18:27:16.990487 [TRACE] (view) kv.block(avi/vcenter/ova_path) starting fetch
+2018/10/05 18:27:16.990506 [TRACE] kv.block(avi/vcenter/ova_path): GET /v1/kv/avi/vcenter/ova_path?stale=true&wait=1m0s
+2018/10/05 18:27:16.990636 [TRACE] (view) kv.block(avi/vcenter/power_on) starting fetch
+2018/10/05 18:27:16.990648 [TRACE] kv.block(avi/vcenter/power_on): GET /v1/kv/avi/vcenter/power_on?stale=true&wait=1m0s
+2018/10/05 18:27:16.990746 [TRACE] (view) kv.block(avi/vcenter/number_of_cpus) starting fetch
+2018/10/05 18:27:16.990757 [TRACE] kv.block(avi/vcenter/number_of_cpus): GET /v1/kv/avi/vcenter/number_of_cpus?stale=true&wait=1m0s
+2018/10/05 18:27:16.990857 [TRACE] (view) kv.block(avi/vcenter/memory) starting fetch
+2018/10/05 18:27:16.990868 [TRACE] kv.block(avi/vcenter/memory): GET /v1/kv/avi/vcenter/memory?stale=true&wait=1m0s
+2018/10/05 18:27:16.990956 [TRACE] (view) kv.block(avi/controllers/1/name) starting fetch
+2018/10/05 18:27:16.990967 [TRACE] kv.block(avi/controllers/1/name): GET /v1/kv/avi/controllers/1/name?stale=true&wait=1m0s
+2018/10/05 18:27:16.991066 [TRACE] (view) kv.block(avi/controllers/1/vcenter/host) starting fetch
+2018/10/05 18:27:16.991077 [TRACE] kv.block(avi/controllers/1/vcenter/host): GET /v1/kv/avi/controllers/1/vcenter/host?stale=true&wait=1m0s
+2018/10/05 18:27:16.991183 [TRACE] (view) kv.block(avi/controllers/1/mgmt_ip) starting fetch
+2018/10/05 18:27:16.991196 [TRACE] kv.block(avi/controllers/1/mgmt_ip): GET /v1/kv/avi/controllers/1/mgmt_ip?stale=true&wait=1m0s
+2018/10/05 18:27:16.991307 [TRACE] (view) kv.block(avi/controllers/1/mgmt_mask) starting fetch
+2018/10/05 18:27:16.991319 [TRACE] kv.block(avi/controllers/1/mgmt_mask): GET /v1/kv/avi/controllers/1/mgmt_mask?stale=true&wait=1m0s
+2018/10/05 18:27:16.991425 [TRACE] (view) kv.block(avi/controllers/1/default_gw) starting fetch
+2018/10/05 18:27:16.991437 [TRACE] kv.block(avi/controllers/1/default_gw): GET /v1/kv/avi/controllers/1/default_gw?stale=true&wait=1m0s
+2018/10/05 18:27:16.991527 [TRACE] (view) kv.block(avi/controllers/2/name) starting fetch
+2018/10/05 18:27:16.991548 [TRACE] kv.block(avi/controllers/2/name): GET /v1/kv/avi/controllers/2/name?stale=true&wait=1m0s
+2018/10/05 18:27:16.991643 [TRACE] (view) kv.block(avi/controllers/2/vcenter/host) starting fetch
+2018/10/05 18:27:16.991654 [TRACE] kv.block(avi/controllers/2/vcenter/host): GET /v1/kv/avi/controllers/2/vcenter/host?stale=true&wait=1m0s
+2018/10/05 18:27:16.991766 [TRACE] (view) kv.block(avi/controllers/2/mgmt_ip) starting fetch
+2018/10/05 18:27:16.991778 [TRACE] kv.block(avi/controllers/2/mgmt_ip): GET /v1/kv/avi/controllers/2/mgmt_ip?stale=true&wait=1m0s
+2018/10/05 18:27:16.991888 [TRACE] (view) kv.block(avi/controllers/2/mgmt_mask) starting fetch
+2018/10/05 18:27:16.991899 [TRACE] kv.block(avi/controllers/2/mgmt_mask): GET /v1/kv/avi/controllers/2/mgmt_mask?stale=true&wait=1m0s
+2018/10/05 18:27:16.992001 [TRACE] (view) kv.block(avi/controllers/2/default_gw) starting fetch
+2018/10/05 18:27:16.992014 [TRACE] kv.block(avi/controllers/2/default_gw): GET /v1/kv/avi/controllers/2/default_gw?stale=true&wait=1m0s
+2018/10/05 18:27:16.992099 [TRACE] (view) kv.block(avi/controllers/3/name) starting fetch
+2018/10/05 18:27:16.992110 [TRACE] kv.block(avi/controllers/3/name): GET /v1/kv/avi/controllers/3/name?stale=true&wait=1m0s
+2018/10/05 18:27:16.992221 [TRACE] (view) kv.block(avi/controllers/3/vcenter/host) starting fetch
+2018/10/05 18:27:16.992232 [TRACE] kv.block(avi/controllers/3/vcenter/host): GET /v1/kv/avi/controllers/3/vcenter/host?stale=true&wait=1m0s
+2018/10/05 18:27:16.992353 [TRACE] (view) kv.block(avi/controllers/3/mgmt_ip) starting fetch
+2018/10/05 18:27:16.992366 [TRACE] kv.block(avi/controllers/3/mgmt_ip): GET /v1/kv/avi/controllers/3/mgmt_ip?stale=true&wait=1m0s
+2018/10/05 18:27:16.992463 [TRACE] (view) kv.block(avi/controllers/3/mgmt_mask) starting fetch
+2018/10/05 18:27:16.992473 [TRACE] kv.block(avi/controllers/3/mgmt_mask): GET /v1/kv/avi/controllers/3/mgmt_mask?stale=true&wait=1m0s
+2018/10/05 18:27:16.992574 [TRACE] (view) kv.block(avi/vcenter/password) starting fetch
+2018/10/05 18:27:16.992589 [TRACE] kv.block(avi/vcenter/password): GET /v1/kv/avi/vcenter/password?stale=true&wait=1m0s
+2018/10/05 18:27:17.002950 [TRACE] kv.block(avi/vcenter/password): returned "h6j5?HxL3zlSO$"
+2018/10/05 18:27:17.002969 [TRACE] (view) kv.block(avi/vcenter/password) marking successful data response
+2018/10/05 18:27:17.002978 [TRACE] (view) kv.block(avi/vcenter/password) successful contact, resetting retries
+2018/10/05 18:27:17.002984 [TRACE] (view) kv.block(avi/vcenter/password) received data
+2018/10/05 18:27:17.002994 [DEBUG] (runner) receiving dependency kv.block(avi/vcenter/password)
+2018/10/05 18:27:17.003001 [DEBUG] (runner) initiating run
+2018/10/05 18:27:17.003005 [DEBUG] (runner) checking template e2e293a4e9ad3bb8cd68e19166b89225
+2018/10/05 18:27:17.003788 [DEBUG] (runner) missing data for 25 dependencies
+2018/10/05 18:27:17.003799 [DEBUG] (runner) diffing and updating dependencies
+2018/10/05 18:27:17.003805 [DEBUG] (runner) kv.block(avi/vcenter/cluster) is still needed
+2018/10/05 18:27:17.003810 [DEBUG] (runner) kv.block(avi/vcenter/memory) is still needed
+2018/10/05 18:27:17.003814 [DEBUG] (runner) kv.block(avi/controllers/1/mgmt_mask) is still needed
+2018/10/05 18:27:17.003819 [DEBUG] (runner) kv.block(avi/controllers/1/default_gw) is still needed
+2018/10/05 18:27:17.003823 [DEBUG] (runner) kv.block(avi/controllers/2/vcenter/host) is still needed
+2018/10/05 18:27:17.003827 [DEBUG] (runner) kv.block(avi/ovftool_path) is still needed
+2018/10/05 18:27:17.003832 [DEBUG] (runner) kv.block(avi/vcenter/user) is still needed
+2018/10/05 18:27:17.003836 [DEBUG] (runner) kv.block(avi/vcenter/ova_path) is still needed
+2018/10/05 18:27:17.003840 [DEBUG] (runner) kv.block(avi/controllers/2/name) is still needed
+2018/10/05 18:27:17.003845 [DEBUG] (runner) kv.block(avi/controllers/2/mgmt_ip) is still needed
+2018/10/05 18:27:17.003849 [DEBUG] (runner) kv.block(avi/controllers/3/vcenter/host) is still needed
+2018/10/05 18:27:17.003853 [DEBUG] (runner) kv.block(avi/controllers/3/mgmt_mask) is still needed
+2018/10/05 18:27:17.003857 [DEBUG] (runner) kv.block(avi/vcenter/password) is still needed
+2018/10/05 18:27:17.003862 [DEBUG] (runner) kv.block(avi/vcenter/mgmt_network) is still needed
+2018/10/05 18:27:17.003866 [DEBUG] (runner) kv.block(avi/controllers/1/name) is still needed
+2018/10/05 18:27:17.003871 [DEBUG] (runner) kv.block(avi/controllers/1/mgmt_ip) is still needed
+2018/10/05 18:27:17.003875 [DEBUG] (runner) kv.block(avi/controllers/2/default_gw) is still needed
+2018/10/05 18:27:17.003879 [DEBUG] (runner) kv.block(avi/controllers/3/name) is still needed
+2018/10/05 18:27:17.003884 [DEBUG] (runner) kv.block(avi/controllers/3/default_gw) is still needed
+2018/10/05 18:27:17.003888 [DEBUG] (runner) kv.block(avi/vcenter/folder) is still needed
+2018/10/05 18:27:17.003892 [DEBUG] (runner) kv.block(avi/vcenter/number_of_cpus) is still needed
+2018/10/05 18:27:17.003897 [DEBUG] (runner) kv.block(avi/controllers/1/vcenter/host) is still needed
+2018/10/05 18:27:17.003901 [DEBUG] (runner) kv.block(avi/controllers/2/mgmt_mask) is still needed
+2018/10/05 18:27:17.003905 [DEBUG] (runner) kv.block(avi/controllers/3/mgmt_ip) is still needed
+2018/10/05 18:27:17.003910 [DEBUG] (runner) kv.block(avi/vcenter/datacenter) is still needed
+2018/10/05 18:27:17.003914 [DEBUG] (runner) kv.block(avi/vcenter/power_on) is still needed
+2018/10/05 18:27:17.003920 [DEBUG] (runner) watching 26 dependencies
+2018/10/05 18:27:17.007149 [TRACE] kv.block(avi/vcenter/mgmt_network): returned "VM Network"
+2018/10/05 18:27:17.007175 [TRACE] (view) kv.block(avi/vcenter/mgmt_network) marking successful data response
+2018/10/05 18:27:17.007185 [TRACE] (view) kv.block(avi/vcenter/mgmt_network) successful contact, resetting retries
+2018/10/05 18:27:17.007191 [TRACE] (view) kv.block(avi/vcenter/mgmt_network) received data
+2018/10/05 18:27:17.007198 [DEBUG] (runner) receiving dependency kv.block(avi/vcenter/mgmt_network)
+2018/10/05 18:27:17.007205 [DEBUG] (runner) initiating run
+2018/10/05 18:27:17.007209 [DEBUG] (runner) checking template e2e293a4e9ad3bb8cd68e19166b89225
+2018/10/05 18:27:17.007925 [DEBUG] (runner) missing data for 24 dependencies
+2018/10/05 18:27:17.007937 [DEBUG] (runner) diffing and updating dependencies
+2018/10/05 18:27:17.007943 [DEBUG] (runner) kv.block(avi/vcenter/mgmt_network) is still needed
+2018/10/05 18:27:17.007947 [DEBUG] (runner) kv.block(avi/controllers/1/mgmt_ip) is still needed
+2018/10/05 18:27:17.007952 [DEBUG] (runner) kv.block(avi/controllers/2/mgmt_ip) is still needed
+2018/10/05 18:27:17.007956 [DEBUG] (runner) kv.block(avi/controllers/2/mgmt_mask) is still needed
+2018/10/05 18:27:17.007960 [DEBUG] (runner) kv.block(avi/controllers/3/mgmt_mask) is still needed
+2018/10/05 18:27:17.007964 [DEBUG] (runner) kv.block(avi/vcenter/datacenter) is still needed
+2018/10/05 18:27:17.007968 [DEBUG] (runner) kv.block(avi/controllers/1/vcenter/host) is still needed
+2018/10/05 18:27:17.007973 [DEBUG] (runner) kv.block(avi/controllers/1/default_gw) is still needed
+2018/10/05 18:27:17.007977 [DEBUG] (runner) kv.block(avi/controllers/3/name) is still needed
+2018/10/05 18:27:17.007981 [DEBUG] (runner) kv.block(avi/controllers/3/mgmt_ip) is still needed
+2018/10/05 18:27:17.007985 [DEBUG] (runner) kv.block(avi/vcenter/memory) is still needed
+2018/10/05 18:27:17.007990 [DEBUG] (runner) kv.block(avi/controllers/1/mgmt_mask) is still needed
+2018/10/05 18:27:17.007994 [DEBUG] (runner) kv.block(avi/controllers/2/name) is still needed
+2018/10/05 18:27:17.007998 [DEBUG] (runner) kv.block(avi/controllers/3/vcenter/host) is still needed
+2018/10/05 18:27:17.008002 [DEBUG] (runner) kv.block(avi/controllers/3/default_gw) is still needed
+2018/10/05 18:27:17.008007 [DEBUG] (runner) kv.block(avi/vcenter/folder) is still needed
+2018/10/05 18:27:17.008011 [DEBUG] (runner) kv.block(avi/vcenter/user) is still needed
+2018/10/05 18:27:17.008016 [DEBUG] (runner) kv.block(avi/vcenter/password) is still needed
+2018/10/05 18:27:17.008020 [DEBUG] (runner) kv.block(avi/vcenter/cluster) is still needed
+2018/10/05 18:27:17.008024 [DEBUG] (runner) kv.block(avi/vcenter/ova_path) is still needed
+2018/10/05 18:27:17.008028 [DEBUG] (runner) kv.block(avi/vcenter/power_on) is still needed
+2018/10/05 18:27:17.008033 [DEBUG] (runner) kv.block(avi/vcenter/number_of_cpus) is still needed
+2018/10/05 18:27:17.008037 [DEBUG] (runner) kv.block(avi/controllers/1/name) is still needed
+2018/10/05 18:27:17.008041 [DEBUG] (runner) kv.block(avi/ovftool_path) is still needed
+2018/10/05 18:27:17.008045 [DEBUG] (runner) kv.block(avi/controllers/2/default_gw) is still needed
+2018/10/05 18:27:17.008049 [DEBUG] (runner) kv.block(avi/controllers/2/vcenter/host) is still needed
+2018/10/05 18:27:17.008055 [DEBUG] (runner) watching 26 dependencies
+2018/10/05 18:27:17.008716 [TRACE] kv.block(avi/vcenter/ova_path): returned "/home/ge/controller-17.2.13-9168.ova"
+2018/10/05 18:27:17.008729 [TRACE] (view) kv.block(avi/vcenter/ova_path) marking successful data response
+2018/10/05 18:27:17.008737 [TRACE] (view) kv.block(avi/vcenter/ova_path) successful contact, resetting retries
+2018/10/05 18:27:17.008743 [TRACE] (view) kv.block(avi/vcenter/ova_path) received data
+2018/10/05 18:27:17.008750 [DEBUG] (runner) receiving dependency kv.block(avi/vcenter/ova_path)
+2018/10/05 18:27:17.008756 [DEBUG] (runner) initiating run
+2018/10/05 18:27:17.008760 [DEBUG] (runner) checking template e2e293a4e9ad3bb8cd68e19166b89225
+2018/10/05 18:27:17.009637 [DEBUG] (runner) missing data for 23 dependencies
+2018/10/05 18:27:17.009649 [DEBUG] (runner) diffing and updating dependencies
+2018/10/05 18:27:17.009655 [DEBUG] (runner) kv.block(avi/vcenter/cluster) is still needed
+2018/10/05 18:27:17.009666 [DEBUG] (runner) kv.block(avi/controllers/1/vcenter/host) is still needed
+2018/10/05 18:27:17.009670 [DEBUG] (runner) kv.block(avi/controllers/2/vcenter/host) is still needed
+2018/10/05 18:27:17.009675 [DEBUG] (runner) kv.block(avi/controllers/2/default_gw) is still needed
+2018/10/05 18:27:17.009679 [DEBUG] (runner) kv.block(avi/controllers/3/mgmt_ip) is still needed
+2018/10/05 18:27:17.009687 [DEBUG] (runner) kv.block(avi/controllers/3/mgmt_mask) is still needed
+2018/10/05 18:27:17.009692 [DEBUG] (runner) kv.block(avi/vcenter/password) is still needed
+2018/10/05 18:27:17.009712 [DEBUG] (runner) kv.block(avi/vcenter/datacenter) is still needed
+2018/10/05 18:27:17.009717 [DEBUG] (runner) kv.block(avi/vcenter/mgmt_network) is still needed
+2018/10/05 18:27:17.009722 [DEBUG] (runner) kv.block(avi/controllers/1/mgmt_ip) is still needed
+2018/10/05 18:27:17.009726 [DEBUG] (runner) kv.block(avi/controllers/2/name) is still needed
+2018/10/05 18:27:17.009730 [DEBUG] (runner) kv.block(avi/controllers/3/name) is still needed
+2018/10/05 18:27:17.009734 [DEBUG] (runner) kv.block(avi/vcenter/user) is still needed
+2018/10/05 18:27:17.009738 [DEBUG] (runner) kv.block(avi/vcenter/power_on) is still needed
+2018/10/05 18:27:17.009742 [DEBUG] (runner) kv.block(avi/vcenter/memory) is still needed
+2018/10/05 18:27:17.009746 [DEBUG] (runner) kv.block(avi/controllers/1/name) is still needed
+2018/10/05 18:27:17.009750 [DEBUG] (runner) kv.block(avi/controllers/2/mgmt_ip) is still needed
+2018/10/05 18:27:17.009754 [DEBUG] (runner) kv.block(avi/controllers/2/mgmt_mask) is still needed
+2018/10/05 18:27:17.009758 [DEBUG] (runner) kv.block(avi/vcenter/folder) is still needed
+2018/10/05 18:27:17.009762 [DEBUG] (runner) kv.block(avi/vcenter/ova_path) is still needed
+2018/10/05 18:27:17.009767 [DEBUG] (runner) kv.block(avi/vcenter/number_of_cpus) is still needed
+2018/10/05 18:27:17.009771 [DEBUG] (runner) kv.block(avi/controllers/1/mgmt_mask) is still needed
+2018/10/05 18:27:17.009785 [DEBUG] (runner) kv.block(avi/controllers/1/default_gw) is still needed
+2018/10/05 18:27:17.009790 [DEBUG] (runner) kv.block(avi/controllers/3/vcenter/host) is still needed
+2018/10/05 18:27:17.009794 [DEBUG] (runner) kv.block(avi/controllers/3/default_gw) is still needed
+2018/10/05 18:27:17.009798 [DEBUG] (runner) kv.block(avi/ovftool_path) is still needed
+2018/10/05 18:27:17.009803 [DEBUG] (runner) watching 26 dependencies
+2018/10/05 18:27:17.010512 [TRACE] kv.block(avi/vcenter/power_on): returned "true"
+2018/10/05 18:27:17.010526 [TRACE] (view) kv.block(avi/vcenter/power_on) marking successful data response
+2018/10/05 18:27:17.010536 [TRACE] (view) kv.block(avi/vcenter/power_on) successful contact, resetting retries
+2018/10/05 18:27:17.010542 [TRACE] (view) kv.block(avi/vcenter/power_on) received data
+2018/10/05 18:27:17.010550 [DEBUG] (runner) receiving dependency kv.block(avi/vcenter/power_on)
+2018/10/05 18:27:17.010555 [DEBUG] (runner) initiating run
+2018/10/05 18:27:17.010559 [DEBUG] (runner) checking template e2e293a4e9ad3bb8cd68e19166b89225
+2018/10/05 18:27:17.011487 [DEBUG] (runner) missing data for 22 dependencies
+2018/10/05 18:27:17.011513 [DEBUG] (runner) diffing and updating dependencies
+2018/10/05 18:27:17.011520 [DEBUG] (runner) kv.block(avi/vcenter/memory) is still needed
+2018/10/05 18:27:17.011525 [DEBUG] (runner) kv.block(avi/controllers/1/name) is still needed
+2018/10/05 18:27:17.011529 [DEBUG] (runner) kv.block(avi/controllers/3/name) is still needed
+2018/10/05 18:27:17.011533 [DEBUG] (runner) kv.block(avi/controllers/3/vcenter/host) is still needed
+2018/10/05 18:27:17.011537 [DEBUG] (runner) kv.block(avi/controllers/3/mgmt_mask) is still needed
+2018/10/05 18:27:17.011542 [DEBUG] (runner) kv.block(avi/vcenter/datacenter) is still needed
+2018/10/05 18:27:17.011546 [DEBUG] (runner) kv.block(avi/vcenter/cluster) is still needed
+2018/10/05 18:27:17.011550 [DEBUG] (runner) kv.block(avi/vcenter/ova_path) is still needed
+2018/10/05 18:27:17.011554 [DEBUG] (runner) kv.block(avi/controllers/3/mgmt_ip) is still needed
+2018/10/05 18:27:17.011567 [DEBUG] (runner) kv.block(avi/vcenter/user) is still needed
+2018/10/05 18:27:17.011571 [DEBUG] (runner) kv.block(avi/vcenter/mgmt_network) is still needed
+2018/10/05 18:27:17.011586 [DEBUG] (runner) kv.block(avi/controllers/1/default_gw) is still needed
+2018/10/05 18:27:17.011591 [DEBUG] (runner) kv.block(avi/controllers/2/mgmt_ip) is still needed
+2018/10/05 18:27:17.011595 [DEBUG] (runner) kv.block(avi/controllers/2/mgmt_mask) is still needed
+2018/10/05 18:27:17.011599 [DEBUG] (runner) kv.block(avi/controllers/3/default_gw) is still needed
+2018/10/05 18:27:17.011603 [DEBUG] (runner) kv.block(avi/ovftool_path) is still needed
+2018/10/05 18:27:17.011607 [DEBUG] (runner) kv.block(avi/controllers/2/name) is still needed
+2018/10/05 18:27:17.011611 [DEBUG] (runner) kv.block(avi/controllers/2/vcenter/host) is still needed
+2018/10/05 18:27:17.011616 [DEBUG] (runner) kv.block(avi/vcenter/number_of_cpus) is still needed
+2018/10/05 18:27:17.011620 [DEBUG] (runner) kv.block(avi/controllers/1/vcenter/host) is still needed
+2018/10/05 18:27:17.011624 [DEBUG] (runner) kv.block(avi/controllers/1/mgmt_ip) is still needed
+2018/10/05 18:27:17.011628 [DEBUG] (runner) kv.block(avi/controllers/1/mgmt_mask) is still needed
+2018/10/05 18:27:17.011632 [DEBUG] (runner) kv.block(avi/controllers/2/default_gw) is still needed
+2018/10/05 18:27:17.011636 [DEBUG] (runner) kv.block(avi/vcenter/password) is still needed
+2018/10/05 18:27:17.011641 [DEBUG] (runner) kv.block(avi/vcenter/folder) is still needed
+2018/10/05 18:27:17.011645 [DEBUG] (runner) kv.block(avi/vcenter/power_on) is still needed
+2018/10/05 18:27:17.011650 [DEBUG] (runner) watching 26 dependencies
+2018/10/05 18:27:17.014616 [TRACE] kv.block(avi/vcenter/number_of_cpus): returned "8"
+2018/10/05 18:27:17.014630 [TRACE] (view) kv.block(avi/vcenter/number_of_cpus) marking successful data response
+2018/10/05 18:27:17.014638 [TRACE] (view) kv.block(avi/vcenter/number_of_cpus) successful contact, resetting retries
+2018/10/05 18:27:17.014644 [TRACE] (view) kv.block(avi/vcenter/number_of_cpus) received data
+2018/10/05 18:27:17.014652 [DEBUG] (runner) receiving dependency kv.block(avi/vcenter/number_of_cpus)
+2018/10/05 18:27:17.014668 [DEBUG] (runner) initiating run
+2018/10/05 18:27:17.014674 [DEBUG] (runner) checking template e2e293a4e9ad3bb8cd68e19166b89225
+2018/10/05 18:27:17.015384 [DEBUG] (runner) missing data for 21 dependencies
+2018/10/05 18:27:17.015394 [DEBUG] (runner) diffing and updating dependencies
+2018/10/05 18:27:17.015400 [DEBUG] (runner) kv.block(avi/vcenter/folder) is still needed
+2018/10/05 18:27:17.015404 [DEBUG] (runner) kv.block(avi/vcenter/mgmt_network) is still needed
+2018/10/05 18:27:17.015409 [DEBUG] (runner) kv.block(avi/controllers/2/name) is still needed
+2018/10/05 18:27:17.015413 [DEBUG] (runner) kv.block(avi/controllers/2/mgmt_ip) is still needed
+2018/10/05 18:27:17.015417 [DEBUG] (runner) kv.block(avi/controllers/2/mgmt_mask) is still needed
+2018/10/05 18:27:17.015422 [DEBUG] (runner) kv.block(avi/controllers/2/default_gw) is still needed
+2018/10/05 18:27:17.015426 [DEBUG] (runner) kv.block(avi/controllers/3/default_gw) is still needed
+2018/10/05 18:27:17.015430 [DEBUG] (runner) kv.block(avi/ovftool_path) is still needed
+2018/10/05 18:27:17.015434 [DEBUG] (runner) kv.block(avi/vcenter/number_of_cpus) is still needed
+2018/10/05 18:27:17.015438 [DEBUG] (runner) kv.block(avi/vcenter/memory) is still needed
+2018/10/05 18:27:17.015442 [DEBUG] (runner) kv.block(avi/controllers/1/vcenter/host) is still needed
+2018/10/05 18:27:17.015447 [DEBUG] (runner) kv.block(avi/controllers/1/mgmt_ip) is still needed
+2018/10/05 18:27:17.015451 [DEBUG] (runner) kv.block(avi/controllers/1/default_gw) is still needed
+2018/10/05 18:27:17.015455 [DEBUG] (runner) kv.block(avi/controllers/3/mgmt_mask) is still needed
+2018/10/05 18:27:17.015459 [DEBUG] (runner) kv.block(avi/vcenter/cluster) is still needed
+2018/10/05 18:27:17.015463 [DEBUG] (runner) kv.block(avi/vcenter/power_on) is still needed
+2018/10/05 18:27:17.015467 [DEBUG] (runner) kv.block(avi/controllers/1/name) is still needed
+2018/10/05 18:27:17.015479 [DEBUG] (runner) kv.block(avi/controllers/1/mgmt_mask) is still needed
+2018/10/05 18:27:17.015486 [DEBUG] (runner) kv.block(avi/controllers/3/mgmt_ip) is still needed
+2018/10/05 18:27:17.015491 [DEBUG] (runner) kv.block(avi/vcenter/user) is still needed
+2018/10/05 18:27:17.015495 [DEBUG] (runner) kv.block(avi/vcenter/password) is still needed
+2018/10/05 18:27:17.015499 [DEBUG] (runner) kv.block(avi/vcenter/datacenter) is still needed
+2018/10/05 18:27:17.015503 [DEBUG] (runner) kv.block(avi/vcenter/ova_path) is still needed
+2018/10/05 18:27:17.015507 [DEBUG] (runner) kv.block(avi/controllers/2/vcenter/host) is still needed
+2018/10/05 18:27:17.015511 [DEBUG] (runner) kv.block(avi/controllers/3/name) is still needed
+2018/10/05 18:27:17.015515 [DEBUG] (runner) kv.block(avi/controllers/3/vcenter/host) is still needed
+2018/10/05 18:27:17.015520 [DEBUG] (runner) watching 26 dependencies
+2018/10/05 18:27:17.016153 [TRACE] kv.block(avi/vcenter/memory): returned "24"
+2018/10/05 18:27:17.016166 [TRACE] (view) kv.block(avi/vcenter/memory) marking successful data response
+2018/10/05 18:27:17.016175 [TRACE] (view) kv.block(avi/vcenter/memory) successful contact, resetting retries
+2018/10/05 18:27:17.016181 [TRACE] (view) kv.block(avi/vcenter/memory) received data
+2018/10/05 18:27:17.016188 [DEBUG] (runner) receiving dependency kv.block(avi/vcenter/memory)
+2018/10/05 18:27:17.016194 [DEBUG] (runner) initiating run
+2018/10/05 18:27:17.016198 [DEBUG] (runner) checking template e2e293a4e9ad3bb8cd68e19166b89225
+2018/10/05 18:27:17.017013 [DEBUG] (runner) missing data for 20 dependencies
+2018/10/05 18:27:17.017025 [DEBUG] (runner) diffing and updating dependencies
+2018/10/05 18:27:17.017031 [DEBUG] (runner) kv.block(avi/controllers/1/name) is still needed
+2018/10/05 18:27:17.017036 [DEBUG] (runner) kv.block(avi/controllers/1/vcenter/host) is still needed
+2018/10/05 18:27:17.017040 [DEBUG] (runner) kv.block(avi/vcenter/user) is still needed
+2018/10/05 18:27:17.017044 [DEBUG] (runner) kv.block(avi/vcenter/password) is still needed
+2018/10/05 18:27:17.017048 [DEBUG] (runner) kv.block(avi/vcenter/folder) is still needed
+2018/10/05 18:27:17.017052 [DEBUG] (runner) kv.block(avi/vcenter/datacenter) is still needed
+2018/10/05 18:27:17.017056 [DEBUG] (runner) kv.block(avi/vcenter/cluster) is still needed
+2018/10/05 18:27:17.017060 [DEBUG] (runner) kv.block(avi/vcenter/memory) is still needed
+2018/10/05 18:27:17.017065 [DEBUG] (runner) kv.block(avi/controllers/2/name) is still needed
+2018/10/05 18:27:17.017069 [DEBUG] (runner) kv.block(avi/controllers/2/vcenter/host) is still needed
+2018/10/05 18:27:17.017073 [DEBUG] (runner) kv.block(avi/controllers/2/default_gw) is still needed
+2018/10/05 18:27:17.017077 [DEBUG] (runner) kv.block(avi/controllers/3/mgmt_ip) is still needed
+2018/10/05 18:27:17.017092 [DEBUG] (runner) kv.block(avi/controllers/3/default_gw) is still needed
+2018/10/05 18:27:17.017097 [DEBUG] (runner) kv.block(avi/ovftool_path) is still needed
+2018/10/05 18:27:17.017102 [DEBUG] (runner) kv.block(avi/controllers/1/default_gw) is still needed
+2018/10/05 18:27:17.017106 [DEBUG] (runner) kv.block(avi/controllers/2/mgmt_ip) is still needed
+2018/10/05 18:27:17.017110 [DEBUG] (runner) kv.block(avi/controllers/2/mgmt_mask) is still needed
+2018/10/05 18:27:17.017114 [DEBUG] (runner) kv.block(avi/controllers/3/name) is still needed
+2018/10/05 18:27:17.017118 [DEBUG] (runner) kv.block(avi/controllers/3/vcenter/host) is still needed
+2018/10/05 18:27:17.017122 [DEBUG] (runner) kv.block(avi/controllers/3/mgmt_mask) is still needed
+2018/10/05 18:27:17.017126 [DEBUG] (runner) kv.block(avi/vcenter/mgmt_network) is still needed
+2018/10/05 18:27:17.017130 [DEBUG] (runner) kv.block(avi/vcenter/ova_path) is still needed
+2018/10/05 18:27:17.017135 [DEBUG] (runner) kv.block(avi/vcenter/power_on) is still needed
+2018/10/05 18:27:17.017139 [DEBUG] (runner) kv.block(avi/vcenter/number_of_cpus) is still needed
+2018/10/05 18:27:17.017143 [DEBUG] (runner) kv.block(avi/controllers/1/mgmt_ip) is still needed
+2018/10/05 18:27:17.017154 [DEBUG] (runner) kv.block(avi/controllers/1/mgmt_mask) is still needed
+2018/10/05 18:27:17.017168 [DEBUG] (runner) watching 26 dependencies
+2018/10/05 18:27:17.017874 [TRACE] kv.block(avi/controllers/1/name): returned "AviController1"
+2018/10/05 18:27:17.017901 [TRACE] (view) kv.block(avi/controllers/1/name) marking successful data response
+2018/10/05 18:27:17.017911 [TRACE] (view) kv.block(avi/controllers/1/name) successful contact, resetting retries
+2018/10/05 18:27:17.017917 [TRACE] (view) kv.block(avi/controllers/1/name) received data
+2018/10/05 18:27:17.017925 [DEBUG] (runner) receiving dependency kv.block(avi/controllers/1/name)
+2018/10/05 18:27:17.017930 [DEBUG] (runner) initiating run
+2018/10/05 18:27:17.017935 [DEBUG] (runner) checking template e2e293a4e9ad3bb8cd68e19166b89225
+2018/10/05 18:27:17.018901 [DEBUG] (runner) missing data for 19 dependencies
+2018/10/05 18:27:17.018914 [DEBUG] (runner) diffing and updating dependencies
+2018/10/05 18:27:17.018921 [DEBUG] (runner) kv.block(avi/controllers/1/vcenter/host) is still needed
+2018/10/05 18:27:17.018926 [DEBUG] (runner) kv.block(avi/controllers/2/vcenter/host) is still needed
+2018/10/05 18:27:17.018930 [DEBUG] (runner) kv.block(avi/controllers/3/mgmt_ip) is still needed
+2018/10/05 18:27:17.018935 [DEBUG] (runner) kv.block(avi/vcenter/datacenter) is still needed
+2018/10/05 18:27:17.018939 [DEBUG] (runner) kv.block(avi/vcenter/ova_path) is still needed
+2018/10/05 18:27:17.018944 [DEBUG] (runner) kv.block(avi/vcenter/memory) is still needed
+2018/10/05 18:27:17.018948 [DEBUG] (runner) kv.block(avi/controllers/1/default_gw) is still needed
+2018/10/05 18:27:17.018952 [DEBUG] (runner) kv.block(avi/controllers/2/mgmt_mask) is still needed
+2018/10/05 18:27:17.018961 [DEBUG] (runner) kv.block(avi/ovftool_path) is still needed
+2018/10/05 18:27:17.018982 [DEBUG] (runner) kv.block(avi/vcenter/user) is still needed
+2018/10/05 18:27:17.018987 [DEBUG] (runner) kv.block(avi/vcenter/power_on) is still needed
+2018/10/05 18:27:17.018991 [DEBUG] (runner) kv.block(avi/controllers/2/name) is still needed
+2018/10/05 18:27:17.018995 [DEBUG] (runner) kv.block(avi/controllers/2/mgmt_ip) is still needed
+2018/10/05 18:27:17.019000 [DEBUG] (runner) kv.block(avi/controllers/2/default_gw) is still needed
+2018/10/05 18:27:17.019004 [DEBUG] (runner) kv.block(avi/controllers/3/mgmt_mask) is still needed
+2018/10/05 18:27:17.019007 [DEBUG] (runner) kv.block(avi/vcenter/password) is still needed
+2018/10/05 18:27:17.019010 [DEBUG] (runner) kv.block(avi/vcenter/number_of_cpus) is still needed
+2018/10/05 18:27:17.019013 [DEBUG] (runner) kv.block(avi/controllers/1/mgmt_mask) is still needed
+2018/10/05 18:27:17.019018 [DEBUG] (runner) kv.block(avi/controllers/1/name) is still needed
+2018/10/05 18:27:17.019022 [DEBUG] (runner) kv.block(avi/controllers/1/mgmt_ip) is still needed
+2018/10/05 18:27:17.019027 [DEBUG] (runner) kv.block(avi/controllers/3/name) is still needed
+2018/10/05 18:27:17.019033 [DEBUG] (runner) kv.block(avi/controllers/3/vcenter/host) is still needed
+2018/10/05 18:27:17.019037 [DEBUG] (runner) kv.block(avi/controllers/3/default_gw) is still needed
+2018/10/05 18:27:17.019041 [DEBUG] (runner) kv.block(avi/vcenter/folder) is still needed
+2018/10/05 18:27:17.019063 [DEBUG] (runner) kv.block(avi/vcenter/cluster) is still needed
+2018/10/05 18:27:17.019068 [DEBUG] (runner) kv.block(avi/vcenter/mgmt_network) is still needed
+2018/10/05 18:27:17.019074 [DEBUG] (runner) watching 26 dependencies
+2018/10/05 18:27:17.020100 [TRACE] kv.block(avi/controllers/1/mgmt_ip): returned "192.168.38.71"
+2018/10/05 18:27:17.020111 [TRACE] (view) kv.block(avi/controllers/1/mgmt_ip) marking successful data response
+2018/10/05 18:27:17.020179 [TRACE] (view) kv.block(avi/controllers/1/mgmt_ip) successful contact, resetting retries
+2018/10/05 18:27:17.020186 [TRACE] (view) kv.block(avi/controllers/1/mgmt_ip) received data
+2018/10/05 18:27:17.020192 [DEBUG] (runner) receiving dependency kv.block(avi/controllers/1/mgmt_ip)
+2018/10/05 18:27:17.020196 [DEBUG] (runner) initiating run
+2018/10/05 18:27:17.020216 [DEBUG] (runner) checking template e2e293a4e9ad3bb8cd68e19166b89225
+2018/10/05 18:27:17.020765 [DEBUG] (runner) missing data for 18 dependencies
+2018/10/05 18:27:17.020774 [DEBUG] (runner) diffing and updating dependencies
+2018/10/05 18:27:17.020778 [DEBUG] (runner) kv.block(avi/vcenter/cluster) is still needed
+2018/10/05 18:27:17.020781 [DEBUG] (runner) kv.block(avi/vcenter/memory) is still needed
+2018/10/05 18:27:17.020787 [DEBUG] (runner) kv.block(avi/controllers/1/name) is still needed
+2018/10/05 18:27:17.020790 [DEBUG] (runner) kv.block(avi/controllers/2/name) is still needed
+2018/10/05 18:27:17.020792 [DEBUG] (runner) kv.block(avi/controllers/2/mgmt_ip) is still needed
+2018/10/05 18:27:17.020795 [DEBUG] (runner) kv.block(avi/controllers/2/default_gw) is still needed
+2018/10/05 18:27:17.020798 [DEBUG] (runner) kv.block(avi/controllers/3/name) is still needed
+2018/10/05 18:27:17.020800 [DEBUG] (runner) kv.block(avi/ovftool_path) is still needed
+2018/10/05 18:27:17.020803 [DEBUG] (runner) kv.block(avi/controllers/3/default_gw) is still needed
+2018/10/05 18:27:17.020806 [DEBUG] (runner) kv.block(avi/vcenter/folder) is still needed
+2018/10/05 18:27:17.020809 [DEBUG] (runner) kv.block(avi/controllers/1/default_gw) is still needed
+2018/10/05 18:27:17.020812 [DEBUG] (runner) kv.block(avi/controllers/3/mgmt_ip) is still needed
+2018/10/05 18:27:17.020814 [DEBUG] (runner) kv.block(avi/vcenter/user) is still needed
+2018/10/05 18:27:17.020817 [DEBUG] (runner) kv.block(avi/vcenter/number_of_cpus) is still needed
+2018/10/05 18:27:17.020820 [DEBUG] (runner) kv.block(avi/controllers/1/vcenter/host) is still needed
+2018/10/05 18:27:17.020823 [DEBUG] (runner) kv.block(avi/controllers/1/mgmt_mask) is still needed
+2018/10/05 18:27:17.020825 [DEBUG] (runner) kv.block(avi/controllers/2/vcenter/host) is still needed
+2018/10/05 18:27:17.020836 [DEBUG] (runner) kv.block(avi/vcenter/power_on) is still needed
+2018/10/05 18:27:17.020839 [DEBUG] (runner) kv.block(avi/vcenter/datacenter) is still needed
+2018/10/05 18:27:17.020842 [DEBUG] (runner) kv.block(avi/vcenter/mgmt_network) is still needed
+2018/10/05 18:27:17.020844 [DEBUG] (runner) kv.block(avi/vcenter/ova_path) is still needed
+2018/10/05 18:27:17.020847 [DEBUG] (runner) kv.block(avi/controllers/1/mgmt_ip) is still needed
+2018/10/05 18:27:17.020850 [DEBUG] (runner) kv.block(avi/controllers/2/mgmt_mask) is still needed
+2018/10/05 18:27:17.020853 [DEBUG] (runner) kv.block(avi/controllers/3/vcenter/host) is still needed
+2018/10/05 18:27:17.020855 [DEBUG] (runner) kv.block(avi/controllers/3/mgmt_mask) is still needed
+2018/10/05 18:27:17.020858 [DEBUG] (runner) kv.block(avi/vcenter/password) is still needed
+2018/10/05 18:27:17.020862 [DEBUG] (runner) watching 26 dependencies
+2018/10/05 18:27:17.020899 [TRACE] kv.block(avi/controllers/1/vcenter/host): returned "192.168.38.20"
+2018/10/05 18:27:17.020915 [TRACE] (view) kv.block(avi/controllers/1/vcenter/host) marking successful data response
+2018/10/05 18:27:17.020921 [TRACE] (view) kv.block(avi/controllers/1/vcenter/host) successful contact, resetting retries
+2018/10/05 18:27:17.020924 [TRACE] (view) kv.block(avi/controllers/1/vcenter/host) received data
+2018/10/05 18:27:17.020930 [DEBUG] (runner) receiving dependency kv.block(avi/controllers/1/vcenter/host)
+2018/10/05 18:27:17.020935 [DEBUG] (runner) initiating run
+2018/10/05 18:27:17.020938 [DEBUG] (runner) checking template e2e293a4e9ad3bb8cd68e19166b89225
+2018/10/05 18:27:17.021569 [DEBUG] (runner) missing data for 17 dependencies
+2018/10/05 18:27:17.021578 [DEBUG] (runner) diffing and updating dependencies
+2018/10/05 18:27:17.021582 [DEBUG] (runner) kv.block(avi/controllers/1/default_gw) is still needed
+2018/10/05 18:27:17.021585 [DEBUG] (runner) kv.block(avi/controllers/3/mgmt_ip) is still needed
+2018/10/05 18:27:17.021588 [DEBUG] (runner) kv.block(avi/ovftool_path) is still needed
+2018/10/05 18:27:17.021590 [DEBUG] (runner) kv.block(avi/vcenter/user) is still needed
+2018/10/05 18:27:17.021593 [DEBUG] (runner) kv.block(avi/vcenter/mgmt_network) is still needed
+2018/10/05 18:27:17.021700 [DEBUG] (runner) kv.block(avi/vcenter/ova_path) is still needed
+2018/10/05 18:27:17.021704 [DEBUG] (runner) kv.block(avi/vcenter/number_of_cpus) is still needed
+2018/10/05 18:27:17.021707 [DEBUG] (runner) kv.block(avi/controllers/1/vcenter/host) is still needed
+2018/10/05 18:27:17.021710 [DEBUG] (runner) kv.block(avi/controllers/3/mgmt_mask) is still needed
+2018/10/05 18:27:17.021713 [DEBUG] (runner) kv.block(avi/controllers/3/default_gw) is still needed
+2018/10/05 18:27:17.021716 [DEBUG] (runner) kv.block(avi/vcenter/power_on) is still needed
+2018/10/05 18:27:17.021718 [DEBUG] (runner) kv.block(avi/controllers/1/name) is still needed
+2018/10/05 18:27:17.021721 [DEBUG] (runner) kv.block(avi/controllers/2/name) is still needed
+2018/10/05 18:27:17.021724 [DEBUG] (runner) kv.block(avi/controllers/2/vcenter/host) is still needed
+2018/10/05 18:27:17.021726 [DEBUG] (runner) kv.block(avi/controllers/2/mgmt_mask) is still needed
+2018/10/05 18:27:17.021729 [DEBUG] (runner) kv.block(avi/controllers/3/name) is still needed
+2018/10/05 18:27:17.021732 [DEBUG] (runner) kv.block(avi/vcenter/folder) is still needed
+2018/10/05 18:27:17.021735 [DEBUG] (runner) kv.block(avi/controllers/1/mgmt_mask) is still needed
+2018/10/05 18:27:17.021737 [DEBUG] (runner) kv.block(avi/controllers/2/mgmt_ip) is still needed
+2018/10/05 18:27:17.021740 [DEBUG] (runner) kv.block(avi/controllers/3/vcenter/host) is still needed
+2018/10/05 18:27:17.021743 [DEBUG] (runner) kv.block(avi/vcenter/password) is still needed
+2018/10/05 18:27:17.021746 [DEBUG] (runner) kv.block(avi/vcenter/datacenter) is still needed
+2018/10/05 18:27:17.021748 [DEBUG] (runner) kv.block(avi/vcenter/cluster) is still needed
+2018/10/05 18:27:17.021751 [DEBUG] (runner) kv.block(avi/vcenter/memory) is still needed
+2018/10/05 18:27:17.021844 [DEBUG] (runner) kv.block(avi/controllers/1/mgmt_ip) is still needed
+2018/10/05 18:27:17.021850 [DEBUG] (runner) kv.block(avi/controllers/2/default_gw) is still needed
+2018/10/05 18:27:17.021854 [DEBUG] (runner) watching 26 dependencies
+2018/10/05 18:27:17.022358 [TRACE] kv.block(avi/controllers/1/mgmt_mask): returned "255.255.255.0"
+2018/10/05 18:27:17.022369 [TRACE] (view) kv.block(avi/controllers/1/mgmt_mask) marking successful data response
+2018/10/05 18:27:17.022375 [TRACE] (view) kv.block(avi/controllers/1/mgmt_mask) successful contact, resetting retries
+2018/10/05 18:27:17.022379 [TRACE] (view) kv.block(avi/controllers/1/mgmt_mask) received data
+2018/10/05 18:27:17.022384 [DEBUG] (runner) receiving dependency kv.block(avi/controllers/1/mgmt_mask)
+2018/10/05 18:27:17.022388 [DEBUG] (runner) initiating run
+2018/10/05 18:27:17.022391 [DEBUG] (runner) checking template e2e293a4e9ad3bb8cd68e19166b89225
+2018/10/05 18:27:17.022829 [DEBUG] (runner) missing data for 16 dependencies
+2018/10/05 18:27:17.022836 [DEBUG] (runner) diffing and updating dependencies
+2018/10/05 18:27:17.022840 [DEBUG] (runner) kv.block(avi/vcenter/number_of_cpus) is still needed
+2018/10/05 18:27:17.022843 [DEBUG] (runner) kv.block(avi/vcenter/memory) is still needed
+2018/10/05 18:27:17.022846 [DEBUG] (runner) kv.block(avi/controllers/1/name) is still needed
+2018/10/05 18:27:17.022849 [DEBUG] (runner) kv.block(avi/controllers/1/mgmt_ip) is still needed
+2018/10/05 18:27:17.022852 [DEBUG] (runner) kv.block(avi/controllers/2/mgmt_mask) is still needed
+2018/10/05 18:27:17.022854 [DEBUG] (runner) kv.block(avi/vcenter/user) is still needed
+2018/10/05 18:27:17.022857 [DEBUG] (runner) kv.block(avi/vcenter/folder) is still needed
+2018/10/05 18:27:17.022860 [DEBUG] (runner) kv.block(avi/vcenter/cluster) is still needed
+2018/10/05 18:27:17.022863 [DEBUG] (runner) kv.block(avi/controllers/3/name) is still needed
+2018/10/05 18:27:17.022865 [DEBUG] (runner) kv.block(avi/vcenter/power_on) is still needed
+2018/10/05 18:27:17.022868 [DEBUG] (runner) kv.block(avi/controllers/1/vcenter/host) is still needed
+2018/10/05 18:27:17.022871 [DEBUG] (runner) kv.block(avi/controllers/1/default_gw) is still needed
+2018/10/05 18:27:17.022875 [DEBUG] (runner) kv.block(avi/controllers/2/vcenter/host) is still needed
+2018/10/05 18:27:17.022883 [DEBUG] (runner) kv.block(avi/controllers/3/vcenter/host) is still needed
+2018/10/05 18:27:17.022888 [DEBUG] (runner) kv.block(avi/vcenter/password) is still needed
+2018/10/05 18:27:17.022893 [DEBUG] (runner) kv.block(avi/vcenter/datacenter) is still needed
+2018/10/05 18:27:17.022897 [DEBUG] (runner) kv.block(avi/vcenter/ova_path) is still needed
+2018/10/05 18:27:17.022901 [DEBUG] (runner) kv.block(avi/controllers/3/mgmt_ip) is still needed
+2018/10/05 18:27:17.022905 [DEBUG] (runner) kv.block(avi/controllers/3/default_gw) is still needed
+2018/10/05 18:27:17.022910 [DEBUG] (runner) kv.block(avi/controllers/2/default_gw) is still needed
+2018/10/05 18:27:17.022914 [DEBUG] (runner) kv.block(avi/ovftool_path) is still needed
+2018/10/05 18:27:17.022918 [DEBUG] (runner) kv.block(avi/vcenter/mgmt_network) is still needed
+2018/10/05 18:27:17.022921 [DEBUG] (runner) kv.block(avi/controllers/1/mgmt_mask) is still needed
+2018/10/05 18:27:17.022924 [DEBUG] (runner) kv.block(avi/controllers/2/name) is still needed
+2018/10/05 18:27:17.022926 [DEBUG] (runner) kv.block(avi/controllers/2/mgmt_ip) is still needed
+2018/10/05 18:27:17.022929 [DEBUG] (runner) kv.block(avi/controllers/3/mgmt_mask) is still needed
+2018/10/05 18:27:17.022933 [DEBUG] (runner) watching 26 dependencies
+2018/10/05 18:27:17.023403 [TRACE] kv.block(avi/controllers/1/default_gw): returned "192.168.38.1"
+2018/10/05 18:27:17.023413 [TRACE] (view) kv.block(avi/controllers/1/default_gw) marking successful data response
+2018/10/05 18:27:17.023419 [TRACE] (view) kv.block(avi/controllers/1/default_gw) successful contact, resetting retries
+2018/10/05 18:27:17.023423 [TRACE] (view) kv.block(avi/controllers/1/default_gw) received data
+2018/10/05 18:27:17.023428 [DEBUG] (runner) receiving dependency kv.block(avi/controllers/1/default_gw)
+2018/10/05 18:27:17.023431 [DEBUG] (runner) initiating run
+2018/10/05 18:27:17.023434 [DEBUG] (runner) checking template e2e293a4e9ad3bb8cd68e19166b89225
+2018/10/05 18:27:17.023880 [DEBUG] (runner) missing data for 15 dependencies
+2018/10/05 18:27:17.023892 [DEBUG] (runner) diffing and updating dependencies
+2018/10/05 18:27:17.023899 [DEBUG] (runner) kv.block(avi/vcenter/power_on) is still needed
+2018/10/05 18:27:17.023903 [DEBUG] (runner) kv.block(avi/controllers/1/name) is still needed
+2018/10/05 18:27:17.023906 [DEBUG] (runner) kv.block(avi/controllers/1/vcenter/host) is still needed
+2018/10/05 18:27:17.023909 [DEBUG] (runner) kv.block(avi/controllers/2/mgmt_ip) is still needed
+2018/10/05 18:27:17.023911 [DEBUG] (runner) kv.block(avi/controllers/3/default_gw) is still needed
+2018/10/05 18:27:17.023914 [DEBUG] (runner) kv.block(avi/vcenter/ova_path) is still needed
+2018/10/05 18:27:17.023917 [DEBUG] (runner) kv.block(avi/vcenter/cluster) is still needed
+2018/10/05 18:27:17.023920 [DEBUG] (runner) kv.block(avi/vcenter/mgmt_network) is still needed
+2018/10/05 18:27:17.023922 [DEBUG] (runner) kv.block(avi/vcenter/memory) is still needed
+2018/10/05 18:27:17.023925 [DEBUG] (runner) kv.block(avi/controllers/1/mgmt_ip) is still needed
+2018/10/05 18:27:17.023928 [DEBUG] (runner) kv.block(avi/controllers/1/mgmt_mask) is still needed
+2018/10/05 18:27:17.023930 [DEBUG] (runner) kv.block(avi/controllers/2/name) is still needed
+2018/10/05 18:27:17.023933 [DEBUG] (runner) kv.block(avi/controllers/3/name) is still needed
+2018/10/05 18:27:17.023936 [DEBUG] (runner) kv.block(avi/vcenter/datacenter) is still needed
+2018/10/05 18:27:17.023939 [DEBUG] (runner) kv.block(avi/controllers/3/mgmt_ip) is still needed
+2018/10/05 18:27:17.023942 [DEBUG] (runner) kv.block(avi/vcenter/folder) is still needed
+2018/10/05 18:27:17.023947 [DEBUG] (runner) kv.block(avi/controllers/1/default_gw) is still needed
+2018/10/05 18:27:17.023949 [DEBUG] (runner) kv.block(avi/controllers/2/vcenter/host) is still needed
+2018/10/05 18:27:17.023952 [DEBUG] (runner) kv.block(avi/controllers/2/default_gw) is still needed
+2018/10/05 18:27:17.023955 [DEBUG] (runner) kv.block(avi/ovftool_path) is still needed
+2018/10/05 18:27:17.023958 [DEBUG] (runner) kv.block(avi/vcenter/password) is still needed
+2018/10/05 18:27:17.023966 [DEBUG] (runner) kv.block(avi/vcenter/number_of_cpus) is still needed
+2018/10/05 18:27:17.023969 [DEBUG] (runner) kv.block(avi/controllers/2/mgmt_mask) is still needed
+2018/10/05 18:27:17.023971 [DEBUG] (runner) kv.block(avi/controllers/3/vcenter/host) is still needed
+2018/10/05 18:27:17.023974 [DEBUG] (runner) kv.block(avi/controllers/3/mgmt_mask) is still needed
+2018/10/05 18:27:17.023977 [DEBUG] (runner) kv.block(avi/vcenter/user) is still needed
+2018/10/05 18:27:17.023981 [DEBUG] (runner) watching 26 dependencies
+2018/10/05 18:27:17.024445 [TRACE] kv.block(avi/controllers/2/name): returned "AviController2"
+2018/10/05 18:27:17.024455 [TRACE] (view) kv.block(avi/controllers/2/name) marking successful data response
+2018/10/05 18:27:17.024462 [TRACE] (view) kv.block(avi/controllers/2/name) successful contact, resetting retries
+2018/10/05 18:27:17.024469 [TRACE] (view) kv.block(avi/controllers/2/name) received data
+2018/10/05 18:27:17.024474 [DEBUG] (runner) receiving dependency kv.block(avi/controllers/2/name)
+2018/10/05 18:27:17.024478 [DEBUG] (runner) initiating run
+2018/10/05 18:27:17.024480 [DEBUG] (runner) checking template e2e293a4e9ad3bb8cd68e19166b89225
+2018/10/05 18:27:17.024925 [DEBUG] (runner) missing data for 14 dependencies
+2018/10/05 18:27:17.024933 [DEBUG] (runner) diffing and updating dependencies
+2018/10/05 18:27:17.024937 [DEBUG] (runner) kv.block(avi/controllers/1/vcenter/host) is still needed
+2018/10/05 18:27:17.024940 [DEBUG] (runner) kv.block(avi/controllers/1/default_gw) is still needed
+2018/10/05 18:27:17.024943 [DEBUG] (runner) kv.block(avi/controllers/2/vcenter/host) is still needed
+2018/10/05 18:27:17.024945 [DEBUG] (runner) kv.block(avi/controllers/2/mgmt_ip) is still needed
+2018/10/05 18:27:17.024948 [DEBUG] (runner) kv.block(avi/controllers/2/default_gw) is still needed
+2018/10/05 18:27:17.024951 [DEBUG] (runner) kv.block(avi/ovftool_path) is still needed
+2018/10/05 18:27:17.024954 [DEBUG] (runner) kv.block(avi/vcenter/number_of_cpus) is still needed
+2018/10/05 18:27:17.024956 [DEBUG] (runner) kv.block(avi/vcenter/memory) is still needed
+2018/10/05 18:27:17.024959 [DEBUG] (runner) kv.block(avi/controllers/3/name) is still needed
+2018/10/05 18:27:17.024962 [DEBUG] (runner) kv.block(avi/controllers/3/vcenter/host) is still needed
+2018/10/05 18:27:17.024965 [DEBUG] (runner) kv.block(avi/controllers/1/mgmt_ip) is still needed
+2018/10/05 18:27:17.024967 [DEBUG] (runner) kv.block(avi/controllers/2/mgmt_mask) is still needed
+2018/10/05 18:27:17.024970 [DEBUG] (runner) kv.block(avi/controllers/3/default_gw) is still needed
+2018/10/05 18:27:17.024973 [DEBUG] (runner) kv.block(avi/vcenter/datacenter) is still needed
+2018/10/05 18:27:17.024976 [DEBUG] (runner) kv.block(avi/vcenter/cluster) is still needed
+2018/10/05 18:27:17.024978 [DEBUG] (runner) kv.block(avi/vcenter/power_on) is still needed
+2018/10/05 18:27:17.024981 [DEBUG] (runner) kv.block(avi/vcenter/ova_path) is still needed
+2018/10/05 18:27:17.024984 [DEBUG] (runner) kv.block(avi/controllers/1/mgmt_mask) is still needed
+2018/10/05 18:27:17.024986 [DEBUG] (runner) kv.block(avi/controllers/2/name) is still needed
+2018/10/05 18:27:17.024991 [DEBUG] (runner) kv.block(avi/controllers/3/mgmt_mask) is still needed
+2018/10/05 18:27:17.024994 [DEBUG] (runner) kv.block(avi/vcenter/user) is still needed
+2018/10/05 18:27:17.024997 [DEBUG] (runner) kv.block(avi/vcenter/password) is still needed
+2018/10/05 18:27:17.025000 [DEBUG] (runner) kv.block(avi/vcenter/mgmt_network) is still needed
+2018/10/05 18:27:17.025003 [DEBUG] (runner) kv.block(avi/vcenter/folder) is still needed
+2018/10/05 18:27:17.025005 [DEBUG] (runner) kv.block(avi/controllers/1/name) is still needed
+2018/10/05 18:27:17.025008 [DEBUG] (runner) kv.block(avi/controllers/3/mgmt_ip) is still needed
+2018/10/05 18:27:17.025011 [DEBUG] (runner) watching 26 dependencies
+2018/10/05 18:27:17.025495 [TRACE] kv.block(avi/controllers/2/vcenter/host): returned "192.168.38.20"
+2018/10/05 18:27:17.025505 [TRACE] (view) kv.block(avi/controllers/2/vcenter/host) marking successful data response
+2018/10/05 18:27:17.025516 [TRACE] (view) kv.block(avi/controllers/2/vcenter/host) successful contact, resetting retries
+2018/10/05 18:27:17.025520 [TRACE] (view) kv.block(avi/controllers/2/vcenter/host) received data
+2018/10/05 18:27:17.025526 [DEBUG] (runner) receiving dependency kv.block(avi/controllers/2/vcenter/host)
+2018/10/05 18:27:17.025530 [DEBUG] (runner) initiating run
+2018/10/05 18:27:17.025533 [DEBUG] (runner) checking template e2e293a4e9ad3bb8cd68e19166b89225
+2018/10/05 18:27:17.026061 [DEBUG] (runner) missing data for 13 dependencies
+2018/10/05 18:27:17.026074 [DEBUG] (runner) diffing and updating dependencies
+2018/10/05 18:27:17.026079 [DEBUG] (runner) kv.block(avi/vcenter/cluster) is still needed
+2018/10/05 18:27:17.026081 [DEBUG] (runner) kv.block(avi/vcenter/memory) is still needed
+2018/10/05 18:27:17.026084 [DEBUG] (runner) kv.block(avi/controllers/2/mgmt_mask) is still needed
+2018/10/05 18:27:17.026087 [DEBUG] (runner) kv.block(avi/controllers/2/default_gw) is still needed
+2018/10/05 18:27:17.026090 [DEBUG] (runner) kv.block(avi/controllers/3/name) is still needed
+2018/10/05 18:27:17.026093 [DEBUG] (runner) kv.block(avi/vcenter/user) is still needed
+2018/10/05 18:27:17.026105 [DEBUG] (runner) kv.block(avi/controllers/1/default_gw) is still needed
+2018/10/05 18:27:17.026108 [DEBUG] (runner) kv.block(avi/controllers/3/mgmt_ip) is still needed
+2018/10/05 18:27:17.026111 [DEBUG] (runner) kv.block(avi/controllers/3/mgmt_mask) is still needed
+2018/10/05 18:27:17.026114 [DEBUG] (runner) kv.block(avi/vcenter/folder) is still needed
+2018/10/05 18:27:17.026116 [DEBUG] (runner) kv.block(avi/vcenter/power_on) is still needed
+2018/10/05 18:27:17.026119 [DEBUG] (runner) kv.block(avi/vcenter/number_of_cpus) is still needed
+2018/10/05 18:27:17.026122 [DEBUG] (runner) kv.block(avi/controllers/1/name) is still needed
+2018/10/05 18:27:17.026124 [DEBUG] (runner) kv.block(avi/controllers/1/vcenter/host) is still needed
+2018/10/05 18:27:17.026127 [DEBUG] (runner) kv.block(avi/controllers/2/mgmt_ip) is still needed
+2018/10/05 18:27:17.026130 [DEBUG] (runner) kv.block(avi/controllers/3/vcenter/host) is still needed
+2018/10/05 18:27:17.026132 [DEBUG] (runner) kv.block(avi/controllers/3/default_gw) is still needed
+2018/10/05 18:27:17.026135 [DEBUG] (runner) kv.block(avi/ovftool_path) is still needed
+2018/10/05 18:27:17.026138 [DEBUG] (runner) kv.block(avi/vcenter/password) is still needed
+2018/10/05 18:27:17.026141 [DEBUG] (runner) kv.block(avi/vcenter/datacenter) is still needed
+2018/10/05 18:27:17.026146 [DEBUG] (runner) kv.block(avi/vcenter/mgmt_network) is still needed
+2018/10/05 18:27:17.026149 [DEBUG] (runner) kv.block(avi/vcenter/ova_path) is still needed
+2018/10/05 18:27:17.026152 [DEBUG] (runner) kv.block(avi/controllers/1/mgmt_ip) is still needed
+2018/10/05 18:27:17.026154 [DEBUG] (runner) kv.block(avi/controllers/1/mgmt_mask) is still needed
+2018/10/05 18:27:17.026157 [DEBUG] (runner) kv.block(avi/controllers/2/name) is still needed
+2018/10/05 18:27:17.026160 [DEBUG] (runner) kv.block(avi/controllers/2/vcenter/host) is still needed
+2018/10/05 18:27:17.026163 [DEBUG] (runner) watching 26 dependencies
+2018/10/05 18:27:17.026657 [TRACE] kv.block(avi/controllers/2/mgmt_ip): returned "192.168.38.72"
+2018/10/05 18:27:17.026668 [TRACE] (view) kv.block(avi/controllers/2/mgmt_ip) marking successful data response
+2018/10/05 18:27:17.026674 [TRACE] (view) kv.block(avi/controllers/2/mgmt_ip) successful contact, resetting retries
+2018/10/05 18:27:17.026678 [TRACE] (view) kv.block(avi/controllers/2/mgmt_ip) received data
+2018/10/05 18:27:17.026683 [DEBUG] (runner) receiving dependency kv.block(avi/controllers/2/mgmt_ip)
+2018/10/05 18:27:17.026690 [DEBUG] (runner) initiating run
+2018/10/05 18:27:17.026693 [DEBUG] (runner) checking template e2e293a4e9ad3bb8cd68e19166b89225
+2018/10/05 18:27:17.027188 [DEBUG] (runner) missing data for 12 dependencies
+2018/10/05 18:27:17.027197 [DEBUG] (runner) diffing and updating dependencies
+2018/10/05 18:27:17.027201 [DEBUG] (runner) kv.block(avi/controllers/3/vcenter/host) is still needed
+2018/10/05 18:27:17.027218 [DEBUG] (runner) kv.block(avi/controllers/3/mgmt_mask) is still needed
+2018/10/05 18:27:17.027222 [DEBUG] (runner) kv.block(avi/vcenter/ova_path) is still needed
+2018/10/05 18:27:17.027225 [DEBUG] (runner) kv.block(avi/controllers/2/mgmt_ip) is still needed
+2018/10/05 18:27:17.027227 [DEBUG] (runner) kv.block(avi/vcenter/power_on) is still needed
+2018/10/05 18:27:17.027230 [DEBUG] (runner) kv.block(avi/controllers/1/name) is still needed
+2018/10/05 18:27:17.027233 [DEBUG] (runner) kv.block(avi/controllers/1/mgmt_ip) is still needed
+2018/10/05 18:27:17.027236 [DEBUG] (runner) kv.block(avi/controllers/2/mgmt_mask) is still needed
+2018/10/05 18:27:17.027238 [DEBUG] (runner) kv.block(avi/controllers/2/default_gw) is still needed
+2018/10/05 18:27:17.027250 [DEBUG] (runner) kv.block(avi/controllers/3/default_gw) is still needed
+2018/10/05 18:27:17.027253 [DEBUG] (runner) kv.block(avi/ovftool_path) is still needed
+2018/10/05 18:27:17.027256 [DEBUG] (runner) kv.block(avi/vcenter/user) is still needed
+2018/10/05 18:27:17.027259 [DEBUG] (runner) kv.block(avi/vcenter/number_of_cpus) is still needed
+2018/10/05 18:27:17.027261 [DEBUG] (runner) kv.block(avi/vcenter/memory) is still needed
+2018/10/05 18:27:17.027264 [DEBUG] (runner) kv.block(avi/controllers/1/vcenter/host) is still needed
+2018/10/05 18:27:17.027267 [DEBUG] (runner) kv.block(avi/controllers/1/default_gw) is still needed
+2018/10/05 18:27:17.027270 [DEBUG] (runner) kv.block(avi/controllers/2/name) is still needed
+2018/10/05 18:27:17.027272 [DEBUG] (runner) kv.block(avi/controllers/3/name) is still needed
+2018/10/05 18:27:17.027275 [DEBUG] (runner) kv.block(avi/vcenter/datacenter) is still needed
+2018/10/05 18:27:17.027278 [DEBUG] (runner) kv.block(avi/vcenter/cluster) is still needed
+2018/10/05 18:27:17.027281 [DEBUG] (runner) kv.block(avi/vcenter/mgmt_network) is still needed
+2018/10/05 18:27:17.027283 [DEBUG] (runner) kv.block(avi/controllers/1/mgmt_mask) is still needed
+2018/10/05 18:27:17.027286 [DEBUG] (runner) kv.block(avi/controllers/2/vcenter/host) is still needed
+2018/10/05 18:27:17.027289 [DEBUG] (runner) kv.block(avi/controllers/3/mgmt_ip) is still needed
+2018/10/05 18:27:17.027292 [DEBUG] (runner) kv.block(avi/vcenter/password) is still needed
+2018/10/05 18:27:17.027294 [DEBUG] (runner) kv.block(avi/vcenter/folder) is still needed
+2018/10/05 18:27:17.027298 [DEBUG] (runner) watching 26 dependencies
+2018/10/05 18:27:17.028344 [TRACE] kv.block(avi/controllers/3/name): returned "AviController3"
+2018/10/05 18:27:17.028355 [TRACE] (view) kv.block(avi/controllers/3/name) marking successful data response
+2018/10/05 18:27:17.028361 [TRACE] (view) kv.block(avi/controllers/3/name) successful contact, resetting retries
+2018/10/05 18:27:17.028365 [TRACE] (view) kv.block(avi/controllers/3/name) received data
+2018/10/05 18:27:17.028370 [DEBUG] (runner) receiving dependency kv.block(avi/controllers/3/name)
+2018/10/05 18:27:17.028374 [DEBUG] (runner) initiating run
+2018/10/05 18:27:17.028387 [DEBUG] (runner) checking template e2e293a4e9ad3bb8cd68e19166b89225
+2018/10/05 18:27:17.030450 [DEBUG] (runner) missing data for 11 dependencies
+2018/10/05 18:27:17.030461 [DEBUG] (runner) diffing and updating dependencies
+2018/10/05 18:27:17.030472 [DEBUG] (runner) kv.block(avi/vcenter/cluster) is still needed
+2018/10/05 18:27:17.030481 [DEBUG] (runner) kv.block(avi/vcenter/number_of_cpus) is still needed
+2018/10/05 18:27:17.030485 [DEBUG] (runner) kv.block(avi/controllers/1/name) is still needed
+2018/10/05 18:27:17.030489 [DEBUG] (runner) kv.block(avi/controllers/1/mgmt_mask) is still needed
+2018/10/05 18:27:17.030497 [DEBUG] (runner) kv.block(avi/controllers/2/name) is still needed
+2018/10/05 18:27:17.031769 [DEBUG] (runner) kv.block(avi/controllers/2/vcenter/host) is still needed
+2018/10/05 18:27:17.031780 [DEBUG] (runner) kv.block(avi/ovftool_path) is still needed
+2018/10/05 18:27:17.031783 [DEBUG] (runner) kv.block(avi/vcenter/password) is still needed
+2018/10/05 18:27:17.031786 [DEBUG] (runner) kv.block(avi/controllers/3/name) is still needed
+2018/10/05 18:27:17.031795 [DEBUG] (runner) kv.block(avi/controllers/3/mgmt_mask) is still needed
+2018/10/05 18:27:17.031798 [DEBUG] (runner) kv.block(avi/vcenter/power_on) is still needed
+2018/10/05 18:27:17.031801 [DEBUG] (runner) kv.block(avi/controllers/1/mgmt_ip) is still needed
+2018/10/05 18:27:17.031804 [DEBUG] (runner) kv.block(avi/controllers/2/mgmt_mask) is still needed
+2018/10/05 18:27:17.031806 [DEBUG] (runner) kv.block(avi/controllers/2/default_gw) is still needed
+2018/10/05 18:27:17.031809 [DEBUG] (runner) kv.block(avi/controllers/3/vcenter/host) is still needed
+2018/10/05 18:27:17.031812 [DEBUG] (runner) kv.block(avi/controllers/3/default_gw) is still needed
+2018/10/05 18:27:17.031815 [DEBUG] (runner) kv.block(avi/vcenter/folder) is still needed
+2018/10/05 18:27:17.031818 [DEBUG] (runner) kv.block(avi/vcenter/ova_path) is still needed
+2018/10/05 18:27:17.031821 [DEBUG] (runner) kv.block(avi/vcenter/mgmt_network) is still needed
+2018/10/05 18:27:17.031824 [DEBUG] (runner) kv.block(avi/controllers/1/vcenter/host) is still needed
+2018/10/05 18:27:17.031827 [DEBUG] (runner) kv.block(avi/controllers/2/mgmt_ip) is still needed
+2018/10/05 18:27:17.031921 [DEBUG] (runner) kv.block(avi/vcenter/user) is still needed
+2018/10/05 18:27:17.031931 [DEBUG] (runner) kv.block(avi/vcenter/datacenter) is still needed
+2018/10/05 18:27:17.031934 [DEBUG] (runner) kv.block(avi/controllers/3/mgmt_ip) is still needed
+2018/10/05 18:27:17.031937 [DEBUG] (runner) kv.block(avi/vcenter/memory) is still needed
+2018/10/05 18:27:17.031940 [DEBUG] (runner) kv.block(avi/controllers/1/default_gw) is still needed
+2018/10/05 18:27:17.031945 [DEBUG] (runner) watching 26 dependencies
+2018/10/05 18:27:17.031159 [TRACE] kv.block(avi/controllers/2/default_gw): returned "192.168.38.1"
+2018/10/05 18:27:17.031954 [TRACE] (view) kv.block(avi/controllers/2/default_gw) marking successful data response
+2018/10/05 18:27:17.031960 [TRACE] (view) kv.block(avi/controllers/2/default_gw) successful contact, resetting retries
+2018/10/05 18:27:17.031963 [TRACE] (view) kv.block(avi/controllers/2/default_gw) received data
+2018/10/05 18:27:17.031969 [DEBUG] (runner) receiving dependency kv.block(avi/controllers/2/default_gw)
+2018/10/05 18:27:17.031973 [DEBUG] (runner) initiating run
+2018/10/05 18:27:17.031976 [DEBUG] (runner) checking template e2e293a4e9ad3bb8cd68e19166b89225
+2018/10/05 18:27:17.033223 [DEBUG] (runner) missing data for 10 dependencies
+2018/10/05 18:27:17.033234 [DEBUG] (runner) diffing and updating dependencies
+2018/10/05 18:27:17.033239 [DEBUG] (runner) kv.block(avi/vcenter/cluster) is still needed
+2018/10/05 18:27:17.033242 [DEBUG] (runner) kv.block(avi/vcenter/ova_path) is still needed
+2018/10/05 18:27:17.033244 [DEBUG] (runner) kv.block(avi/vcenter/memory) is still needed
+2018/10/05 18:27:17.033247 [DEBUG] (runner) kv.block(avi/controllers/1/name) is still needed
+2018/10/05 18:27:17.033250 [DEBUG] (runner) kv.block(avi/controllers/2/default_gw) is still needed
+2018/10/05 18:27:17.033253 [DEBUG] (runner) kv.block(avi/controllers/3/mgmt_mask) is still needed
+2018/10/05 18:27:17.033256 [DEBUG] (runner) kv.block(avi/vcenter/password) is still needed
+2018/10/05 18:27:17.033259 [DEBUG] (runner) kv.block(avi/controllers/1/mgmt_ip) is still needed
+2018/10/05 18:27:17.033353 [DEBUG] (runner) kv.block(avi/controllers/3/mgmt_ip) is still needed
+2018/10/05 18:27:17.033359 [DEBUG] (runner) kv.block(avi/vcenter/user) is still needed
+2018/10/05 18:27:17.033362 [DEBUG] (runner) kv.block(avi/vcenter/datacenter) is still needed
+2018/10/05 18:27:17.033365 [DEBUG] (runner) kv.block(avi/vcenter/power_on) is still needed
+2018/10/05 18:27:17.033368 [DEBUG] (runner) kv.block(avi/controllers/2/name) is still needed
+2018/10/05 18:27:17.033371 [DEBUG] (runner) kv.block(avi/controllers/2/vcenter/host) is still needed
+2018/10/05 18:27:17.033374 [DEBUG] (runner) kv.block(avi/controllers/2/mgmt_ip) is still needed
+2018/10/05 18:27:17.033377 [DEBUG] (runner) kv.block(avi/controllers/2/mgmt_mask) is still needed
+2018/10/05 18:27:17.033388 [DEBUG] (runner) kv.block(avi/controllers/3/vcenter/host) is still needed
+2018/10/05 18:27:17.033391 [DEBUG] (runner) kv.block(avi/controllers/3/default_gw) is still needed
+2018/10/05 18:27:17.033394 [DEBUG] (runner) kv.block(avi/ovftool_path) is still needed
+2018/10/05 18:27:17.033397 [DEBUG] (runner) kv.block(avi/vcenter/folder) is still needed
+2018/10/05 18:27:17.033400 [DEBUG] (runner) kv.block(avi/vcenter/mgmt_network) is still needed
+2018/10/05 18:27:17.033402 [DEBUG] (runner) kv.block(avi/vcenter/number_of_cpus) is still needed
+2018/10/05 18:27:17.033405 [DEBUG] (runner) kv.block(avi/controllers/1/vcenter/host) is still needed
+2018/10/05 18:27:17.033408 [DEBUG] (runner) kv.block(avi/controllers/1/mgmt_mask) is still needed
+2018/10/05 18:27:17.033411 [DEBUG] (runner) kv.block(avi/controllers/1/default_gw) is still needed
+2018/10/05 18:27:17.033414 [DEBUG] (runner) kv.block(avi/controllers/3/name) is still needed
+2018/10/05 18:27:17.031201 [TRACE] kv.block(avi/controllers/2/mgmt_mask): returned "255.255.255.0"
+2018/10/05 18:27:17.031308 [TRACE] kv.block(avi/controllers/3/vcenter/host): returned "192.168.38.20"
+2018/10/05 18:27:17.033613 [TRACE] kv.block(avi/controllers/3/mgmt_ip): returned "192.168.38.73"
+2018/10/05 18:27:17.033794 [TRACE] (view) kv.block(avi/controllers/3/mgmt_ip) marking successful data response
+2018/10/05 18:27:17.033799 [TRACE] (view) kv.block(avi/controllers/3/mgmt_ip) successful contact, resetting retries
+2018/10/05 18:27:17.033803 [TRACE] (view) kv.block(avi/controllers/3/mgmt_ip) received data
+2018/10/05 18:27:17.033691 [TRACE] kv.block(avi/ovftool_path): returned "/usr/lib/vmware-ovftool"
+2018/10/05 18:27:17.033819 [TRACE] (view) kv.block(avi/ovftool_path) marking successful data response
+2018/10/05 18:27:17.033824 [TRACE] (view) kv.block(avi/ovftool_path) successful contact, resetting retries
+2018/10/05 18:27:17.033827 [TRACE] (view) kv.block(avi/ovftool_path) received data
+2018/10/05 18:27:17.033753 [TRACE] kv.block(avi/controllers/3/mgmt_mask): returned "255.255.255.0"
+2018/10/05 18:27:17.033833 [TRACE] (view) kv.block(avi/controllers/3/mgmt_mask) marking successful data response
+2018/10/05 18:27:17.033837 [TRACE] (view) kv.block(avi/controllers/3/mgmt_mask) successful contact, resetting retries
+2018/10/05 18:27:17.034048 [TRACE] (view) kv.block(avi/controllers/3/mgmt_mask) received data
+2018/10/05 18:27:17.033777 [DEBUG] (runner) watching 26 dependencies
+2018/10/05 18:27:17.034065 [DEBUG] (runner) receiving dependency kv.block(avi/controllers/3/mgmt_ip)
+2018/10/05 18:27:17.034070 [DEBUG] (runner) receiving dependency kv.block(avi/ovftool_path)
+2018/10/05 18:27:17.034075 [DEBUG] (runner) receiving dependency kv.block(avi/controllers/3/mgmt_mask)
+2018/10/05 18:27:17.034078 [DEBUG] (runner) initiating run
+2018/10/05 18:27:17.034081 [DEBUG] (runner) checking template e2e293a4e9ad3bb8cd68e19166b89225
+2018/10/05 18:27:17.035312 [DEBUG] (runner) missing data for 7 dependencies
+2018/10/05 18:27:17.035324 [DEBUG] (runner) diffing and updating dependencies
+2018/10/05 18:27:17.035329 [DEBUG] (runner) kv.block(avi/vcenter/user) is still needed
+2018/10/05 18:27:17.035333 [DEBUG] (runner) kv.block(avi/vcenter/cluster) is still needed
+2018/10/05 18:27:17.035335 [DEBUG] (runner) kv.block(avi/vcenter/ova_path) is still needed
+2018/10/05 18:27:17.035338 [DEBUG] (runner) kv.block(avi/controllers/2/mgmt_ip) is still needed
+2018/10/05 18:27:17.035341 [DEBUG] (runner) kv.block(avi/controllers/3/vcenter/host) is still needed
+2018/10/05 18:27:17.035344 [DEBUG] (runner) kv.block(avi/controllers/3/mgmt_ip) is still needed
+2018/10/05 18:27:17.035347 [DEBUG] (runner) kv.block(avi/controllers/3/mgmt_mask) is still needed
+2018/10/05 18:27:17.035350 [DEBUG] (runner) kv.block(avi/ovftool_path) is still needed
+2018/10/05 18:27:17.035353 [DEBUG] (runner) kv.block(avi/vcenter/datacenter) is still needed
+2018/10/05 18:27:17.035356 [DEBUG] (runner) kv.block(avi/vcenter/memory) is still needed
+2018/10/05 18:27:17.035358 [DEBUG] (runner) kv.block(avi/controllers/2/vcenter/host) is still needed
+2018/10/05 18:27:17.035367 [DEBUG] (runner) kv.block(avi/vcenter/password) is still needed
+2018/10/05 18:27:17.035370 [DEBUG] (runner) kv.block(avi/vcenter/mgmt_network) is still needed
+2018/10/05 18:27:17.035373 [DEBUG] (runner) kv.block(avi/vcenter/power_on) is still needed
+2018/10/05 18:27:17.035376 [DEBUG] (runner) kv.block(avi/vcenter/number_of_cpus) is still needed
+2018/10/05 18:27:17.033787 [TRACE] (view) kv.block(avi/controllers/2/mgmt_mask) marking successful data response
+2018/10/05 18:27:17.033791 [TRACE] (view) kv.block(avi/controllers/3/vcenter/host) marking successful data response
+2018/10/05 18:27:17.035577 [TRACE] kv.block(avi/vcenter/cluster): returned "MyCluster1"
+2018/10/05 18:27:17.035694 [TRACE] (view) kv.block(avi/vcenter/cluster) marking successful data response
+2018/10/05 18:27:17.035698 [TRACE] (view) kv.block(avi/vcenter/cluster) successful contact, resetting retries
+2018/10/05 18:27:17.035702 [TRACE] (view) kv.block(avi/vcenter/cluster) received data
+2018/10/05 18:27:17.035648 [TRACE] kv.block(avi/vcenter/datacenter): returned "DC1"
+2018/10/05 18:27:17.035708 [TRACE] (view) kv.block(avi/vcenter/datacenter) marking successful data response
+2018/10/05 18:27:17.035712 [TRACE] (view) kv.block(avi/vcenter/datacenter) successful contact, resetting retries
+2018/10/05 18:27:17.035715 [TRACE] (view) kv.block(avi/vcenter/datacenter) received data
+2018/10/05 18:27:17.035674 [DEBUG] (runner) kv.block(avi/controllers/1/name) is still needed
+2018/10/05 18:27:17.035721 [DEBUG] (runner) kv.block(avi/controllers/1/vcenter/host) is still needed
+2018/10/05 18:27:17.035724 [DEBUG] (runner) kv.block(avi/controllers/1/mgmt_ip) is still needed
+2018/10/05 18:27:17.035727 [DEBUG] (runner) kv.block(avi/controllers/1/default_gw) is still needed
+2018/10/05 18:27:17.035730 [DEBUG] (runner) kv.block(avi/vcenter/folder) is still needed
+2018/10/05 18:27:17.035733 [DEBUG] (runner) kv.block(avi/controllers/2/default_gw) is still needed
+2018/10/05 18:27:17.035736 [DEBUG] (runner) kv.block(avi/controllers/3/name) is still needed
+2018/10/05 18:27:17.035968 [DEBUG] (runner) kv.block(avi/controllers/2/name) is still needed
+2018/10/05 18:27:17.035976 [DEBUG] (runner) kv.block(avi/controllers/2/mgmt_mask) is still needed
+2018/10/05 18:27:17.035979 [DEBUG] (runner) kv.block(avi/controllers/3/default_gw) is still needed
+2018/10/05 18:27:17.035982 [DEBUG] (runner) kv.block(avi/controllers/1/mgmt_mask) is still needed
+2018/10/05 18:27:17.035987 [DEBUG] (runner) watching 26 dependencies
+2018/10/05 18:27:17.035992 [DEBUG] (runner) receiving dependency kv.block(avi/vcenter/cluster)
+2018/10/05 18:27:17.035997 [DEBUG] (runner) receiving dependency kv.block(avi/vcenter/datacenter)
+2018/10/05 18:27:17.036000 [DEBUG] (runner) initiating run
+2018/10/05 18:27:17.036003 [DEBUG] (runner) checking template e2e293a4e9ad3bb8cd68e19166b89225
+2018/10/05 18:27:17.037081 [DEBUG] (runner) missing data for 5 dependencies
+2018/10/05 18:27:17.037092 [DEBUG] (runner) diffing and updating dependencies
+2018/10/05 18:27:17.037096 [DEBUG] (runner) kv.block(avi/vcenter/cluster) is still needed
+2018/10/05 18:27:17.037100 [DEBUG] (runner) kv.block(avi/vcenter/number_of_cpus) is still needed
+2018/10/05 18:27:17.037103 [DEBUG] (runner) kv.block(avi/controllers/2/mgmt_mask) is still needed
+2018/10/05 18:27:17.037293 [DEBUG] (runner) kv.block(avi/controllers/3/mgmt_ip) is still needed
+2018/10/05 18:27:17.037303 [DEBUG] (runner) kv.block(avi/controllers/3/mgmt_mask) is still needed
+2018/10/05 18:27:17.037306 [DEBUG] (runner) kv.block(avi/vcenter/mgmt_network) is still needed
+2018/10/05 18:27:17.037309 [DEBUG] (runner) kv.block(avi/controllers/1/vcenter/host) is still needed
+2018/10/05 18:27:17.037312 [DEBUG] (runner) kv.block(avi/controllers/1/mgmt_ip) is still needed
+2018/10/05 18:27:17.037315 [DEBUG] (runner) kv.block(avi/controllers/2/vcenter/host) is still needed
+2018/10/05 18:27:17.037319 [DEBUG] (runner) kv.block(avi/controllers/2/default_gw) is still needed
+2018/10/05 18:27:17.037322 [DEBUG] (runner) kv.block(avi/vcenter/password) is still needed
+2018/10/05 18:27:17.037325 [DEBUG] (runner) kv.block(avi/vcenter/ova_path) is still needed
+2018/10/05 18:27:17.037333 [DEBUG] (runner) kv.block(avi/vcenter/power_on) is still needed
+2018/10/05 18:27:17.037336 [DEBUG] (runner) kv.block(avi/vcenter/memory) is still needed
+2018/10/05 18:27:17.037339 [DEBUG] (runner) kv.block(avi/controllers/1/mgmt_mask) is still needed
+2018/10/05 18:27:17.037342 [DEBUG] (runner) kv.block(avi/controllers/2/name) is still needed
+2018/10/05 18:27:17.037344 [DEBUG] (runner) kv.block(avi/controllers/3/name) is still needed
+2018/10/05 18:27:17.037348 [DEBUG] (runner) kv.block(avi/ovftool_path) is still needed
+2018/10/05 18:27:17.037352 [DEBUG] (runner) kv.block(avi/vcenter/user) is still needed
+2018/10/05 18:27:17.035685 [TRACE] (view) kv.block(avi/controllers/2/mgmt_mask) successful contact, resetting retries
+2018/10/05 18:27:17.035690 [TRACE] (view) kv.block(avi/controllers/3/vcenter/host) successful contact, resetting retries
+2018/10/05 18:27:17.035948 [TRACE] kv.block(avi/vcenter/user): returned "administrator@mitchchen.com"
+2018/10/05 18:27:17.038428 [TRACE] kv.block(avi/controllers/3/default_gw): returned "192.168.38.1"
+2018/10/05 18:27:17.038849 [TRACE] (view) kv.block(avi/controllers/3/default_gw) marking successful data response
+2018/10/05 18:27:17.038855 [TRACE] (view) kv.block(avi/controllers/3/default_gw) successful contact, resetting retries
+2018/10/05 18:27:17.038859 [TRACE] (view) kv.block(avi/controllers/3/default_gw) received data
+2018/10/05 18:27:17.038502 [TRACE] kv.block(avi/vcenter/folder): returned "ge"
+2018/10/05 18:27:17.038865 [TRACE] (view) kv.block(avi/vcenter/folder) marking successful data response
+2018/10/05 18:27:17.038869 [TRACE] (view) kv.block(avi/vcenter/folder) successful contact, resetting retries
+2018/10/05 18:27:17.038872 [TRACE] (view) kv.block(avi/vcenter/folder) received data
+2018/10/05 18:27:17.038824 [DEBUG] (runner) kv.block(avi/vcenter/folder) is still needed
+2018/10/05 18:27:17.038878 [DEBUG] (runner) kv.block(avi/vcenter/datacenter) is still needed
+2018/10/05 18:27:17.038881 [DEBUG] (runner) kv.block(avi/controllers/1/name) is still needed
+2018/10/05 18:27:17.038884 [DEBUG] (runner) kv.block(avi/controllers/1/default_gw) is still needed
+2018/10/05 18:27:17.038914 [DEBUG] (runner) kv.block(avi/controllers/2/mgmt_ip) is still needed
+2018/10/05 18:27:17.038917 [DEBUG] (runner) kv.block(avi/controllers/3/vcenter/host) is still needed
+2018/10/05 18:27:17.038920 [DEBUG] (runner) kv.block(avi/controllers/3/default_gw) is still needed
+2018/10/05 18:27:17.038925 [DEBUG] (runner) watching 26 dependencies
+2018/10/05 18:27:17.038930 [DEBUG] (runner) receiving dependency kv.block(avi/controllers/3/default_gw)
+2018/10/05 18:27:17.038935 [DEBUG] (runner) receiving dependency kv.block(avi/vcenter/folder)
+2018/10/05 18:27:17.038938 [DEBUG] (runner) initiating run
+2018/10/05 18:27:17.038941 [DEBUG] (runner) checking template e2e293a4e9ad3bb8cd68e19166b89225
+2018/10/05 18:27:17.039471 [DEBUG] (runner) missing data for 3 dependencies
+2018/10/05 18:27:17.039481 [DEBUG] (runner) diffing and updating dependencies
+2018/10/05 18:27:17.039485 [DEBUG] (runner) kv.block(avi/vcenter/folder) is still needed
+2018/10/05 18:27:17.039488 [DEBUG] (runner) kv.block(avi/vcenter/mgmt_network) is still needed
+2018/10/05 18:27:17.039491 [DEBUG] (runner) kv.block(avi/controllers/1/name) is still needed
+2018/10/05 18:27:17.039494 [DEBUG] (runner) kv.block(avi/controllers/2/mgmt_mask) is still needed
+2018/10/05 18:27:17.039497 [DEBUG] (runner) kv.block(avi/vcenter/ova_path) is still needed
+2018/10/05 18:27:17.039500 [DEBUG] (runner) kv.block(avi/vcenter/number_of_cpus) is still needed
+2018/10/05 18:27:17.039513 [DEBUG] (runner) kv.block(avi/controllers/2/name) is still needed
+2018/10/05 18:27:17.039516 [DEBUG] (runner) kv.block(avi/controllers/3/name) is still needed
+2018/10/05 18:27:17.039519 [DEBUG] (runner) kv.block(avi/controllers/3/default_gw) is still needed
+2018/10/05 18:27:17.039522 [DEBUG] (runner) kv.block(avi/controllers/1/mgmt_ip) is still needed
+2018/10/05 18:27:17.039524 [DEBUG] (runner) kv.block(avi/controllers/2/mgmt_ip) is still needed
+2018/10/05 18:27:17.039533 [DEBUG] (runner) kv.block(avi/controllers/2/default_gw) is still needed
+2018/10/05 18:27:17.039536 [DEBUG] (runner) kv.block(avi/ovftool_path) is still needed
+2018/10/05 18:27:17.039539 [DEBUG] (runner) kv.block(avi/vcenter/user) is still needed
+2018/10/05 18:27:17.039541 [DEBUG] (runner) kv.block(avi/vcenter/password) is still needed
+2018/10/05 18:27:17.039544 [DEBUG] (runner) kv.block(avi/vcenter/power_on) is still needed
+2018/10/05 18:27:17.039547 [DEBUG] (runner) kv.block(avi/controllers/1/vcenter/host) is still needed
+2018/10/05 18:27:17.039550 [DEBUG] (runner) kv.block(avi/controllers/3/vcenter/host) is still needed
+2018/10/05 18:27:17.039553 [DEBUG] (runner) kv.block(avi/controllers/3/mgmt_ip) is still needed
+2018/10/05 18:27:17.039555 [DEBUG] (runner) kv.block(avi/controllers/2/vcenter/host) is still needed
+2018/10/05 18:27:17.039558 [DEBUG] (runner) kv.block(avi/controllers/3/mgmt_mask) is still needed
+2018/10/05 18:27:17.039561 [DEBUG] (runner) kv.block(avi/vcenter/datacenter) is still needed
+2018/10/05 18:27:17.039564 [DEBUG] (runner) kv.block(avi/vcenter/cluster) is still needed
+2018/10/05 18:27:17.039566 [DEBUG] (runner) kv.block(avi/vcenter/memory) is still needed
+2018/10/05 18:27:17.039569 [DEBUG] (runner) kv.block(avi/controllers/1/mgmt_mask) is still needed
+2018/10/05 18:27:17.039572 [DEBUG] (runner) kv.block(avi/controllers/1/default_gw) is still needed
+2018/10/05 18:27:17.039575 [DEBUG] (runner) watching 26 dependencies
+2018/10/05 18:27:17.038837 [TRACE] (view) kv.block(avi/controllers/2/mgmt_mask) received data
+2018/10/05 18:27:17.039597 [DEBUG] (runner) receiving dependency kv.block(avi/controllers/2/mgmt_mask)
+2018/10/05 18:27:17.039601 [DEBUG] (runner) initiating run
+2018/10/05 18:27:17.039603 [DEBUG] (runner) checking template e2e293a4e9ad3bb8cd68e19166b89225
+2018/10/05 18:27:17.040044 [DEBUG] (runner) missing data for 2 dependencies
+2018/10/05 18:27:17.040052 [DEBUG] (runner) diffing and updating dependencies
+2018/10/05 18:27:17.040056 [DEBUG] (runner) kv.block(avi/ovftool_path) is still needed
+2018/10/05 18:27:17.040059 [DEBUG] (runner) kv.block(avi/vcenter/user) is still needed
+2018/10/05 18:27:17.040062 [DEBUG] (runner) kv.block(avi/vcenter/folder) is still needed
+2018/10/05 18:27:17.040065 [DEBUG] (runner) kv.block(avi/vcenter/datacenter) is still needed
+2018/10/05 18:27:17.040068 [DEBUG] (runner) kv.block(avi/vcenter/memory) is still needed
+2018/10/05 18:27:17.040070 [DEBUG] (runner) kv.block(avi/controllers/1/name) is still needed
+2018/10/05 18:27:17.040073 [DEBUG] (runner) kv.block(avi/controllers/1/mgmt_ip) is still needed
+2018/10/05 18:27:17.040076 [DEBUG] (runner) kv.block(avi/controllers/2/name) is still needed
+2018/10/05 18:27:17.040079 [DEBUG] (runner) kv.block(avi/controllers/3/vcenter/host) is still needed
+2018/10/05 18:27:17.040082 [DEBUG] (runner) kv.block(avi/controllers/3/mgmt_ip) is still needed
+2018/10/05 18:27:17.040085 [DEBUG] (runner) kv.block(avi/vcenter/power_on) is still needed
+2018/10/05 18:27:17.040087 [DEBUG] (runner) kv.block(avi/vcenter/number_of_cpus) is still needed
+2018/10/05 18:27:17.040090 [DEBUG] (runner) kv.block(avi/controllers/1/mgmt_mask) is still needed
+2018/10/05 18:27:17.040093 [DEBUG] (runner) kv.block(avi/vcenter/password) is still needed
+2018/10/05 18:27:17.040096 [DEBUG] (runner) kv.block(avi/vcenter/mgmt_network) is still needed
+2018/10/05 18:27:17.040099 [DEBUG] (runner) kv.block(avi/controllers/2/vcenter/host) is still needed
+2018/10/05 18:27:17.040101 [DEBUG] (runner) kv.block(avi/controllers/3/name) is still needed
+2018/10/05 18:27:17.040104 [DEBUG] (runner) kv.block(avi/vcenter/cluster) is still needed
+2018/10/05 18:27:17.040114 [DEBUG] (runner) kv.block(avi/vcenter/ova_path) is still needed
+2018/10/05 18:27:17.040118 [DEBUG] (runner) kv.block(avi/controllers/1/vcenter/host) is still needed
+2018/10/05 18:27:17.040120 [DEBUG] (runner) kv.block(avi/controllers/1/default_gw) is still needed
+2018/10/05 18:27:17.040123 [DEBUG] (runner) kv.block(avi/controllers/2/mgmt_ip) is still needed
+2018/10/05 18:27:17.040131 [DEBUG] (runner) kv.block(avi/controllers/2/mgmt_mask) is still needed
+2018/10/05 18:27:17.040134 [DEBUG] (runner) kv.block(avi/controllers/2/default_gw) is still needed
+2018/10/05 18:27:17.040137 [DEBUG] (runner) kv.block(avi/controllers/3/mgmt_mask) is still needed
+2018/10/05 18:27:17.040139 [DEBUG] (runner) kv.block(avi/controllers/3/default_gw) is still needed
+2018/10/05 18:27:17.040143 [DEBUG] (runner) watching 26 dependencies
+2018/10/05 18:27:17.038842 [TRACE] (view) kv.block(avi/controllers/3/vcenter/host) received data
+2018/10/05 18:27:17.040153 [DEBUG] (runner) receiving dependency kv.block(avi/controllers/3/vcenter/host)
+2018/10/05 18:27:17.040157 [DEBUG] (runner) initiating run
+2018/10/05 18:27:17.040160 [DEBUG] (runner) checking template e2e293a4e9ad3bb8cd68e19166b89225
+2018/10/05 18:27:17.040657 [DEBUG] (runner) missing data for 1 dependencies
+2018/10/05 18:27:17.040666 [DEBUG] (runner) diffing and updating dependencies
+2018/10/05 18:27:17.040670 [DEBUG] (runner) kv.block(avi/controllers/1/name) is still needed
+2018/10/05 18:27:17.040674 [DEBUG] (runner) kv.block(avi/controllers/1/mgmt_mask) is still needed
+2018/10/05 18:27:17.040676 [DEBUG] (runner) kv.block(avi/controllers/2/vcenter/host) is still needed
+2018/10/05 18:27:17.040679 [DEBUG] (runner) kv.block(avi/controllers/2/default_gw) is still needed
+2018/10/05 18:27:17.040682 [DEBUG] (runner) kv.block(avi/vcenter/datacenter) is still needed
+2018/10/05 18:27:17.040685 [DEBUG] (runner) kv.block(avi/vcenter/number_of_cpus) is still needed
+2018/10/05 18:27:17.040688 [DEBUG] (runner) kv.block(avi/vcenter/folder) is still needed
+2018/10/05 18:27:17.040691 [DEBUG] (runner) kv.block(avi/vcenter/mgmt_network) is still needed
+2018/10/05 18:27:17.040694 [DEBUG] (runner) kv.block(avi/vcenter/memory) is still needed
+2018/10/05 18:27:17.040696 [DEBUG] (runner) kv.block(avi/controllers/1/default_gw) is still needed
+2018/10/05 18:27:17.040699 [DEBUG] (runner) kv.block(avi/controllers/2/mgmt_ip) is still needed
+2018/10/05 18:27:17.040702 [DEBUG] (runner) kv.block(avi/controllers/2/mgmt_mask) is still needed
+2018/10/05 18:27:17.040705 [DEBUG] (runner) kv.block(avi/ovftool_path) is still needed
+2018/10/05 18:27:17.040707 [DEBUG] (runner) kv.block(avi/vcenter/password) is still needed
+2018/10/05 18:27:17.040710 [DEBUG] (runner) kv.block(avi/controllers/2/name) is still needed
+2018/10/05 18:27:17.040713 [DEBUG] (runner) kv.block(avi/controllers/3/name) is still needed
+2018/10/05 18:27:17.040716 [DEBUG] (runner) kv.block(avi/controllers/3/vcenter/host) is still needed
+2018/10/05 18:27:17.040726 [DEBUG] (runner) kv.block(avi/controllers/3/mgmt_ip) is still needed
+2018/10/05 18:27:17.040729 [DEBUG] (runner) kv.block(avi/controllers/3/mgmt_mask) is still needed
+2018/10/05 18:27:17.040732 [DEBUG] (runner) kv.block(avi/controllers/3/default_gw) is still needed
+2018/10/05 18:27:17.040735 [DEBUG] (runner) kv.block(avi/vcenter/user) is still needed
+2018/10/05 18:27:17.040738 [DEBUG] (runner) kv.block(avi/vcenter/ova_path) is still needed
+2018/10/05 18:27:17.040741 [DEBUG] (runner) kv.block(avi/controllers/1/vcenter/host) is still needed
+2018/10/05 18:27:17.040744 [DEBUG] (runner) kv.block(avi/controllers/1/mgmt_ip) is still needed
+2018/10/05 18:27:17.040747 [DEBUG] (runner) kv.block(avi/vcenter/cluster) is still needed
+2018/10/05 18:27:17.040750 [DEBUG] (runner) kv.block(avi/vcenter/power_on) is still needed
+2018/10/05 18:27:17.040754 [DEBUG] (runner) watching 26 dependencies
+2018/10/05 18:27:17.038845 [TRACE] (view) kv.block(avi/vcenter/user) marking successful data response
+2018/10/05 18:27:17.040766 [TRACE] (view) kv.block(avi/vcenter/user) successful contact, resetting retries
+2018/10/05 18:27:17.040769 [TRACE] (view) kv.block(avi/vcenter/user) received data
+2018/10/05 18:27:17.040774 [DEBUG] (runner) receiving dependency kv.block(avi/vcenter/user)
+2018/10/05 18:27:17.040777 [DEBUG] (runner) initiating run
+2018/10/05 18:27:17.040780 [DEBUG] (runner) checking template e2e293a4e9ad3bb8cd68e19166b89225
+2018/10/05 18:27:17.041423 [DEBUG] (runner) rendering "./consul-templates/deploymentVars.tpl" => "../playbooks/roles/deployment/vars/main_test.yml"
+2018/10/05 18:27:17.075578 [INFO] (runner) rendered "./consul-templates/deploymentVars.tpl" => "../playbooks/roles/deployment/vars/main_test.yml"
+2018/10/05 18:27:17.075593 [DEBUG] (runner) diffing and updating dependencies
+2018/10/05 18:27:17.075601 [DEBUG] (runner) kv.block(avi/vcenter/password) is still needed
+2018/10/05 18:27:17.075605 [DEBUG] (runner) kv.block(avi/vcenter/folder) is still needed
+2018/10/05 18:27:17.075608 [DEBUG] (runner) kv.block(avi/vcenter/cluster) is still needed
+2018/10/05 18:27:17.075612 [DEBUG] (runner) kv.block(avi/controllers/1/name) is still needed
+2018/10/05 18:27:17.075616 [DEBUG] (runner) kv.block(avi/controllers/1/vcenter/host) is still needed
+2018/10/05 18:27:17.075619 [DEBUG] (runner) kv.block(avi/controllers/1/mgmt_mask) is still needed
+2018/10/05 18:27:17.075622 [DEBUG] (runner) kv.block(avi/controllers/2/default_gw) is still needed
+2018/10/05 18:27:17.075625 [DEBUG] (runner) kv.block(avi/controllers/3/vcenter/host) is still needed
+2018/10/05 18:27:17.075628 [DEBUG] (runner) kv.block(avi/controllers/3/mgmt_mask) is still needed
+2018/10/05 18:27:17.075631 [DEBUG] (runner) kv.block(avi/controllers/3/default_gw) is still needed
+2018/10/05 18:27:17.075646 [DEBUG] (runner) kv.block(avi/ovftool_path) is still needed
+2018/10/05 18:27:17.075649 [DEBUG] (runner) kv.block(avi/vcenter/user) is still needed
+2018/10/05 18:27:17.075652 [DEBUG] (runner) kv.block(avi/vcenter/mgmt_network) is still needed
+2018/10/05 18:27:17.075655 [DEBUG] (runner) kv.block(avi/vcenter/ova_path) is still needed
+2018/10/05 18:27:17.075658 [DEBUG] (runner) kv.block(avi/vcenter/power_on) is still needed
+2018/10/05 18:27:17.075661 [DEBUG] (runner) kv.block(avi/controllers/1/mgmt_ip) is still needed
+2018/10/05 18:27:17.075664 [DEBUG] (runner) kv.block(avi/controllers/2/mgmt_ip) is still needed
+2018/10/05 18:27:17.075667 [DEBUG] (runner) kv.block(avi/controllers/3/mgmt_ip) is still needed
+2018/10/05 18:27:17.075671 [DEBUG] (runner) kv.block(avi/vcenter/datacenter) is still needed
+2018/10/05 18:27:17.075674 [DEBUG] (runner) kv.block(avi/vcenter/number_of_cpus) is still needed
+2018/10/05 18:27:17.075677 [DEBUG] (runner) kv.block(avi/vcenter/memory) is still needed
+2018/10/05 18:27:17.075680 [DEBUG] (runner) kv.block(avi/controllers/2/name) is still needed
+2018/10/05 18:27:17.075683 [DEBUG] (runner) kv.block(avi/controllers/3/name) is still needed
+2018/10/05 18:27:17.075686 [DEBUG] (runner) kv.block(avi/controllers/1/default_gw) is still needed
+2018/10/05 18:27:17.075689 [DEBUG] (runner) kv.block(avi/controllers/2/vcenter/host) is still needed
+2018/10/05 18:27:17.075692 [DEBUG] (runner) kv.block(avi/controllers/2/mgmt_mask) is still needed
+2018/10/05 18:27:17.075698 [DEBUG] (runner) watching 26 dependencies
+2018/10/05 18:27:17.075700 [DEBUG] (runner) all templates rendered
+2018/10/05 18:27:17.075703 [INFO] (runner) once mode and all templates rendered
+2018/10/05 18:27:17.075705 [INFO] (runner) stopping
+2018/10/05 18:27:17.075708 [DEBUG] (runner) stopping watcher
+2018/10/05 18:27:17.075718 [DEBUG] (watcher) stopping all views
+2018/10/05 18:27:17.075722 [TRACE] (watcher) stopping kv.block(avi/controllers/1/vcenter/host)
+2018/10/05 18:27:17.075725 [TRACE] (watcher) stopping kv.block(avi/controllers/1/default_gw)
+2018/10/05 18:27:17.075728 [TRACE] (watcher) stopping kv.block(avi/controllers/2/name)
+2018/10/05 18:27:17.075731 [TRACE] (watcher) stopping kv.block(avi/controllers/2/mgmt_ip)
+2018/10/05 18:27:17.075735 [TRACE] (watcher) stopping kv.block(avi/vcenter/password)
+2018/10/05 18:27:17.075738 [TRACE] (watcher) stopping kv.block(avi/vcenter/cluster)
+2018/10/05 18:27:17.075741 [TRACE] (watcher) stopping kv.block(avi/vcenter/mgmt_network)
+2018/10/05 18:27:17.075744 [TRACE] (watcher) stopping kv.block(avi/vcenter/power_on)
+2018/10/05 18:27:17.075747 [TRACE] (watcher) stopping kv.block(avi/controllers/3/vcenter/host)
+2018/10/05 18:27:17.075750 [TRACE] (watcher) stopping kv.block(avi/controllers/3/default_gw)
+2018/10/05 18:27:17.075753 [TRACE] (watcher) stopping kv.block(avi/controllers/3/name)
+2018/10/05 18:27:17.075762 [TRACE] (watcher) stopping kv.block(avi/vcenter/datacenter)
+2018/10/05 18:27:17.075765 [TRACE] (watcher) stopping kv.block(avi/vcenter/number_of_cpus)
+2018/10/05 18:27:17.075769 [TRACE] (watcher) stopping kv.block(avi/controllers/2/vcenter/host)
+2018/10/05 18:27:17.075772 [TRACE] (watcher) stopping kv.block(avi/controllers/2/mgmt_mask)
+2018/10/05 18:27:17.075775 [TRACE] (watcher) stopping kv.block(avi/controllers/1/mgmt_mask)
+2018/10/05 18:27:17.075778 [TRACE] (watcher) stopping kv.block(avi/controllers/2/default_gw)
+2018/10/05 18:27:17.075781 [TRACE] (watcher) stopping kv.block(avi/ovftool_path)
+2018/10/05 18:27:17.075791 [TRACE] (watcher) stopping kv.block(avi/vcenter/memory)
+2018/10/05 18:27:17.075795 [TRACE] (watcher) stopping kv.block(avi/controllers/1/name)
+2018/10/05 18:27:17.075798 [TRACE] (watcher) stopping kv.block(avi/controllers/1/mgmt_ip)
+2018/10/05 18:27:17.075801 [TRACE] (watcher) stopping kv.block(avi/controllers/3/mgmt_mask)
+2018/10/05 18:27:17.075804 [TRACE] (watcher) stopping kv.block(avi/vcenter/user)
+2018/10/05 18:27:17.075807 [TRACE] (watcher) stopping kv.block(avi/vcenter/folder)
+2018/10/05 18:27:17.075810 [TRACE] (watcher) stopping kv.block(avi/vcenter/ova_path)
+2018/10/05 18:27:17.075813 [TRACE] (watcher) stopping kv.block(avi/controllers/3/mgmt_ip)

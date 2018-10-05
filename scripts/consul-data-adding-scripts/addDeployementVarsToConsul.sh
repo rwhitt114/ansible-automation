@@ -24,7 +24,7 @@ consul kv put avi/controllers/2/mgmt_mask 255.255.255.0
 consul kv put avi/controllers/2/default_gw 192.168.38.1
 
 consul kv put avi/controllers/3/name AviController3
-consul kv put avi/controllers/3/vcenter_host 192.168.38.20
+consul kv put avi/controllers/3/vcenter/host 192.168.38.20
 consul kv put avi/controllers/3/mgmt_ip 192.168.38.73
 consul kv put avi/controllers/3/mgmt_mask 255.255.255.0
 consul kv put avi/controllers/3/default_gw 192.168.38.1

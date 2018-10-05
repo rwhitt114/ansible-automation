@@ -1,5 +1,5 @@
 avi_credentials:
-  controller: '{{ controller }}'
-  username: '{{ username }}'
-  password: '{{ password }}'
+  controller: 192.168.38.71
+  username: 'admin'
+  password: 'Password123'
   api_version: 17.2.13

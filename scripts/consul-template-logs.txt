@@ -1,0 +1,93 @@
+2018/10/05 19:38:19.000958 [INFO] consul-template v0.19.5 (57b6c71)
+2018/10/05 19:38:19.000989 [INFO] (runner) creating new runner (dry: false, once: true)
+2018/10/05 19:38:19.001334 [DEBUG] (runner) final config: {"Consul":{"Address":"","Auth":{"Enabled":false,"Username":"","Password":""},"Retry":{"Attempts":12,"Backoff":250000000,"MaxBackoff":60000000000,"Enabled":true},"SSL":{"CaCert":"","CaPath":"","Cert":"","Enabled":false,"Key":"","ServerName":"","Verify":true},"Token":"","Transport":{"DialKeepAlive":30000000000,"DialTimeout":30000000000,"DisableKeepAlives":false,"IdleConnTimeout":90000000000,"MaxIdleConns":100,"MaxIdleConnsPerHost":2,"TLSHandshakeTimeout":10000000000}},"Dedup":{"Enabled":false,"MaxStale":2000000000,"Prefix":"consul-template/dedup/","TTL":15000000000},"Exec":{"Command":"","Enabled":false,"Env":{"Blacklist":[],"Custom":[],"Pristine":false,"Whitelist":[]},"KillSignal":2,"KillTimeout":30000000000,"ReloadSignal":null,"Splay":0,"Timeout":0},"KillSignal":2,"LogLevel":"trace","MaxStale":2000000000,"PidFile":"","ReloadSignal":1,"Syslog":{"Enabled":false,"Facility":"LOCAL0"},"Templates":[{"Backup":false,"Command":"","CommandTimeout":30000000000,"Contents":"","CreateDestDirs":true,"Destination":"../playbooks/roles/initialization/files/creds_test.yml","ErrMissingKey":false,"Exec":{"Command":"","Enabled":false,"Env":{"Blacklist":[],"Custom":[],"Pristine":false,"Whitelist":[]},"KillSignal":2,"KillTimeout":30000000000,"ReloadSignal":null,"Splay":0,"Timeout":30000000000},"Perms":0,"Source":"./consul-templates/initializationCredsVars.tpl","Wait":{"Enabled":false,"Min":0,"Max":0},"LeftDelim":"","RightDelim":""}],"Vault":{"Address":"","Enabled":false,"Grace":15000000000,"RenewToken":true,"Retry":{"Attempts":12,"Backoff":250000000,"MaxBackoff":60000000000,"Enabled":true},"SSL":{"CaCert":"","CaPath":"","Cert":"","Enabled":true,"Key":"","ServerName":"","Verify":true},"Transport":{"DialKeepAlive":30000000000,"DialTimeout":30000000000,"DisableKeepAlives":false,"IdleConnTimeout":90000000000,"MaxIdleConns":100,"MaxIdleConnsPerHost":2,"TLSHandshakeTimeout":10000000000},"UnwrapToken":false},"Wait":{"Enabled":false,"Min":0,"Max":0}}
+2018/10/05 19:38:19.001383 [INFO] (runner) creating watcher
+2018/10/05 19:38:19.006552 [INFO] (runner) starting
+2018/10/05 19:38:19.006569 [DEBUG] (runner) running initial templates
+2018/10/05 19:38:19.006573 [DEBUG] (runner) initiating run
+2018/10/05 19:38:19.006587 [DEBUG] (runner) checking template 87bc528d0ead0095903b8318d00372b2
+2018/10/05 19:38:19.007260 [DEBUG] (runner) was not watching 4 dependencies
+2018/10/05 19:38:19.007273 [DEBUG] (watcher) adding kv.block(avi/controller/ip)
+2018/10/05 19:38:19.007277 [TRACE] (watcher) kv.block(avi/controller/ip) starting
+2018/10/05 19:38:19.007283 [DEBUG] (watcher) adding kv.block(avi/username)
+2018/10/05 19:38:19.007286 [TRACE] (watcher) kv.block(avi/username) starting
+2018/10/05 19:38:19.007289 [DEBUG] (watcher) adding kv.block(avi/password)
+2018/10/05 19:38:19.007292 [TRACE] (watcher) kv.block(avi/password) starting
+2018/10/05 19:38:19.007296 [DEBUG] (watcher) adding kv.block(avi/api_version)
+2018/10/05 19:38:19.007300 [TRACE] (watcher) kv.block(avi/api_version) starting
+2018/10/05 19:38:19.007304 [DEBUG] (runner) diffing and updating dependencies
+2018/10/05 19:38:19.007308 [DEBUG] (runner) watching 4 dependencies
+2018/10/05 19:38:19.007337 [TRACE] (view) kv.block(avi/api_version) starting fetch
+2018/10/05 19:38:19.007351 [TRACE] kv.block(avi/api_version): GET /v1/kv/avi/api_version?stale=true&wait=1m0s
+2018/10/05 19:38:19.007996 [TRACE] (view) kv.block(avi/controller/ip) starting fetch
+2018/10/05 19:38:19.008011 [TRACE] kv.block(avi/controller/ip): GET /v1/kv/avi/controller/ip?stale=true&wait=1m0s
+2018/10/05 19:38:19.009410 [TRACE] (view) kv.block(avi/username) starting fetch
+2018/10/05 19:38:19.009425 [TRACE] kv.block(avi/username): GET /v1/kv/avi/username?stale=true&wait=1m0s
+2018/10/05 19:38:19.009617 [TRACE] (view) kv.block(avi/password) starting fetch
+2018/10/05 19:38:19.009631 [TRACE] kv.block(avi/password): GET /v1/kv/avi/password?stale=true&wait=1m0s
+2018/10/05 19:38:19.011272 [TRACE] kv.block(avi/password): returned "Password123"
+2018/10/05 19:38:19.011284 [TRACE] (view) kv.block(avi/password) marking successful data response
+2018/10/05 19:38:19.011290 [TRACE] (view) kv.block(avi/password) successful contact, resetting retries
+2018/10/05 19:38:19.011293 [TRACE] (view) kv.block(avi/password) received data
+2018/10/05 19:38:19.011299 [DEBUG] (runner) receiving dependency kv.block(avi/password)
+2018/10/05 19:38:19.011303 [DEBUG] (runner) initiating run
+2018/10/05 19:38:19.011306 [DEBUG] (runner) checking template 87bc528d0ead0095903b8318d00372b2
+2018/10/05 19:38:19.011480 [DEBUG] (runner) missing data for 3 dependencies
+2018/10/05 19:38:19.011488 [DEBUG] (runner) diffing and updating dependencies
+2018/10/05 19:38:19.011492 [DEBUG] (runner) kv.block(avi/api_version) is still needed
+2018/10/05 19:38:19.011495 [DEBUG] (runner) kv.block(avi/controller/ip) is still needed
+2018/10/05 19:38:19.011498 [DEBUG] (runner) kv.block(avi/username) is still needed
+2018/10/05 19:38:19.011500 [DEBUG] (runner) kv.block(avi/password) is still needed
+2018/10/05 19:38:19.011504 [DEBUG] (runner) watching 4 dependencies
+2018/10/05 19:38:19.011572 [TRACE] kv.block(avi/username): returned "admin"
+2018/10/05 19:38:19.011578 [TRACE] (view) kv.block(avi/username) marking successful data response
+2018/10/05 19:38:19.011583 [TRACE] (view) kv.block(avi/username) successful contact, resetting retries
+2018/10/05 19:38:19.011586 [TRACE] (view) kv.block(avi/username) received data
+2018/10/05 19:38:19.011591 [DEBUG] (runner) receiving dependency kv.block(avi/username)
+2018/10/05 19:38:19.011594 [DEBUG] (runner) initiating run
+2018/10/05 19:38:19.011597 [DEBUG] (runner) checking template 87bc528d0ead0095903b8318d00372b2
+2018/10/05 19:38:19.011751 [DEBUG] (runner) missing data for 2 dependencies
+2018/10/05 19:38:19.011758 [DEBUG] (runner) diffing and updating dependencies
+2018/10/05 19:38:19.011762 [DEBUG] (runner) kv.block(avi/controller/ip) is still needed
+2018/10/05 19:38:19.011765 [DEBUG] (runner) kv.block(avi/username) is still needed
+2018/10/05 19:38:19.011767 [DEBUG] (runner) kv.block(avi/password) is still needed
+2018/10/05 19:38:19.011770 [DEBUG] (runner) kv.block(avi/api_version) is still needed
+2018/10/05 19:38:19.011773 [DEBUG] (runner) watching 4 dependencies
+2018/10/05 19:38:19.011919 [TRACE] kv.block(avi/controller/ip): returned "192.168.38.71"
+2018/10/05 19:38:19.011927 [TRACE] (view) kv.block(avi/controller/ip) marking successful data response
+2018/10/05 19:38:19.011932 [TRACE] (view) kv.block(avi/controller/ip) successful contact, resetting retries
+2018/10/05 19:38:19.011935 [TRACE] (view) kv.block(avi/controller/ip) received data
+2018/10/05 19:38:19.011940 [DEBUG] (runner) receiving dependency kv.block(avi/controller/ip)
+2018/10/05 19:38:19.011944 [DEBUG] (runner) initiating run
+2018/10/05 19:38:19.011946 [DEBUG] (runner) checking template 87bc528d0ead0095903b8318d00372b2
+2018/10/05 19:38:19.012101 [DEBUG] (runner) missing data for 1 dependencies
+2018/10/05 19:38:19.012108 [DEBUG] (runner) diffing and updating dependencies
+2018/10/05 19:38:19.012111 [DEBUG] (runner) kv.block(avi/controller/ip) is still needed
+2018/10/05 19:38:19.012114 [DEBUG] (runner) kv.block(avi/username) is still needed
+2018/10/05 19:38:19.012117 [DEBUG] (runner) kv.block(avi/password) is still needed
+2018/10/05 19:38:19.012120 [DEBUG] (runner) kv.block(avi/api_version) is still needed
+2018/10/05 19:38:19.012123 [DEBUG] (runner) watching 4 dependencies
+2018/10/05 19:38:19.012153 [TRACE] kv.block(avi/api_version): returned "17.2.13"
+2018/10/05 19:38:19.012157 [TRACE] (view) kv.block(avi/api_version) marking successful data response
+2018/10/05 19:38:19.012162 [TRACE] (view) kv.block(avi/api_version) successful contact, resetting retries
+2018/10/05 19:38:19.012165 [TRACE] (view) kv.block(avi/api_version) received data
+2018/10/05 19:38:19.012170 [DEBUG] (runner) receiving dependency kv.block(avi/api_version)
+2018/10/05 19:38:19.012173 [DEBUG] (runner) initiating run
+2018/10/05 19:38:19.012176 [DEBUG] (runner) checking template 87bc528d0ead0095903b8318d00372b2
+2018/10/05 19:38:19.012316 [DEBUG] (runner) rendering "./consul-templates/initializationCredsVars.tpl" => "../playbooks/roles/initialization/files/creds_test.yml"
+2018/10/05 19:38:19.013564 [INFO] (runner) rendered "./consul-templates/initializationCredsVars.tpl" => "../playbooks/roles/initialization/files/creds_test.yml"
+2018/10/05 19:38:19.013572 [DEBUG] (runner) diffing and updating dependencies
+2018/10/05 19:38:19.013577 [DEBUG] (runner) kv.block(avi/api_version) is still needed
+2018/10/05 19:38:19.013580 [DEBUG] (runner) kv.block(avi/controller/ip) is still needed
+2018/10/05 19:38:19.013583 [DEBUG] (runner) kv.block(avi/username) is still needed
+2018/10/05 19:38:19.013586 [DEBUG] (runner) kv.block(avi/password) is still needed
+2018/10/05 19:38:19.013590 [DEBUG] (runner) watching 4 dependencies
+2018/10/05 19:38:19.013593 [DEBUG] (runner) all templates rendered
+2018/10/05 19:38:19.013595 [INFO] (runner) once mode and all templates rendered
+2018/10/05 19:38:19.013598 [INFO] (runner) stopping
+2018/10/05 19:38:19.013600 [DEBUG] (runner) stopping watcher
+2018/10/05 19:38:19.013606 [DEBUG] (watcher) stopping all views
+2018/10/05 19:38:19.013611 [TRACE] (watcher) stopping kv.block(avi/username)
+2018/10/05 19:38:19.013615 [TRACE] (watcher) stopping kv.block(avi/password)
+2018/10/05 19:38:19.013617 [TRACE] (watcher) stopping kv.block(avi/api_version)
+2018/10/05 19:38:19.013620 [TRACE] (watcher) stopping kv.block(avi/controller/ip)

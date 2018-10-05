@@ -68,17 +68,28 @@ avi_config:
 
 
 
-# avi_cluster:
-#   avi_credentials: avi_credentials
-#    vi_api_update_method: patch
-#    avi_api_patch_op: add
-#    nodes:
-#      - name: node2
-#        addr:
-#  	    type:
-#
-#      - name: node3
-#	    addr:
-#	    type:
-#    virtual_ip: "{{ item.virtual_ip | default(omit) }}"
+#avi_cluster:
+#- name: Create Avi Cluster
+#  avi_cluster:
+#   avi_api_update_method: “put”
+#   avi_api_patch_op: “replace”
+#   avi_credentials: {{ avi_credentials }}
+#   tenant: “admin”
+#   name: “cluster-0-1"
+#   virtual_ip:
+#     type: “V4”
+#     addr: “x.x.x.”
+#   nodes:
+#       - ip:
+#           type: “V4”
+#           addr: “192.168.38.71"
+#         name: “10.144.73.44”
+#       - ip:
+#           type: “V4"
+#           addr: “10.144.73.56”
+#         name: “10.144.73.56"
+#       - ip:
+#           type: “V4”
+#           addr: “10.144.73.5"
+#         name: “10.144.73.5”
 

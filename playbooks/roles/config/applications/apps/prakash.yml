@@ -1,6 +1,6 @@
 vs_name: prakash_vs
 vip: 192.168.38.80
-lb_algorithm: LB_ALGORITHM_ROUND_ROBIN
+algorithm: LB_ALGORITHM_ROUND_ROBIN
 pool_name: prakash_pool
 server: 192.168.38.3
 port: 80

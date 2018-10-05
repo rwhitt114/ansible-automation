@@ -5,4 +5,4 @@
     - role: roles/initialization
   vars_files:
     - roles/initialization/files/creds.yml
-
+  gather_facts: no

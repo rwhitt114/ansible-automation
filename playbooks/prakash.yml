@@ -5,3 +5,4 @@
   roles:
     - role: avinetworks.avisdk
     - role: roles/config/applications
+  gather_facts: no    

@@ -65,23 +65,23 @@ avi_config:
         use_uuid_from_input: false
 
 
-  avi_network:
-    exclude_discovered_subnets: true
-    name: 'VM Network'
-    dhcp_enabled: false
-    configured_subnets:
-      - prefix:
-          ip_addr:
-            addr: 192.168.38.0
-            type: 'V4'
-          mask: 24
-        static_ranges:
-        - begin:
-            addr: 192.168.38.85
-            type: 'V4'
-        - end:
-            addr: 192.168.38.90
-            type: 'V4'
+  network:
+    - exclude_discovered_subnets: true
+      name: "VM Network"
+      dhcp_enabled: false
+      configured_subnets:
+        - prefix:
+            ip_addr:
+              addr: 192.168.38.0
+              type: 'V4'
+            mask: 24
+          static_ranges:
+          - begin:
+              addr: 192.168.38.85
+              type: 'V4'
+            end:
+              addr: 192.168.38.90
+              type: 'V4'
 
 
 #avi_cluster:

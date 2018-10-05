@@ -19,3 +19,4 @@
     con_default_gw: '{{ item.default_gw }}'
   with_items:
    - "{{ controllers }}"
+- pause: minutes=3

@@ -1,4 +1,9 @@
 ---
-- import_playbook: ./deploy.yml
-- import_playbook: ./initialize.yml
-- import_playbook: ../apps/prakash.yml
+- hosts: localhost
+  connection: local
+  roles:
+    - role: avinetworks.avisdk
+
+- import_playbook: deploy.yml
+- import_playbook: initialize.yml
+- import_playbook: apps/prakash.yml

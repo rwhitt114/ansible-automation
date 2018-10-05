@@ -1,7 +1,9 @@
+---
+# vars file for deployement
 ovftool_path: {{ key "avi/ovftool_path" }}
 vcenter_host: {{ key "avi/vcenter_host" }}
-vcenter_user: {{ key "avi/vcenter_user" }}
-vcenter_password: {{ key "avi/vcenter_password" }}
+vcenter_user: '{{ key "avi/vcenter_user" }}'
+vcenter_password: '{{ key "avi/vcenter_password" }}'
 datacenter: {{ key "avi/datacenter" }}
 cluster: {{ key "avi/cluster" }}
 mgmt_network: {{ key "avi/mgmt_network" }}

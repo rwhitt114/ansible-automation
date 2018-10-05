@@ -1,8 +1,7 @@
 ---
 # tasks file for initilization
 - name: Configuring Avi vmware cloud
-  debug: msg="{{cloud_name}}"
+  debug: msg="vmware"
 - name: Avi Cloud | Setup VMWare Cloud with Write Access
   include_role:
     name: avinetworks.aviconfig
-

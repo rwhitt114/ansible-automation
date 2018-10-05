@@ -7,14 +7,13 @@ consul kv put avi/vcenter/user 'administrator@mitchchen.com'
 consul kv put avi/vcenter/password 'h6j5?HxL3zlSO$'
 consul kv put avi/vcenter/datacenter DC1
 consul kv put avi/vcenter/mgmt_network 'VM Network'
+consul kv put avi/vcenter/privilege "WRITE_ACCESS"
 consul kv put avi/vcenter/url 192.168.38.20
 
 consul kv put avi/serviceenginegroup/name Default-Group
 consul kv put avi/serviceenginegroup/cloud_ref '/api/cloud?name=Default-Cloud'
 consul kv put avi/serviceenginegroup/vcenter/folder ge
 consul kv put avi/serviceenginegroup/vcenter/cluser/ref '/api/vimgrclusterruntime?name=Arista'
-consul kv put avi/serviceenginegroup/name
-consul kv put avi/serviceenginegroup/name
 consul kv put avi/serviceenginegroup/include True
 consul kv put avi/serviceenginegroup/max_se 4
 consul kv put avi/serviceenginegroup/buffer_se 1

@@ -1,3 +1,0 @@
----
-- import_playbook: ./deploy.yaml
-- import_playbook: ./initialize.yaml

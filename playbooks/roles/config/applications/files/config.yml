@@ -1,0 +1,21 @@
+avi_config:
+  pool:
+    - name: '{{ pool_name }}'
+      state: '{{ state }}'
+      lb_algorithm: '{{ algorithm }}'
+      servers:
+        - ip:
+             addr: '{{ server }}'
+             type: ' V4'
+
+  virtualservice:
+    - name: '{{ vs_name }}'
+      services:
+        - port: '{{ port }}'
+      pool_ref: '{{ pool_ref | default=/api/pool?name={{ pool_name}} }}'
+      state: '{{ state }}'
+      vip:
+        - ip_address:
+            addr: '{{ vip }}'
+            type: 'V4'
+          vip_id: '1'

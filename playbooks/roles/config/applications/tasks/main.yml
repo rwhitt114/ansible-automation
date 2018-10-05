@@ -1,0 +1,5 @@
+---
+# tasks file for applications
+- name: Creating VS
+  import_role:
+    name: avinetworks.aviconfig

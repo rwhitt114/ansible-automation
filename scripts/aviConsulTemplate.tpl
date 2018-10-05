@@ -1,7 +1,8 @@
+---
+# vars file for deployement
 ovftool_path: {{ key "avi/ovftool_path" }}
-vcenter_host: {{ key "avi/vcenter_host" }}
-vcenter_user: {{ key "avi/vcenter_user" }}
-vcenter_password: {{ key "avi/vcenter_password" }}
+vcenter_user: '{{ key "avi/vcenter_user" }}'
+vcenter_password: '{{ key "avi/vcenter_password" }}'
 datacenter: {{ key "avi/datacenter" }}
 cluster: {{ key "avi/cluster" }}
 mgmt_network: {{ key "avi/mgmt_network" }}
@@ -11,15 +12,18 @@ vcenter_folder: {{ key "avi/vcenter_folder" }}
 number_of_cpus: {{ key "avi/number_of_cpus" }}
 memory: {{ key "avi/memory" }}
 controllers:
-  - name: {{ key "avi/controller1_name" }}
-    mgmt_ip: {{ key "avi/controller1_mgmt_ip" }}
-    mgmt_mask: {{ key "avi/controller1_mgmt_mask" }}
-    default_gw: {{ key "avi/controller1_default_gw" }}
-  - name: {{ key "avi/controller2_name" }}
-    mgmt_ip: {{ key "avi/controller2_mgmt_ip" }}
-    mgmt_mask: {{ key "avi/controller2_mgmt_mask" }}
-    default_gw: {{ key "avi/controller2_default_gw" }}
-  - name: {{ key "avi/controller3_name" }}
-    mgmt_ip: {{ key "avi/controller3_mgmt_ip" }}
-    mgmt_mask: {{ key "avi/controller3_mgmt_mask" }}
-    default_gw: {{ key "avi/controller3_default_gw" }}
+  - name: {{ key "avi/controllers/1/name" }}
+    vcenter_host: {{ key "avi/controllers/1/vcenter_host" }}
+    mgmt_ip: {{ key "avi/controllers/1/mgmt_ip" }}
+    mgmt_mask: {{ key "avi/controllers/1/mgmt_mask" }}
+    default_gw: {{ key "avi/controllers/1/default_gw" }}
+  - name: {{ key "avi/controllers/2/name" }}
+    vcenter_host: {{ key "avi/controllers/2/vcenter_host" }}
+    mgmt_ip: {{ key "avi/controllers/2/mgmt_ip" }}
+    mgmt_mask: {{ key "avi/controllers/2/mgmt_mask" }}
+    default_gw: {{ key "avi/controllers/2/default_gw" }}
+  - name: {{ key "avi/controllers/3/name" }}
+    vcenter_host: {{ key "avi/controllers/3/vcenter_host" }}
+    mgmt_ip: {{ key "avi/controllers/3/mgmt_ip" }}
+    mgmt_mask: {{ key "avi/controllers/3/mgmt_mask" }}
+    default_gw: {{ key "avi/controllers/3/default_gw" }}

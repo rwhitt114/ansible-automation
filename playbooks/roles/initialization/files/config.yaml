@@ -61,18 +61,3 @@ avi_config:
         sslprofile_ref: "/api/sslprofile?name=System-Standard-Portal"
         use_uuid_from_input: false
 
-
-  avi_cluster:
-    avi_credentials: avi_credentials
-    vi_api_update_method: patch
-    avi_api_patch_op: add
-    nodes:
-      - name: node2
-        addr:
-  	    type:
-
-      - name: node3
-	    addr:
-	    type:
-    virtual_ip: "{{ item.virtual_ip | default(omit) }}"
-

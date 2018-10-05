@@ -1,8 +1,8 @@
 avi_config:
   avi_cloud_discovery_wait: {{ key "avi/cloud_discovery_wait" }}
   cloud:
-    - name: {{ key "consul kv put avi/cloud/name"}}
-      vtype: {{ key "consul kv put avi/cloud/vtype" }}
+    - name: {{ key "avi/cloud/name"}}
+      vtype: {{ key "avi/cloud/vtype" }}
       dhcp_enabled: {{ key "avi/cloud/dhcp_enabled" }}
       license_type: {{ key "avi/cloud/license_type" }}
       vcenter_configuration:
@@ -14,7 +14,7 @@ avi_config:
         vcenter_url: {{ key "avi/vcenter/url" }}
 
   serviceenginegroup:
-    - name: {{ key "avi/serviceenginegroup/name Default-Group" }}
+    - name: {{ key "avi/serviceenginegroup/name" }}
       cloud_ref: {{ key "avi/serviceenginegroup/cloud_ref" }}
       vcenter_folder: {{ key "avi/serviceenginegroup/vcenter/folder" }}
       vcenter_clusters:

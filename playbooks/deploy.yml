@@ -3,4 +3,7 @@
   roles:
     - avinetworks.avicontroller-vmware
     - roles/deployment
+  vars_files: 
+    - roles/deployment/files/config.yml
+    - creds/vcentercreds.yml
   gather_facts: no    

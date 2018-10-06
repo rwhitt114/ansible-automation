@@ -1,7 +1,0 @@
-- hosts: localhost
-  connection: local
-  roles:
-    - avinetworks.avicontroller-vmware
-    - deployment
-      #  vars_files: 
-      #- deployment/vars/controller1.yml

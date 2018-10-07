@@ -1,0 +1,17 @@
+- hosts: localhost
+  name: Configure cloud  
+    roles:  
+      - role: avinetworks.avisdk 
+      - role: roles/initialization
+  vars_files:
+    - roles/initialization/files/networks.yml
+  gather_facts: no
+
+- hosts: localhost
+  name: Configure networks
+  roles: 
+      - role: avinetworks.avisdk
+      - role: roles/initialization
+  vars_files:
+    - roles/initialization/files/networks.yml
+  gather_facts: no

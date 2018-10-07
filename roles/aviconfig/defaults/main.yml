@@ -1,0 +1,4 @@
+---
+# defaults file for initilization
+state: present
+avi_config_file: '../files/vs.yml'

@@ -2,8 +2,8 @@
   connection: local
   roles:
     - avinetworks.avicontroller-vmware
-    - roles/deployment
+    - ../roles/deployment
   vars_files: 
-    - roles/deployment/files/config.yml
-    - creds/vcentercreds.yml
+    - ../config/deploy.yml
+    - ../creds.yml
   gather_facts: no    

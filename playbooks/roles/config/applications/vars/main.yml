@@ -1,4 +1,0 @@
----
-# vars file for applications
-avi_config_file: ../files/config.yml
-avi_creds_file: ../../../../creds/avicreds.yml

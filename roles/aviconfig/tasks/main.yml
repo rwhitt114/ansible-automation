@@ -1,0 +1,6 @@
+---
+# tasks file for initilization
+- name: Avi Cloud | Setup VMWare Cloud with Write Access
+  include_role:
+    name: avinetworks.aviconfig
+

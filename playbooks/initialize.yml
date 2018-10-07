@@ -1,8 +1,32 @@
 - hosts: localhost
-  connection: local
-  roles:
-    - role: avinetworks.avisdk
-    - role: roles/initialization
+  name: Setting admin password
   vars_files:
-    - creds/avicreds.yml
+    - ../creds.yml
+  tasks:
+    - name: Set admin password
+      avi_useraccount:
+        avi_credentials: '{{ avi_credentials }}'
+        old_password: '58NFaGDJm(PJH0G'
+        api_version: '17.2.13'
+  roles:
+    - role: avinetworks.avisdk 
+  gather_facts: no
+
+- hosts: localhost
+  name: Applying controller configs         
+  vars:
+    avi_config_file: ../config/init/controller.yml
+    # avi_creds_file: ../creds.yml
+  roles:  
+    - role: avinetworks.avisdk 
+    - role: ../roles/aviconfig
+  gather_facts: no
+
+- hosts: localhost
+  name: Applying SE config
+  roles: 
+    - role: avinetworks.avisdk
+    - role: ../roles/aviconfig
+  vars:
+    avi_config_file: ../config/init/se.yml
   gather_facts: no

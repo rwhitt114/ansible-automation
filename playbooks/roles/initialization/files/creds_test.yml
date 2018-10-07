@@ -1,6 +1,0 @@
-avi_credentials:
-  controller: 192.168.38.71
-  username: 'admin'
-  password: 'Password123'
-  api_version: 17.2.13
-  

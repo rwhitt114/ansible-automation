@@ -4,8 +4,8 @@
   deploy_controller:
     ovftool_path: '{{ ovftool_path }}'
     vcenter_host: '{{ item.vcenter_host }}'
-    vcenter_user: '{{ vcenter_user }}'
-    vcenter_password: '{{ vcenter_password }}'
+    vcenter_user: '{{ vcenter.username }}'
+    vcenter_password: '{{ vcenter.password }}'
     con_datacenter: '{{ datacenter }}'
     con_cluster: '{{ cluster }}'
     con_mgmt_network: '{{ mgmt_network }}'
@@ -19,5 +19,15 @@
     con_default_gw: '{{ item.default_gw }}'
   with_items:
    - "{{ controllers }}"
+
 - name: Waiting for controller to initialize 
-  pause: minutes=3
+  uri:
+    url: 'https://{{ avi_credentials.controller }}'
+    status_code: 200
+    validate_certs: no
+  register: result
+  until: result['status']|default(0) == 200
+  retries: 20
+  delay: 120
+  sleep: 30
+  when: state != "absent"

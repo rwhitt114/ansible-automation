@@ -1,33 +1,17 @@
-avi_config:
-  avi_cloud_discovery_wait: 450
+avi_config:  
+  avi_cloud_discovery_wait: 120
   cloud:
     - name: Default-Cloud
       vtype: CLOUD_VCENTER
-      dhcp_enabled: true
-      license_type: "LIC_CORES"
+      dhcp_enabled: false
+      license_type: 'LIC_CORES'
       vcenter_configuration:
-        username: 'administrator@mitchchen.com'
-        password: 'h6j5?HxL3zlSO$'
-        datacenter: "DC1"
-        management_network: "/api/vimgrnwruntime?name=VM Network"
-        privilege: "WRITE_ACCESS"
-        vcenter_url: "192.168.38.20"
-
-  serviceenginegroup:
-    - name: Default-Group
-      cloud_ref: '/api/cloud?name=Default-Cloud'
-
-      vcenter_folder: ge
-      vcenter_clusters:
-        cluster_refs:
-
-          - '/api/vimgrclusterruntime?name=MyCluster1'
-        include: True
-      max_se: 4
-      buffer_se: 1
-
-      se_name_prefix: hpe
-
+        username: '{{ vcenter.username }}'
+        password: '{{ vcenter.password }}'
+        datacenter: 'DC1'
+        vcenter_dvs: false
+        privilege: 'WRITE_ACCESS'
+        vcenter_url: '192.168.38.20'
 
   systemconfiguration:
     - email_configuration:
@@ -51,7 +35,7 @@ avi_config:
             type: DNS
             addr: 3.us.pool.ntp.org
       portal_configuration:
-        allow_basic_authentication: false
+        allow_basic_authentication: true
         disable_remote_cli_shell: false
         enable_clickjacking_protection: true
         enable_http: true
@@ -59,29 +43,10 @@ avi_config:
         password_strength_check: false
         redirect_to_https: true
         sslkeyandcertificate_refs:
-          - "/api/sslkeyandcertificate?name=System-Default-Portal-Cert"
-          - "/api/sslkeyandcertificate?name=System-Default-Portal-Cert-EC256"
-        sslprofile_ref: "/api/sslprofile?name=System-Standard-Portal"
+          - '/api/sslkeyandcertificate?name=System-Default-Portal-Cert'
+          - '/api/sslkeyandcertificate?name=System-Default-Portal-Cert-EC256'
+        sslprofile_ref: '/api/sslprofile?name=System-Standard-Portal'
         use_uuid_from_input: false
-
-
-  network:
-    - exclude_discovered_subnets: true
-      name: "VM Network"
-      dhcp_enabled: false
-      configured_subnets:
-        - prefix:
-            ip_addr:
-              addr: 192.168.38.0
-              type: 'V4'
-            mask: 24
-          static_ranges:
-          - begin:
-              addr: 192.168.38.85
-              type: 'V4'
-            end:
-              addr: 192.168.38.90
-              type: 'V4'
 
   cluster:
     - avi_api_update_method: PUT

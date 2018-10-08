@@ -1,0 +1,17 @@
+---
+- hosts: localhost
+  connection: local
+  roles:
+    - role: avinetworks.avisdk
+  tasks:
+    - name: deploy all apps
+      vars:
+        avi_config_file: '{{ item }}'
+        avi_creds_file: ../../creds.yml
+        # include_tasks: ../../roles/aviconfig/tasks/main.yml
+      include_role:
+        name: ../../roles/aviconfig
+      with_fileglob:
+        - ../../config/apps/*.yml
+      loop_control: 
+        loop_var: avi_config_file

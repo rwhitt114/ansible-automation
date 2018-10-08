@@ -1,9 +1,0 @@
----
-- hosts: localhost
-  connection: local
-  roles:
-    - role: avinetworks.avisdk
-
-- import_playbook: apps/extensive.yml
-- import_playbook: apps/inclusive.yml
-- import_playbook: apps/prakash.yml

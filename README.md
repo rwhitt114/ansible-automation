@@ -1,76 +1,70 @@
-Avi Ansible Training Site Example
-``````````````````````````````
-.. contents::
-  :local:
+# Avi Automation show case using ansible
 
-This is an example of setting up a full Avi Site with Cloud and applications. Note This version is compatible with Ansible 2.4 only.
+This document talks about the avi automation using ansible. The automation covers deployment ( infrastructure ), avi initialization and configuration ( with couple of apps ) with sample site deployment example.
 
-*********
-Installation
-*********
+Following topics will help you in setting up the environment and executing the ansibe playbooks
+
+## Pre-requisits
+
+TO run and develop the playbooks, you would need
+  Linux or Ubuntu machine
+  Python 2.7+
+  Ansible 2.4+
+  
+## Installation
 
 The site example requires avinetworks.avisdk and avinetworks.aviconfig roles.
 Please install them from Ansible galaxy using following command
 
-.. code-block:: shell
-
+```
   pip install avisdk
   ansible-galaxy install avinetworks.avisdk
   ansible-galaxy install avinetworks.aviconfig
+```
 
 
 
-*********
-Site Layout 
-*********
+## Site Layout 
+
 Here are the main components of the site example.
-- `site.yml <https://github.com/avinetworks/devops/blob/master/ansible/training/site-example/site.yml>`_: This describes the playbooks for setup of the site. It includes sections for cloud setup and application setup.
+```
+site.yml [https://github.com/avinetworks/devops/blob/master/ansible/training/site-example/site.yml]
+```
+This describes the playbooks for setup of the site. It includes sections for cloud setup and application setup.
 
 Usage for full site setup
-
-.. code-block:: shell
-  
-  ansible-playbook site.yml --extra-vars "site_dir=`pwd`"
+```  
+ansible-playbook site.yml --extra-vars "site_dir=`pwd`"
+```
 
 Usage for just cloud setup
-
-.. code-block:: shell
-  
-  ansible-playbook site_clouds.yml --extra-vars "site_dir=`pwd`"
+```
+ansible-playbook site_clouds.yml --extra-vars "site_dir=`pwd`"
+```
 
 Usage for just applications setup. This would setup all the applications that are registered in site_applications.yml
-
-.. code-block:: shell
-  
-  ansible-playbook site_applications.yml --extra-vars "site_dir=`pwd`"
+```
+ansible-playbook site_applications.yml --extra-vars "site_dir=`pwd`"
+```
 
 Usage to delete all applications in the site_applications.yml. The flag avi_config_state=absent will override the individual object state for deletion purpose.
-
-.. code-block:: shell
-  
-  ansible-playbook site_applications.yml --extra-vars "site_dir=`pwd` avi_config_state=absent"
-
-************
-Roles
-************
+```
+ansible-playbook site_applications.yml --extra-vars "site_dir=`pwd` avi_config_state=absent"
+```
+## Roles
 
 The roles directory contains AviConfig role that has ability to process a configuration file with avi configurations that is listed on a per-resource type. It performs the configuration in the right order as required by the object dependencies.
 
-************
-Clouds
-************
+## Clouds
+
 All site clouds are registered to the site.yml via `site_clouds.yml <site_clouds.yml>`_. Each cloud has a directory with a configuration file config.yml. The cloud settings for the site are perform via a cloud role that contains playbook to setup Avi Cloud object, service engine group and cloud networks. It also allows for a separate cloud credential files that is automatically merged by the cloud role before applying it to the Avi Controller.
 
--------------------
-Add a VMWare Cloud setup
--------------------
+## Add a VMWare Cloud setup
 
 Add a new directory for vmware cloud in `clouds <clouds>` directory. The following lists the steps to create a new cloud
 
-1. Playbook for the cloud as `cloud.yml <clouds/vmware/cloud.yml>`_
-
-.. code-block:: yaml
-
+1. Playbook for the cloud as cloud.yml [clouds/vmware/cloud.yml]
+```
     - hosts: localhost
       connection: local
       vars:
@@ -88,12 +82,10 @@ Add a new directory for vmware cloud in `clouds <clouds>` directory. The followi
           vars:
             avi_config_file: "{{ site_dir }}/clouds/{{cloud_name}}/config.yml"
             avi_creds_file: "{{ site_dir }}/vars/creds.yml"
-            
+```            
  
-2. Provide cloud configuration settings as `config.yml <clouds/vmware/config.yml>`_
-
-.. code-block:: yaml
-
+2. Provide cloud configuration settings as config.yml [clouds/vmware/config.yml]
+```
   avi_config:
     cloud:
       - api_version: 17.1.2
@@ -108,35 +100,26 @@ Add a new directory for vmware cloud in `clouds <clouds>` directory. The followi
           management_network: "/api/vimgrnwruntime?name=Mgmt_Arista"
           privilege: "WRITE_ACCESS"
           vcenter_url: "10.10.2.10"
-
+```
 
 3. Register in the `site_cloud.yml <site_clouds.yml>`_:
+```
+- include: clouds/vmware/cloud.yml
+```
 
-.. code-block:: yaml
-
-  - include: clouds/vmware/cloud.yml
-
-************
-Applications
-************
-All the site applications are registered in the `site_applications.yml <site_applications.yml>`_. The configuration files for the applications are kept in the `applications <applications>`_ directory. Each applications directory contains `config.yml <applications/app1/config.yml>`_ that represents all Avi RESTful objects that are needed for the application. In addition, there is an playbook for setting up application eg. `app.yml <applications/app1/app.yml>`_. The example only configures Avi settings but this playbook can be extended to create VMs, create SSL certs etc. The `app1 <applications/app1>`_ contains one pool and one l7 virtualservice with VIP 10.90.64.240. 
+## Applications
+All the site applications are registered in the `site_applications.yml <site_applications.yml>`. The configuration files for the applications are kept in the `applications <applications>`_ directory. Each applications directory contains `config.yml <applications/app1/config.yml>`_ that represents all Avi RESTful objects that are needed for the application. In addition, there is an playbook for setting up application eg. `app.yml <applications/app1/app.yml>`_. The example only configures Avi settings but this playbook can be extended to create VMs, create SSL certs etc. The `app1 <applications/app1>`_ contains one pool and one l7 virtualservice with VIP 10.90.64.240. 
 
 Here are steps to enable the application Here are the step:
 
--------------------
-Basic Application
--------------------
+## Basic Application
 
-1. Register in the `site_applications.yml <site_applications.yml>`_:
-
-.. code-block:: yaml
-
+1. Register in the site_applications.yml [ite_applications.yml]
+ ```
     - include: applications/app1/app.yml
-
-2. Create app1 directory under applications and create `config.yml <applications/app1/config.yml>`_ for the application.
-
-.. code-block:: yaml
-
+```
+2. Create app1 directory under applications and create config.yml [pplications/app1/config.yml] or the application.
+```
     avi_config:
       pool:
         - name: app1-pool
@@ -159,11 +142,9 @@ Basic Application
                 addr: 10.90.64.240
                 type: 'V4'
               vip_id: '1'
-
-3. Create `app.yml <applications/app1/app.yml>`_ playbook under the applications directory
-
-.. code-block:: yaml
-
+```
+3. Create app.yml [applications/app1/app.yml] playbook under the applications directory
+```
   ---
   - hosts: localhost
     connection: local
@@ -184,21 +165,15 @@ Basic Application
         vars:
           avi_config_file: "{{ site_dir }}/applications/{{app_name}}/config.yml"
           avi_creds_file: "{{ site_dir }}/vars/creds.yml"
+```
+## SSL Application with Content Switching 
 
--------------------
-SSL Application with Content Switching 
--------------------
-
-1. Register in the `site_applications.yml <site_applications.yml>`_
-
-.. code-block:: yaml
-
+1. Register in the site_applications.yml [ite_applications.yml]
+```
     - include: applications/app3/app.yml
-
-2. Create app1 directory under applications and create `config.yml <applications/app3/config.yml>`_ for the application.
-
-.. code-block:: yaml
-
+```
+2. Create app1 directory under applications and create config.yml [applications/app3/config.yml]_ for the application.
+```
   avi_config:
     pool:
       - name: app3-pool-A
@@ -211,11 +186,9 @@ SSL Application with Content Switching
 
     virtualservice:
       - name: app3
-
-3. Create `app.yml <applications/app3/app.yml>`_ playbook under the applications directory
-
-.. code-block:: yaml
-
+```
+3. Create app.yml [pplications/app3/app.yml] playbook under the applications directory
+```
   ---
   - hosts: localhost
     connection: local
@@ -237,4 +210,4 @@ SSL Application with Content Switching
           avi_config_file: "{{ site_dir }}/applications/{{app_name}}/config.yml"
           avi_creds_file: "{{ site_dir }}/vars/creds.yml"
           
-          
+```

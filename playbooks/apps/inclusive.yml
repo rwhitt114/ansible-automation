@@ -1,0 +1,50 @@
+---
+- hosts: localhost
+  connection: local
+  vars:
+    app_name: inclusive
+  roles:
+    - role: avinetworks.avisdk
+  tasks:
+    - name: Setting up Application
+      debug: msg= "{{ app_name }}"
+
+    - name: Load vars
+      include_vars:
+        file: ../../creds.yml
+
+    - name: Compose Avi Config
+      set_fact:
+        avi_config_var:
+          pool:
+            - name: "{{ app_name}}-pool"
+              lb_algorithm: LB_ALGORITHM_ROUND_ROBIN
+              servers:
+                - ip:
+                     addr: 192.168.38.3
+                     type: V4
+                - ip:
+                     addr: 192.168.38.4
+                     type: V4
+              health_monitor_refs:
+                - '/api/healthmonitor?name=System-Ping'       
+          virtualservice:
+            - name: "{{app_name}}"
+              services:
+                - port: 80
+                - port: 443
+                  enable_ssl: true
+              pool_ref: "/api/pool?name={{app_name}}-pool"
+              ssl_key_and_certificate_refs:
+                - '/api/sslkeyandcertificate?name=System-Default-Cert'
+              vip:
+                - ip_address:
+                    addr: 192.168.38.81
+                    type: V4
+                  vip_id: '1'
+
+    - name: Avi Application | Setup complex_app
+      import_role:
+        name: avinetworks.aviconfig
+      vars:
+        avi_config: "{{avi_config_var}}"

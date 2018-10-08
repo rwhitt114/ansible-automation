@@ -3,15 +3,12 @@ avi_config:
     - name: '{{ pool_name }}'
       state: '{{ state }}'
       lb_algorithm: '{{ algorithm }}'
-      servers:
-        - ip:
-             addr: '{{ server }}'
-             type: 'V4'
-
+      servers: '{{ servers }}'
+      default_server_port: '{{ server_port }}'
+      health_monitor_refs: '{{ health_monitor_refs }}'
   virtualservice:
     - name: '{{ vs_name }}'
-      services:
-        - port: '{{ port }}'
+      services: '{{ vs_ports }}'
       pool_ref: '/api/pool?name={{ pool_name }}'
       state: '{{ state }}'
       vip:
@@ -19,3 +16,6 @@ avi_config:
             addr: '{{ vip }}'
             type: 'V4'
           vip_id: '1'
+      ssl_profile_ref: '/api/sslprofile?name={{ ssl_profile }}'
+      application_profile_ref: '/api/applicationprofile?name={{ app_profile }}'
+      ssl_key_and_certificate_refs: '{{ ssl_certs }}' 

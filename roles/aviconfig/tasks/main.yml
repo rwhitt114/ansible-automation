@@ -1,6 +1,25 @@
 ---
 # tasks file for initilization
-- name: Avi Cloud | Setup VMWare Cloud with Write Access
-  include_role:
+- name: Building pool config
+  set_fact:
+    servers: "{{ servers|default([]) + [{'ip': {'addr': item, 'type': 'V4' }}] }}"
+  loop: '{{ pool_members }}'
+  when: pool_members is defined and pool_members is not none
+ 
+- name: SSL certs
+  set_fact: 
+    ssl_certs: "{{ ssl_certs|default([]) + ['/api/sslkeyandcertificate?name=' + item] }}" 
+  with_items: '{{ certs }}'
+  when: certs is defined and certs is not none
+ 
+- name: Heath monitors
+  set_fact:
+    health_monitor_refs: "{{ health_monitor_refs|default([]) + ['/api/healthmonitor?name='+ item]  }}"
+  with_items: '{{ health_monitors }}'
+  when: health_monitors is defined and certs is not none
+
+
+- name: Applying avi config
+  import_role:
     name: avinetworks.aviconfig
 

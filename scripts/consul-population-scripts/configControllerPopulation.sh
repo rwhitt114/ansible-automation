@@ -7,7 +7,7 @@ consul kv put avi/config/cloud/license_type LIC_CORES
 consul kv put avi/config/vcenter/user administrator@mitchchen.com
 consul kv put avi/config/vcenter/password 'h6j5?HxL3zlSO$'
 consul kv put avi/config/vcenter/datacenter DC1
-consul kv put avi/config/vcenter/mgmt_network false
+consul kv put avi/config/vcenter/dvs false
 consul kv put avi/config/vcenter/privilege WRITE_ACCESS
 consul kv put avi/config/vcenter/url 192.168.38.20
 consul kv put avi/config/systemconfiguration/email/smtp_type SMTP_LOCAL_HOST

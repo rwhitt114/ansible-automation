@@ -36,7 +36,7 @@ consul kv put avi/vcenter/datacenter DC1
 consul kv put avi/vcenter/dvs false
 consul kv put avi/vcenter/privilege WRITE_ACCESS
 consul kv put avi/vcenter/url 192.168.38.20
-consul kv put avi/vcenter/mgmt_network "/api/vimgrnwruntime?name=VM Network"
+consul kv put avi/vcenter/management_network "/api/vimgrnwruntime?name=VM Network"
 consul kv put avi/vcenter/management_ip_subnet/ip_addr/addr 192.168.38.0
 consul kv put avi/vcenter/management_ip_subnet/ip_addr/type V4
 consul kv put avi/vcenter/management_ip_subnet/mask 24

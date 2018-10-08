@@ -1,18 +1,18 @@
 avi_config:
   serviceenginegroup:
     - name: {{ key "avi/serviceenginegroup/name" }}
-      cloud_ref: {{ key "avi/serviceenginegroup/cloud_ref" }}
+      cloud_ref: '{{ key "avi/serviceenginegroup/cloud_ref" }}'
       vcenter_folder: {{ key "avi/serviceenginegroup/vcenter/folder" }}
       vcenter_clusters:
         cluster_refs:
-          - {{ key "avi/serviceenginegroup/vcenter/cluster/ref" }}
+          - '{{ key "avi/serviceenginegroup/vcenter/cluster/ref" }}'
         include: {{ key "avi/serviceenginegroup/vcenter/cluster/include" }}
       max_se: {{ key "avi/serviceenginegroup/max_se" }}
       buffer_se: {{ key "avi/serviceenginegroup/buffer_se" }}
       se_name_prefix: {{ key "avi/serviceenginegroup/se_name_prefix" }}
 
   network:
-    - name: {{ key "avi/network/name" }}
+    - name: "{{ key "avi/network/name" }}"
       #cloud_ref: {{ key "avi/network/cloud_ref" }}
       avi_api_update_method: {{ key "avi/network/update_method" }}
       vcenter_dvs: {{ key "avi/network/vcenter_dvs" }}
@@ -21,15 +21,15 @@ avi_config:
         - prefix:
             ip_addr:
               addr: {{ key "avi/network/configured_subnets/prefix/ip_addr/addr" }}
-              type: {{ key "avi/network/configured_subnets/prefix/ip_addr/type" }}
+              type: '{{ key "avi/network/configured_subnets/prefix/ip_addr/type" }}'
             mask: {{ key "avi/network/configured_subnets/prefix/mask" }}
           static_ranges:
           - begin:
               addr: {{ key "avi/network/configured_subnets/static_ranges/begin/addr" }}
-              type: {{ key "avi/network/configured_subnets/static_ranges/begin/type" }}
+              type: '{{ key "avi/network/configured_subnets/static_ranges/begin/type" }}'
             end:
               addr: {{ key "avi/network/configured_subnets/static_ranges/end/addr" }}
-              type: {{ key "avi/network/configured_subnets/static_ranges/end/type" }}
+              type: '{{ key "avi/network/configured_subnets/static_ranges/end/type" }}'
 
   avi_cloud_discovery_wait: {{ key "avi/cloud_discovery_wait" }}
   cloud:

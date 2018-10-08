@@ -1,0 +1,25 @@
+avi_config:
+  pool:
+    - name: '{{ app }}-pool'
+      lb_algorithm: LB_ALGORITHM_ROUND_ROBIN
+      servers:
+        - ip:
+             addr: 192.168.38.3
+             type: 'V4'
+
+  virtualservice:
+    - name: '{{ app }}'
+      services:
+        - port: 80
+      pool_ref: '/api/pool?name={{ app }}-pool'
+      vip:
+        - ip_address:
+            addr: 192.168.38.91
+            type: 'V4'
+          vip_id: '1'
+      cloud_ref: '/api/cloud?name=Default-Cloud'
+      application_profile_ref: '/api/applicationprofile?name=System-Secure-HTTP'
+      services:
+        - port: 80
+
+   

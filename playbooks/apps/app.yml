@@ -1,0 +1,6 @@
+- hosts: localhost
+  connection: local
+  roles:
+    - role: avinetworks.avisdk
+    - role: ../../roles/aviconfig
+  gather_facts: no

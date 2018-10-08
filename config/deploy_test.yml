@@ -2,7 +2,7 @@
 ovftool_path: /usr/lib/vmware-ovftool
 datacenter: DC1
 cluster: MyCluster1
-mgmt_network: /api/vimgrnwruntime?name=VM Network
+mgmt_network: VM Network
 ova_path: /home/ge/controller-17.2.13-9168.ova
 power_on: true
 vcenter_folder: ge

@@ -6,7 +6,7 @@ avi_config:
         - ip:
              addr: 192.168.38.3
              type: 'V4'
-    - name: ext-pool-Bc
+    - name: ext-pool-B
       lb_algorithm: LB_ALGORITHM_LEAST_CONNECTIONS
       health_monitor_refs:
         - '/api/healthmonitor?name=ext-hm'

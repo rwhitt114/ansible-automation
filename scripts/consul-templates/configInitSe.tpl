@@ -5,8 +5,8 @@ avi_config:
       vcenter_folder: {{ key "avi/serviceenginegroup/vcenter/folder" }}
       vcenter_clusters:
         cluster_refs:
-          - {{ key "avi/serviceenginegroup/vcenter/cluser/ref" }}
-        include: {{ key "avi/serviceenginegroup/include" }}
+          - {{ key "avi/serviceenginegroup/vcenter/cluster/ref" }}
+        include: {{ key "avi/serviceenginegroup/vcenter/cluster/include" }}
       max_se: {{ key "avi/serviceenginegroup/max_se" }}
       buffer_se: {{ key "avi/serviceenginegroup/buffer_se" }}
       se_name_prefix: {{ key "avi/serviceenginegroup/se_name_prefix" }}

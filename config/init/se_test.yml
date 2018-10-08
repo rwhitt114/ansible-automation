@@ -1,0 +1,55 @@
+avi_config:
+  serviceenginegroup:
+    - name: Default-Group
+      cloud_ref: /api/cloud?name=Default-Cloud
+      vcenter_folder: ge
+      vcenter_clusters:
+        cluster_refs:
+          - /api/vimgrclusterruntime?name=MyCluster1
+        include: True
+      max_se: 4
+      buffer_se: 1
+      se_name_prefix: hpe
+
+  network:
+    - name: VM Network
+      #cloud_ref: 
+      avi_api_update_method: PUT
+      vcenter_dvs: false
+      dhcp_enabled: false
+      configured_subnets:
+        - prefix:
+            ip_addr:
+              addr: 192.168.38.0
+              type: V4
+            mask: 24
+          static_ranges:
+          - begin:
+              addr: 192.168.38.87
+              type: V4
+            end:
+              addr: 192.168.38.90
+              type: V4
+
+  avi_cloud_discovery_wait: 1
+  cloud:
+    - name: Default-Cloud
+      vtype: CLOUD_VCENTER
+      dhcp_enabled: false
+      license_type: 'LIC_CORES'
+      vcenter_configuration:
+        username: 'administrator@mitchchen.com'
+        password: 'h6j5?HxL3zlSO$'
+        datacenter: 'DC1'
+        vcenter_dvs: false
+        privilege: 'WRITE_ACCESS'
+        vcenter_url: '192.168.38.20'
+        management_network: "/api/vimgrnwruntime?name=VM Network"
+        management_ip_subnet:
+          ip_addr: 
+            addr: 192.168.38.0
+            type: V4
+          mask: 24
+        
+        
+

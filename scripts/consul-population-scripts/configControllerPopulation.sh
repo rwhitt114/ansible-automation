@@ -1,7 +1,11 @@
+#!/bin/bash
+consul kv put avi/config/cloud_discovery_wait 120
 consul kv put avi/config/cloud/name Default-Cloud
 consul kv put avi/config/cloud/vtype CLOUD_VCENTER
 consul kv put avi/config/cloud/dhcp_enabled false
 consul kv put avi/config/cloud/license_type LIC_CORES
+consul kv put avi/config/vcenter/user administrator@mitchchen.com
+consul kv put avi/config/vcenter/password 'h6j5?HxL3zlSO$'
 consul kv put avi/config/vcenter/datacenter DC1
 consul kv put avi/config/vcenter/mgmt_network false
 consul kv put avi/config/vcenter/privilege WRITE_ACCESS
@@ -26,8 +30,8 @@ consul kv put avi/config/systemconfiguration/portal_configurationenable_http tru
 consul kv put avi/config/systemconfiguration/portal_configurationenable_https true
 consul kv put avi/config/systemconfiguration/portal_configurationpassword_strength_check false
 consul kv put avi/config/systemconfiguration/portal_configurationredirect_to_https true
-consul kv putavi/config/systemconfiguration/portal_configuration/sslkeyandcertificate_refs/1 "/api/sslkeyandcertificate?name=System-Default-Portal-Cert"
-consul kv putavi/config/systemconfiguration/portal_configuration/sslkeyandcertificate_refs/2 "/api/sslkeyandcertificate?name=System-Default-Portal-Cert-EC256"
+consul kv put avi/config/systemconfiguration/portal_configuration/sslkeyandcertificate_refs/1 "/api/sslkeyandcertificate?name=System-Default-Portal-Cert"
+consul kv put avi/config/systemconfiguration/portal_configuration/sslkeyandcertificate_refs/2 "/api/sslkeyandcertificate?name=System-Default-Portal-Cert-EC256"
 consul kv put avi/config/systemconfiguration/portal_configuration/sslprofile_ref /api/sslprofile?name=System-Standard-Portal
 consul kv put avi/config/systemconfiguration/portal_configuration/use_uuid_from_input false
 consul kv put avi/config/cluster/avi_api_update_method PUT

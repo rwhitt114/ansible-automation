@@ -86,7 +86,7 @@ avi_config:
       is_internal_policy: {{ key "avi/config/httppolicyset/1/is_internal_policy" }}
 
   virtualservice:
-    - name: '{{ app }}'
+    - name: {{ printf "{{ app }}" }}
       services:
         - port: {{ key "avi/config/virtualservice/services/port" }}
       pool_ref: '{{ key "avi/config/virtualservice/pool_ref" }}'
@@ -110,8 +110,9 @@ avi_config:
 
   sslkeyandcertificate:
     - name: {{ key "avi/config/sslkeyandcertificate/1/name" }}
-      key: "{{ lookup('file', '{{ playbook_dir }}/../../config/ssl/ext-cert.key') }}"
+      key: {{ printf "{{ lookup('file', '{{ playbook_dir }}/../../config/ssl/ext-cert.key') }}" }}
       certificate:
         self_signed: {{ key "avi/config/sslkeyandcertificate/1/certificate/self_signed" }}
-        certificate: "{{ lookup('file', '{{ playbook_dir }}/../../config/ssl/ext-cert.crt')}}"
+        certificate: {{ printf "{{ lookup('file', '{{ playbook_dir }}/../../config/ssl/ext-cert.crt')}}" }}
       type: {{ key "avi/config/sslkeyandcertificate/1/certificate/type" }}
+

@@ -1,0 +1,13 @@
+---
+- hosts: localhost
+  connection: local
+  roles:
+    - role: avinetworks.avisdk
+  tasks:
+    - name: deploy all apps
+      include_roles:
+        name: ../../roles/aviconfig
+    vars:
+      avi_config_file: '{{ item }}'
+    with_fileglob:
+      - ../../config/apps/*

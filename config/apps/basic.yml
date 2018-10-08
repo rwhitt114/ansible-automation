@@ -1,6 +1,6 @@
 avi_config:
   pool:
-    - name: '{{ app }}-pool'
+    - name: 'basic-pool'
       lb_algorithm: LB_ALGORITHM_ROUND_ROBIN
       servers:
         - ip:
@@ -8,10 +8,10 @@ avi_config:
              type: 'V4'
 
   virtualservice:
-    - name: '{{ app }}'
+    - name: basic
       services:
         - port: 80
-      pool_ref: '/api/pool?name={{ app }}-pool'
+      pool_ref: '/api/pool?name=basic-pool'
       vip:
         - ip_address:
             addr: 192.168.38.91

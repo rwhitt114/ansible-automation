@@ -1,7 +1,3 @@
 ---
-# defaults file for initilization
-state: present
-avi_config_file: '../files/vs.yml'
-ssl_profile: System-Standard
-app_profile: System-HTTP
+# defaults file for aviconfig
 

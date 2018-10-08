@@ -1,4 +1,5 @@
 ---
-# vars file for initilization
+# vars file for aviconfig
 avi_creds_file: '../../../creds.yml'
-#avi_config_file: '../files/vs.yml'
+avi_config_file: '../../../config/apps/{{ app }}.yml'
+

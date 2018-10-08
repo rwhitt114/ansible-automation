@@ -6,5 +6,5 @@
     - '../../config/apps/{{ app }}.yml'
   roles:
     - role: avinetworks.avisdk
-    - role: ../../roles/aviconfig
+    - role: ../../roles/app
   gather_facts: no    

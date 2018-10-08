@@ -93,7 +93,7 @@ avi_config:
       pool_ref: '/api/pool?name=ext-pool-A'
       vip:
         - ip_address:
-            addr: 192.168.30.91
+            addr: 192.168.38.91
             type: 'V4'
           vip_id: '1'
       cloud_ref: '/api/cloud?name=Default-Cloud'
@@ -111,8 +111,8 @@ avi_config:
 
   sslkeyandcertificate:
     - name: ext-cert
-      key: "{{ lookup('file', ../ssl/ext-cert.key') }}"
+      key: "{{ lookup('file', '{{ playbook_dir }}/../../config/ssl/ext-cert.key') }}"
       certificate:
         self_signed: true
-        certificate: "{{ lookup('file', ../ssl/ext-cert.crt')}}"
+        certificate: "{{ lookup('file', '{{ playbook_dir }}/../../config/ssl/ext-cert.crt')}}"
       type: SSL_CERTIFICATE_TYPE_VIRTUALSERVICE

@@ -8,14 +8,14 @@
 
 - name: SSL certs
   set_fact:
-    ssl_certs: "{{ ssl_certs|default([]) + ['/api/sslkeyandcertificate?name=' + item] }}"
+    ssl_certs: "{{ sslcerts|default([]) + ['/api/sslkeyandcertificate?name=%s'%item] }}"
   with_items: '{{ certs }}'
   when: certs is defined and certs is not none
 
 - name: Heath monitors
   set_fact:
-    health_monitor_refs: "{{ health_monitor_refs|default([]) + ['/api/healthmonitor?name='+ item]  }}"
-  with_items: '{{ health_monitors }}'
+    health_monitor_refs: "{{ health_monitor_refs|default([]) + ['/api/healthmonitor?name='+item]  }}"
+  loop: '{{ health_monitors }}'
   when: health_monitors is defined and certs is not none
 
 

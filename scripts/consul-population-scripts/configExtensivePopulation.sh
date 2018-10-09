@@ -62,7 +62,7 @@ consul kv put avi/config/httppolicyset/1/is_internal_policy false
 
 consul kv put avi/config/virtualservice/services/port 80
 consul kv put avi/config/virtualservice/pool_ref '/api/pool?name=ext-pool-A'
-consul kv put avi/config/virtualservice/vip/ip_address/addr 192.168.38.91
+consul kv put avi/config/virtualservice/vip/ip_address/addr 192.168.38.92
 consul kv put avi/config/virtualservice/vip/ip_address/type V4
 consul kv put avi/config/virtualservice/vip/vip_id 1
 consul kv put avi/config/virtualservice/cloud_ref '/api/cloud?name=Default-Cloud'

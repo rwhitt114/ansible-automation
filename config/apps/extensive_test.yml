@@ -46,8 +46,7 @@ avi_config:
     - name: ext_multiline_hm
       failed_checks: 1
       https_monitor:
-        http_request: |- 
-          GET /index.html HTTP/1.0
+        http_request: |- \r\n GET /index.html HTTP/1.0
           Connection: Close
         http_response_code:
         - HTTP_2XX
@@ -87,13 +86,13 @@ avi_config:
       is_internal_policy: false
 
   virtualservice:
-    - name: {{ app }}
+    - name: extensive
       services:
         - port: 80
       pool_ref: '/api/pool?name=ext-pool-A'
       vip:
         - ip_address:
-            addr: 192.168.38.91
+            addr: 192.168.38.92
             type: 'V4'
           vip_id: '1'
       cloud_ref: '/api/cloud?name=Default-Cloud'

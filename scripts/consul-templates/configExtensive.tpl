@@ -86,7 +86,7 @@ avi_config:
       is_internal_policy: {{ key "avi/config/httppolicyset/1/is_internal_policy" }}
 
   virtualservice:
-    - name: {{ printf "{{ app }}" }}
+    - name: extensive
       services:
         - port: {{ key "avi/config/virtualservice/services/port" }}
       pool_ref: '{{ key "avi/config/virtualservice/pool_ref" }}'

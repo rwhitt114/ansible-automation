@@ -1,0 +1,12 @@
+---
+- hosts: localhost
+  tasks:
+    - name: install avisdk
+      pip:
+        name: avisdk
+      gather_facts: no 
+
+    - name: install roles
+      command: 'ansible-galaxy install -r ../requirements.yml'     
+      gather_facts: no
+

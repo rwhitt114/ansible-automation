@@ -46,7 +46,8 @@ avi_config:
     - name: ext_multiline_hm
       failed_checks: 1
       https_monitor:
-        http_request: |- \r\n GET /index.html HTTP/1.0
+        http_request: |- 
+          GET /index.html HTTP/1.0
           Connection: Close
         http_response_code:
         - HTTP_2XX

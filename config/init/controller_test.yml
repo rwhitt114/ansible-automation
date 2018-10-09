@@ -4,14 +4,14 @@ avi_config:
     - name: Default-Cloud
       vtype: CLOUD_VCENTER
       dhcp_enabled: false
-      license_type: LIC_CORES
+      license_type: "LIC_CORES"
       vcenter_configuration:
-        username: administrator@mitchchen.com
-        password: h6j5?HxL3zlSO$
-        datacenter: DC1
-        management_network: false
-        privilege: WRITE_ACCESS
-        vcenter_url: 192.168.38.20
+        username: '{{ vcenter.username }}'
+        password: '{{ vcenter.password }}'
+        datacenter: 'DC1'
+        vcenter_dvs: false
+        privilege: 'WRITE_ACCESS'
+        vcenter_url: '192.168.38.20'
 
   systemconfiguration:
     - email_configuration:
@@ -43,8 +43,8 @@ avi_config:
         password_strength_check: false
         redirect_to_https: true
         sslkeyandcertificate_refs:
-          - "/api/sslkeyandcertificate?name=System-Default-Portal-Cert"
-          - "/api/sslkeyandcertificate?name=System-Default-Portal-Cert-EC256"
+          - '/api/sslkeyandcertificate?name=System-Default-Portal-Cert'
+          - '/api/sslkeyandcertificate?name=System-Default-Portal-Cert-EC256'
         sslprofile_ref: /api/sslprofile?name=System-Standard-Portal
         use_uuid_from_input: false
 

@@ -6,8 +6,8 @@ avi_config:
       dhcp_enabled: {{ key "avi/config/cloud/dhcp_enabled" }}
       license_type: "{{ key "avi/config/cloud/license_type" }}"
       vcenter_configuration:
-        username: '{{ vcenter.username }}'
-        password: '{{ vcenter.password }}'
+        username: {{ printf "'{{ vcenter.username }}'" }}
+        password: {{ printf "'{{ vcenter.password }}'" }}
         datacenter: '{{ key "avi/config/vcenter/datacenter" }}'
         vcenter_dvs: {{ key "avi/config/vcenter/dvs" }}
         privilege: '{{ key "avi/config/vcenter/privilege" }}'

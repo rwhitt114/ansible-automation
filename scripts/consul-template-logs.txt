@@ -1,5 +1,120 @@
-2018/10/08 23:21:39.386246 [INFO] consul-template v0.19.5 (57b6c71)
-2018/10/08 23:21:39.386263 [INFO] (runner) creating new runner (dry: false, once: true)
-2018/10/08 23:21:39.386576 [DEBUG] (runner) final config: {"Consul":{"Address":"","Auth":{"Enabled":false,"Username":"","Password":""},"Retry":{"Attempts":12,"Backoff":250000000,"MaxBackoff":60000000000,"Enabled":true},"SSL":{"CaCert":"","CaPath":"","Cert":"","Enabled":false,"Key":"","ServerName":"","Verify":true},"Token":"","Transport":{"DialKeepAlive":30000000000,"DialTimeout":30000000000,"DisableKeepAlives":false,"IdleConnTimeout":90000000000,"MaxIdleConns":100,"MaxIdleConnsPerHost":3,"TLSHandshakeTimeout":10000000000}},"Dedup":{"Enabled":false,"MaxStale":2000000000,"Prefix":"consul-template/dedup/","TTL":15000000000},"Exec":{"Command":"","Enabled":false,"Env":{"Blacklist":[],"Custom":[],"Pristine":false,"Whitelist":[]},"KillSignal":2,"KillTimeout":30000000000,"ReloadSignal":null,"Splay":0,"Timeout":0},"KillSignal":2,"LogLevel":"trace","MaxStale":2000000000,"PidFile":"","ReloadSignal":1,"Syslog":{"Enabled":false,"Facility":"LOCAL0"},"Templates":[{"Backup":false,"Command":"","CommandTimeout":30000000000,"Contents":"","CreateDestDirs":true,"Destination":"../creds_test.yml","ErrMissingKey":false,"Exec":{"Command":"","Enabled":false,"Env":{"Blacklist":[],"Custom":[],"Pristine":false,"Whitelist":[]},"KillSignal":2,"KillTimeout":30000000000,"ReloadSignal":null,"Splay":0,"Timeout":30000000000},"Perms":0,"Source":"./consul-templates/creds_test.tpl","Wait":{"Enabled":false,"Min":0,"Max":0},"LeftDelim":"","RightDelim":""}],"Vault":{"Address":"","Enabled":false,"Grace":15000000000,"RenewToken":true,"Retry":{"Attempts":12,"Backoff":250000000,"MaxBackoff":60000000000,"Enabled":true},"SSL":{"CaCert":"","CaPath":"","Cert":"","Enabled":true,"Key":"","ServerName":"","Verify":true},"Transport":{"DialKeepAlive":30000000000,"DialTimeout":30000000000,"DisableKeepAlives":false,"IdleConnTimeout":90000000000,"MaxIdleConns":100,"MaxIdleConnsPerHost":3,"TLSHandshakeTimeout":10000000000},"UnwrapToken":false},"Wait":{"Enabled":false,"Min":0,"Max":0}}
-2018/10/08 23:21:39.386609 [INFO] (runner) creating watcher
-2018/10/08 23:21:39.386630 [ERR] (cli) failed to read template: open ./consul-templates/creds_test.tpl: no such file or directory
+2018/10/08 23:41:00.949275 [INFO] consul-template v0.19.5 (57b6c71)
+2018/10/08 23:41:00.949318 [INFO] (runner) creating new runner (dry: false, once: true)
+2018/10/08 23:41:00.949817 [DEBUG] (runner) final config: {"Consul":{"Address":"","Auth":{"Enabled":false,"Username":"","Password":""},"Retry":{"Attempts":12,"Backoff":250000000,"MaxBackoff":60000000000,"Enabled":true},"SSL":{"CaCert":"","CaPath":"","Cert":"","Enabled":false,"Key":"","ServerName":"","Verify":true},"Token":"","Transport":{"DialKeepAlive":30000000000,"DialTimeout":30000000000,"DisableKeepAlives":false,"IdleConnTimeout":90000000000,"MaxIdleConns":100,"MaxIdleConnsPerHost":3,"TLSHandshakeTimeout":10000000000}},"Dedup":{"Enabled":false,"MaxStale":2000000000,"Prefix":"consul-template/dedup/","TTL":15000000000},"Exec":{"Command":"","Enabled":false,"Env":{"Blacklist":[],"Custom":[],"Pristine":false,"Whitelist":[]},"KillSignal":2,"KillTimeout":30000000000,"ReloadSignal":null,"Splay":0,"Timeout":0},"KillSignal":2,"LogLevel":"trace","MaxStale":2000000000,"PidFile":"","ReloadSignal":1,"Syslog":{"Enabled":false,"Facility":"LOCAL0"},"Templates":[{"Backup":false,"Command":"","CommandTimeout":30000000000,"Contents":"","CreateDestDirs":true,"Destination":"../creds_test.yml","ErrMissingKey":false,"Exec":{"Command":"","Enabled":false,"Env":{"Blacklist":[],"Custom":[],"Pristine":false,"Whitelist":[]},"KillSignal":2,"KillTimeout":30000000000,"ReloadSignal":null,"Splay":0,"Timeout":30000000000},"Perms":0,"Source":"./consul-templates/creds.tpl","Wait":{"Enabled":false,"Min":0,"Max":0},"LeftDelim":"","RightDelim":""}],"Vault":{"Address":"","Enabled":false,"Grace":15000000000,"RenewToken":true,"Retry":{"Attempts":12,"Backoff":250000000,"MaxBackoff":60000000000,"Enabled":true},"SSL":{"CaCert":"","CaPath":"","Cert":"","Enabled":true,"Key":"","ServerName":"","Verify":true},"Transport":{"DialKeepAlive":30000000000,"DialTimeout":30000000000,"DisableKeepAlives":false,"IdleConnTimeout":90000000000,"MaxIdleConns":100,"MaxIdleConnsPerHost":3,"TLSHandshakeTimeout":10000000000},"UnwrapToken":false},"Wait":{"Enabled":false,"Min":0,"Max":0}}
+2018/10/08 23:41:00.949870 [INFO] (runner) creating watcher
+2018/10/08 23:41:00.950141 [INFO] (runner) starting
+2018/10/08 23:41:00.950164 [DEBUG] (runner) running initial templates
+2018/10/08 23:41:00.950169 [DEBUG] (runner) initiating run
+2018/10/08 23:41:00.950204 [DEBUG] (runner) checking template 3d2154e2d1cd382106c12486b04e9064
+2018/10/08 23:41:00.951471 [DEBUG] (runner) was not watching 6 dependencies
+2018/10/08 23:41:00.951507 [DEBUG] (watcher) adding kv.block(avi/creds/controller/ip)
+2018/10/08 23:41:00.951516 [TRACE] (watcher) kv.block(avi/creds/controller/ip) starting
+2018/10/08 23:41:00.951532 [DEBUG] (watcher) adding kv.block(avi/creds/username)
+2018/10/08 23:41:00.951538 [TRACE] (watcher) kv.block(avi/creds/username) starting
+2018/10/08 23:41:00.951545 [DEBUG] (watcher) adding kv.block(avi/creds/password)
+2018/10/08 23:41:00.951550 [TRACE] (watcher) kv.block(avi/creds/password) starting
+2018/10/08 23:41:00.951556 [DEBUG] (watcher) adding kv.block(avi/creds/api_version)
+2018/10/08 23:41:00.951561 [TRACE] (watcher) kv.block(avi/creds/api_version) starting
+2018/10/08 23:41:00.951567 [DEBUG] (watcher) adding kv.block(avi/creds/vcenter/user)
+2018/10/08 23:41:00.951573 [TRACE] (watcher) kv.block(avi/creds/vcenter/user) starting
+2018/10/08 23:41:00.951579 [DEBUG] (watcher) adding kv.block(avi/creds/vcenter/password)
+2018/10/08 23:41:00.951584 [TRACE] (watcher) kv.block(avi/creds/vcenter/password) starting
+2018/10/08 23:41:00.951591 [DEBUG] (runner) diffing and updating dependencies
+2018/10/08 23:41:00.951597 [DEBUG] (runner) watching 6 dependencies
+2018/10/08 23:41:00.951635 [TRACE] (view) kv.block(avi/creds/vcenter/password) starting fetch
+2018/10/08 23:41:00.951638 [TRACE] (view) kv.block(avi/creds/password) starting fetch
+2018/10/08 23:41:00.951665 [TRACE] kv.block(avi/creds/vcenter/password): GET /v1/kv/avi/creds/vcenter/password?stale=true&wait=1m0s
+2018/10/08 23:41:00.951678 [TRACE] kv.block(avi/creds/password): GET /v1/kv/avi/creds/password?stale=true&wait=1m0s
+2018/10/08 23:41:00.951766 [TRACE] (view) kv.block(avi/creds/api_version) starting fetch
+2018/10/08 23:41:00.951783 [TRACE] kv.block(avi/creds/api_version): GET /v1/kv/avi/creds/api_version?stale=true&wait=1m0s
+2018/10/08 23:41:00.951992 [TRACE] (view) kv.block(avi/creds/controller/ip) starting fetch
+2018/10/08 23:41:00.952009 [TRACE] kv.block(avi/creds/controller/ip): GET /v1/kv/avi/creds/controller/ip?stale=true&wait=1m0s
+2018/10/08 23:41:00.952138 [TRACE] (view) kv.block(avi/creds/vcenter/user) starting fetch
+2018/10/08 23:41:00.954753 [TRACE] kv.block(avi/creds/vcenter/user): GET /v1/kv/avi/creds/vcenter/user?stale=true&wait=1m0s
+2018/10/08 23:41:00.952186 [TRACE] (view) kv.block(avi/creds/username) starting fetch
+2018/10/08 23:41:00.954965 [TRACE] kv.block(avi/creds/username): GET /v1/kv/avi/creds/username?stale=true&wait=1m0s
+2018/10/08 23:41:00.954326 [TRACE] kv.block(avi/creds/password): returned "Password123"
+2018/10/08 23:41:00.955320 [TRACE] (view) kv.block(avi/creds/password) marking successful data response
+2018/10/08 23:41:00.955330 [TRACE] (view) kv.block(avi/creds/password) successful contact, resetting retries
+2018/10/08 23:41:00.955336 [TRACE] (view) kv.block(avi/creds/password) received data
+2018/10/08 23:41:00.955345 [DEBUG] (runner) receiving dependency kv.block(avi/creds/password)
+2018/10/08 23:41:00.955365 [DEBUG] (runner) initiating run
+2018/10/08 23:41:00.955372 [DEBUG] (runner) checking template 3d2154e2d1cd382106c12486b04e9064
+2018/10/08 23:41:00.955687 [DEBUG] (runner) missing data for 5 dependencies
+2018/10/08 23:41:00.955698 [DEBUG] (runner) diffing and updating dependencies
+2018/10/08 23:41:00.955705 [DEBUG] (runner) kv.block(avi/creds/controller/ip) is still needed
+2018/10/08 23:41:00.955710 [DEBUG] (runner) kv.block(avi/creds/username) is still needed
+2018/10/08 23:41:00.955715 [DEBUG] (runner) kv.block(avi/creds/password) is still needed
+2018/10/08 23:41:00.955720 [DEBUG] (runner) kv.block(avi/creds/api_version) is still needed
+2018/10/08 23:41:00.955724 [DEBUG] (runner) kv.block(avi/creds/vcenter/user) is still needed
+2018/10/08 23:41:00.955729 [DEBUG] (runner) kv.block(avi/creds/vcenter/password) is still needed
+2018/10/08 23:41:00.955735 [DEBUG] (runner) watching 6 dependencies
+2018/10/08 23:41:00.955858 [TRACE] kv.block(avi/creds/controller/ip): returned "192.168.38.71"
+2018/10/08 23:41:00.955869 [TRACE] (view) kv.block(avi/creds/controller/ip) marking successful data response
+2018/10/08 23:41:00.955875 [TRACE] (view) kv.block(avi/creds/controller/ip) successful contact, resetting retries
+2018/10/08 23:41:00.955878 [TRACE] (view) kv.block(avi/creds/controller/ip) received data
+2018/10/08 23:41:00.955884 [DEBUG] (runner) receiving dependency kv.block(avi/creds/controller/ip)
+2018/10/08 23:41:00.955888 [DEBUG] (runner) initiating run
+2018/10/08 23:41:00.955891 [DEBUG] (runner) checking template 3d2154e2d1cd382106c12486b04e9064
+2018/10/08 23:41:00.955891 [TRACE] kv.block(avi/creds/vcenter/password): returned "h6j5?HxL3zlSO$"
+2018/10/08 23:41:00.955905 [TRACE] (view) kv.block(avi/creds/vcenter/password) marking successful data response
+2018/10/08 23:41:00.955916 [TRACE] (view) kv.block(avi/creds/vcenter/password) successful contact, resetting retries
+2018/10/08 23:41:00.955926 [TRACE] (view) kv.block(avi/creds/vcenter/password) received data
+2018/10/08 23:41:00.956089 [TRACE] kv.block(avi/creds/vcenter/user): returned "administrator@mitchchen.com"
+2018/10/08 23:41:00.956100 [TRACE] (view) kv.block(avi/creds/vcenter/user) marking successful data response
+2018/10/08 23:41:00.956108 [TRACE] (view) kv.block(avi/creds/vcenter/user) successful contact, resetting retries
+2018/10/08 23:41:00.956115 [TRACE] (view) kv.block(avi/creds/vcenter/user) received data
+2018/10/08 23:41:00.956108 [DEBUG] (runner) missing data for 4 dependencies
+2018/10/08 23:41:00.956125 [DEBUG] (runner) diffing and updating dependencies
+2018/10/08 23:41:00.956131 [DEBUG] (runner) kv.block(avi/creds/controller/ip) is still needed
+2018/10/08 23:41:00.956135 [DEBUG] (runner) kv.block(avi/creds/username) is still needed
+2018/10/08 23:41:00.956154 [DEBUG] (runner) kv.block(avi/creds/password) is still needed
+2018/10/08 23:41:00.956159 [DEBUG] (runner) kv.block(avi/creds/api_version) is still needed
+2018/10/08 23:41:00.956164 [DEBUG] (runner) kv.block(avi/creds/vcenter/user) is still needed
+2018/10/08 23:41:00.956169 [DEBUG] (runner) kv.block(avi/creds/vcenter/password) is still needed
+2018/10/08 23:41:00.956175 [DEBUG] (runner) watching 6 dependencies
+2018/10/08 23:41:00.956179 [TRACE] kv.block(avi/creds/api_version): returned "17.2.13"
+2018/10/08 23:41:00.956187 [TRACE] (view) kv.block(avi/creds/api_version) marking successful data response
+2018/10/08 23:41:00.956193 [TRACE] (view) kv.block(avi/creds/api_version) successful contact, resetting retries
+2018/10/08 23:41:00.956196 [TRACE] (view) kv.block(avi/creds/api_version) received data
+2018/10/08 23:41:00.956182 [DEBUG] (runner) receiving dependency kv.block(avi/creds/vcenter/password)
+2018/10/08 23:41:00.956204 [DEBUG] (runner) receiving dependency kv.block(avi/creds/vcenter/user)
+2018/10/08 23:41:00.956209 [DEBUG] (runner) receiving dependency kv.block(avi/creds/api_version)
+2018/10/08 23:41:00.956212 [DEBUG] (runner) initiating run
+2018/10/08 23:41:00.956215 [DEBUG] (runner) checking template 3d2154e2d1cd382106c12486b04e9064
+2018/10/08 23:41:00.956626 [TRACE] kv.block(avi/creds/username): returned "admin"
+2018/10/08 23:41:00.956640 [TRACE] (view) kv.block(avi/creds/username) marking successful data response
+2018/10/08 23:41:00.956651 [TRACE] (view) kv.block(avi/creds/username) successful contact, resetting retries
+2018/10/08 23:41:00.956660 [TRACE] (view) kv.block(avi/creds/username) received data
+2018/10/08 23:41:00.956829 [DEBUG] (runner) missing data for 1 dependencies
+2018/10/08 23:41:00.956839 [DEBUG] (runner) diffing and updating dependencies
+2018/10/08 23:41:00.956844 [DEBUG] (runner) kv.block(avi/creds/vcenter/password) is still needed
+2018/10/08 23:41:00.956847 [DEBUG] (runner) kv.block(avi/creds/controller/ip) is still needed
+2018/10/08 23:41:00.956850 [DEBUG] (runner) kv.block(avi/creds/username) is still needed
+2018/10/08 23:41:00.956853 [DEBUG] (runner) kv.block(avi/creds/password) is still needed
+2018/10/08 23:41:00.956856 [DEBUG] (runner) kv.block(avi/creds/api_version) is still needed
+2018/10/08 23:41:00.956858 [DEBUG] (runner) kv.block(avi/creds/vcenter/user) is still needed
+2018/10/08 23:41:00.956862 [DEBUG] (runner) watching 6 dependencies
+2018/10/08 23:41:00.956867 [DEBUG] (runner) receiving dependency kv.block(avi/creds/username)
+2018/10/08 23:41:00.956871 [DEBUG] (runner) initiating run
+2018/10/08 23:41:00.956873 [DEBUG] (runner) checking template 3d2154e2d1cd382106c12486b04e9064
+2018/10/08 23:41:00.957040 [DEBUG] (runner) rendering "./consul-templates/creds.tpl" => "../creds_test.yml"
+2018/10/08 23:41:00.957078 [DEBUG] (runner) diffing and updating dependencies
+2018/10/08 23:41:00.957083 [DEBUG] (runner) kv.block(avi/creds/api_version) is still needed
+2018/10/08 23:41:00.957087 [DEBUG] (runner) kv.block(avi/creds/vcenter/user) is still needed
+2018/10/08 23:41:00.957091 [DEBUG] (runner) kv.block(avi/creds/vcenter/password) is still needed
+2018/10/08 23:41:00.957093 [DEBUG] (runner) kv.block(avi/creds/controller/ip) is still needed
+2018/10/08 23:41:00.957096 [DEBUG] (runner) kv.block(avi/creds/username) is still needed
+2018/10/08 23:41:00.957099 [DEBUG] (runner) kv.block(avi/creds/password) is still needed
+2018/10/08 23:41:00.957102 [DEBUG] (runner) watching 6 dependencies
+2018/10/08 23:41:00.957105 [DEBUG] (runner) all templates rendered
+2018/10/08 23:41:00.957107 [INFO] (runner) once mode and all templates rendered
+2018/10/08 23:41:00.957110 [INFO] (runner) stopping
+2018/10/08 23:41:00.957112 [DEBUG] (runner) stopping watcher
+2018/10/08 23:41:00.957115 [DEBUG] (watcher) stopping all views
+2018/10/08 23:41:00.957117 [TRACE] (watcher) stopping kv.block(avi/creds/vcenter/user)
+2018/10/08 23:41:00.957120 [TRACE] (watcher) stopping kv.block(avi/creds/vcenter/password)
+2018/10/08 23:41:00.957123 [TRACE] (watcher) stopping kv.block(avi/creds/controller/ip)
+2018/10/08 23:41:00.957132 [TRACE] (watcher) stopping kv.block(avi/creds/username)
+2018/10/08 23:41:00.957135 [TRACE] (watcher) stopping kv.block(avi/creds/password)
+2018/10/08 23:41:00.957137 [TRACE] (watcher) stopping kv.block(avi/creds/api_version)

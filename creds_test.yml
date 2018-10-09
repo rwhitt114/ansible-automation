@@ -1,0 +1,10 @@
+avi_credentials:
+  controller: 192.168.38.71
+  username: 'admin'
+  password: 'Password123'
+  api_version: 17.2.13
+
+vcenter:  
+  username: administrator@mitchchen.com
+  password: h6j5?HxL3zlSO$
+  

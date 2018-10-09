@@ -4,14 +4,14 @@ avi_config:
     - name: {{ key "avi/config/cloud/name"}}
       vtype: {{ key "avi/config/cloud/vtype" }}
       dhcp_enabled: {{ key "avi/config/cloud/dhcp_enabled" }}
-      license_type: {{ key "avi/config/cloud/license_type" }}
+      license_type: "{{ key "avi/config/cloud/license_type" }}"
       vcenter_configuration:
-        username: {{ key "avi/config/vcenter/user" }}
-        password: {{ key "avi/config/vcenter/password" }}
-        datacenter: {{ key "avi/config/vcenter/datacenter" }}
-        management_network: {{ key "avi/config/vcenter/mgmt_network" }}
-        privilege: {{ key "avi/config/vcenter/privilege" }}
-        vcenter_url: {{ key "avi/config/vcenter/url" }}
+        username: {{ printf "'{{ vcenter.username }}'" }}
+        password: {{ printf "'{{ vcenter.password }}'" }}
+        datacenter: '{{ key "avi/config/vcenter/datacenter" }}'
+        vcenter_dvs: {{ key "avi/config/vcenter/dvs" }}
+        privilege: '{{ key "avi/config/vcenter/privilege" }}'
+        vcenter_url: '{{ key "avi/config/vcenter/url" }}'
 
   systemconfiguration:
     - email_configuration:
@@ -43,8 +43,8 @@ avi_config:
         password_strength_check: {{ key "avi/config/systemconfiguration/portal_configurationpassword_strength_check" }}
         redirect_to_https: {{ key "avi/config/systemconfiguration/portal_configurationredirect_to_https" }}
         sslkeyandcertificate_refs:
-          - "{{ key "avi/config/systemconfiguration/portal_configuration/sslkeyandcertificate_refs/1" }}"
-          - "{{ key "avi/config/systemconfiguration/portal_configuration/sslkeyandcertificate_refs/2" }}"
+          - '{{ key "avi/config/systemconfiguration/portal_configuration/sslkeyandcertificate_refs/1" }}'
+          - '{{ key "avi/config/systemconfiguration/portal_configuration/sslkeyandcertificate_refs/2" }}'
         sslprofile_ref: {{ key "avi/config/systemconfiguration/portal_configuration/sslprofile_ref" }}
         use_uuid_from_input: {{ key "avi/config/systemconfiguration/portal_configuration/use_uuid_from_input" }}
 

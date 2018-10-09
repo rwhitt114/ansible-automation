@@ -2,7 +2,7 @@ consul kv put avi/config/pool/1/name ext-pool-A
 consul kv put avi/config/pool/1/lb_algorithm LB_ALGORITHM_ROUND_ROBIN
 consul kv put avi/config/pool/1/servers/ip/addr 192.168.38.3
 consul kv put avi/config/pool/1/servers/ip/type V4
-consul kv put avi/config/pool/2/name ext-pool-Bc
+consul kv put avi/config/pool/2/name ext-pool-B
 consul kv put avi/config/pool/2/lb_algorithm LB_ALGORITHM_LEAST_CONNECTIONS
 consul kv put avi/config/pool/2/health_monitor_refs/1 /api/healthmonitor?name=ext-hm
 consul kv put avi/config/pool/2/health_monitor_refs/2 /api/healthmonitor?name=ext_multiline_hm
@@ -62,7 +62,7 @@ consul kv put avi/config/httppolicyset/1/is_internal_policy false
 
 consul kv put avi/config/virtualservice/services/port 80
 consul kv put avi/config/virtualservice/pool_ref '/api/pool?name=ext-pool-A'
-consul kv put avi/config/virtualservice/vip/ip_address/addr 192.168.38.91
+consul kv put avi/config/virtualservice/vip/ip_address/addr 192.168.38.92
 consul kv put avi/config/virtualservice/vip/ip_address/type V4
 consul kv put avi/config/virtualservice/vip/vip_id 1
 consul kv put avi/config/virtualservice/cloud_ref '/api/cloud?name=Default-Cloud'

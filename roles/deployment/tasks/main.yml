@@ -28,6 +28,6 @@
   register: result
   until: result['status']|default(0) == 200
   retries: 20
-  delay: 120
-  sleep: 30
+  delay: 30
+  msg: Controller is still initializing
   when: state != "absent"

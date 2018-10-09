@@ -4,7 +4,7 @@ This document talks about the avi automation using ansible. The automation cover
 
 Following topics will help you in setting up the environment and executing the ansibe playbooks
 
-## Pre-requisits
+## Pre-requisites
 
 TO run and develop the playbooks, you would need
   Linux or Ubuntu machine

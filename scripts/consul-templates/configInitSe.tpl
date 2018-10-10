@@ -38,8 +38,8 @@ avi_config:
       dhcp_enabled: {{ key "properties/avi/config/cloud/dhcp_enabled" }}
       license_type: '{{ key "properties/avi/config/cloud/license_type" }}'
       vcenter_configuration:
-        username: '{{ key "properties/avi/config/vcenter/user" }}'
-        password: '{{ key "properties/avi/config/vcenter/password" }}'
+        username: '{{ key "properties/avi/creds/vcenter/user" }}'
+        password: '{{ key "properties/avi/creds/vcenter/password" }}'
         datacenter: '{{ key "properties/avi/config/vcenter/datacenter" }}'
         vcenter_dvs: {{ key "properties/avi/config/vcenter/dvs" }}
         privilege: '{{ key "properties/avi/config/vcenter/privilege" }}'

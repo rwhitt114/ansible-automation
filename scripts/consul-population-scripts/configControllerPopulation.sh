@@ -4,8 +4,8 @@ consul kv put properties/avi/config/cloud/name Default-Cloud
 consul kv put properties/avi/config/cloud/vtype CLOUD_VCENTER
 consul kv put properties/avi/config/cloud/dhcp_enabled false
 consul kv put properties/avi/config/cloud/license_type LIC_CORES
-consul kv put properties/avi/config/vcenter/user administrator@mitchchen.com
-consul kv put properties/avi/config/vcenter/password 'h6j5?HxL3zlSO$'
+
+
 consul kv put properties/avi/config/vcenter/datacenter DC1
 consul kv put properties/avi/config/vcenter/dvs false
 consul kv put properties/avi/config/vcenter/privilege WRITE_ACCESS

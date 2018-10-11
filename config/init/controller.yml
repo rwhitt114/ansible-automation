@@ -8,10 +8,10 @@ avi_config:
       vcenter_configuration:
         username: '{{ vcenter.username }}'
         password: '{{ vcenter.password }}'
-        datacenter: 'DC1'
+        datacenter: '{{ vcenter.datacenter }}'
         vcenter_dvs: false
         privilege: 'WRITE_ACCESS'
-        vcenter_url: '192.168.38.20'
+        vcenter_url: '{{ vcenter.vcenter_url }}'
 
   systemconfiguration:
     - email_configuration:
@@ -54,11 +54,11 @@ avi_config:
       name: cluster-0-1
       virtual_ip:
         type: V4
-        addr: 192.168.38.75
+        addr: 10.90.88.220
       nodes:
          - ip:
              type: V4
-             addr: 192.168.38.71
+             addr: 10.90.88.221
            name: ctlr01
       #       - ip:
       #           type: “V4"

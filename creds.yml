@@ -1,9 +1,11 @@
 avi_credentials:
-  controller: 192.168.38.71
+  controller: 10.90.88.221
   username: 'admin'
   password: 'Password123'
-  api_version: 17.2.13
+  api_version: 18.1.3
 
 vcenter:  
-  username: 'administrator@mitchchen.com'
-  password: 'h6j5?HxL3zlSO$'
+  vcenter_url: 10.10.2.10 
+  username: root
+  password: vmware
+  datacenter: 10GTest

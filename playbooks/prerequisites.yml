@@ -1,12 +1,28 @@
 ---
 - hosts: localhost
+  vars:
+    packages: 
+      - python-pip
+      - ssh
+    pip_packages: [avisdk, pyvim, pyvmomi]
   tasks:
-    - name: install avisdk
-      pip:
-        name: avisdk
-      gather_facts: no 
+  - name: install packages
+    apt: name='{{ packages }}' state=latest
+    when: ansible_distribution == 'Debian' or ansible_distribution == 'Ubuntu'
 
-    - name: install roles
-      command: 'ansible-galaxy install -r ../requirements.yml'     
-      gather_facts: no
-
+  - name: 'installing packages'
+    yum: name='{{ packages }}' state=latest
+    when: ansible_distribution == 'CentOS' or ansible_distribution == 'Red Hat Enterprise Linux'
+    
+  - name: 'install prerequisites: avisdk, pyvim, and pyvmomi'
+    pip:
+      name: '{{ pip_packages }}'
+  
+  - name: Check binary stats
+    stat: path=/usr/lib/vmware-ovftool
+    register: ovf_stat
+      
+  - name: installing ovftool
+    become: yes
+    shell: '../roles/avinetworks.avicontroller-vmware/files/VMware-ovftool-4.1.0-2459827-lin.x86_64.bundle --eulas-agreed --required --console'
+    when: (not ovf_stat.stat.exists)

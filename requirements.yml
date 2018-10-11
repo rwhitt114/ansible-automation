@@ -1,4 +1,0 @@
-# Install a role from the Ansible Galaxy
-- src: avinetworks.avisdk
-- src: avinetworks.aviconfig
-- src: avinetworks.avicontroller-vmware

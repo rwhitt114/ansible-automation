@@ -2,17 +2,17 @@ avi_config:
   serviceenginegroup:
     - name: Default-Group
       cloud_ref: '/api/cloud?name=Default-Cloud'
-      vcenter_folder: ge
+      vcenter_folder: rwhitt
       vcenter_clusters:
         cluster_refs:
-          - '/api/vimgrclusterruntime?name=MyCluster1'
+          - '/api/vimgrclusterruntime?name=Arista'
         include: True
       max_se: 4
       buffer_se: 1
-      se_name_prefix: hpe
+      se_name_prefix: rwhitt
     
   network:
-    - name: "VM Network"
+    - name: "PG-988"
       #cloud_ref: '/api/cloud?name=Default-Cloud'
       avi_api_update_method: PUT
       vcenter_dvs: false
@@ -20,15 +20,15 @@ avi_config:
       configured_subnets:
         - prefix:
             ip_addr:
-              addr: 192.168.38.0
+              addr: 10.90.88.0
               type: 'V4'
             mask: 24
           static_ranges:
           - begin:
-              addr: 192.168.38.87
+              addr: 10.90.88.246
               type: 'V4'
             end:
-              addr: 192.168.38.90
+              addr: 10.90.88.250
               type: 'V4'
   
   avi_cloud_discovery_wait: 1          
@@ -38,15 +38,15 @@ avi_config:
       dhcp_enabled: false
       license_type: 'LIC_CORES'
       vcenter_configuration:
-        username: 'administrator@mitchchen.com'
-        password: 'h6j5?HxL3zlSO$'
-        datacenter: 'DC1'
+        username: '{{ vcenter.username }}'
+        password: '{{ vcenter.password }}'
+        datacenter: '{{ vcenter.datacenter }}'
         vcenter_dvs: false
         privilege: 'WRITE_ACCESS'
-        vcenter_url: '192.168.38.20'
-        management_network: "/api/vimgrnwruntime?name=VM Network"
+        vcenter_url: '{{ vcenter.vcenter_url }}'
+        management_network: "/api/vimgrnwruntime?name=PG-988"
         management_ip_subnet:
           ip_addr: 
-            addr: 192.168.38.0
+            addr: 10.90.88.1
             type: V4
           mask: 24

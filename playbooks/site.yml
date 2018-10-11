@@ -4,6 +4,7 @@
   roles:
     - role: avinetworks.avisdk
     - role: avinetworks.avicontroller-vmware
+  gather_facts: no
 - import_playbook: deploy.yml
 - import_playbook: initialize.yml
 - import_playbook: apps/all_apps.yml

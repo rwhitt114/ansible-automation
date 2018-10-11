@@ -1,55 +1,55 @@
 avi_config:
   serviceenginegroup:
-    - name: {{ key "avi/serviceenginegroup/name" }}
-      cloud_ref: '{{ key "avi/serviceenginegroup/cloud_ref" }}'
-      vcenter_folder: {{ key "avi/serviceenginegroup/vcenter/folder" }}
+    - name: {{ key "properties/avi/config/serviceenginegroup/name" }}
+      cloud_ref: '{{ key "properties/avi/config/serviceenginegroup/cloud_ref" }}'
+      vcenter_folder: {{ key "properties/avi/config/serviceenginegroup/vcenter/folder" }}
       vcenter_clusters:
         cluster_refs:
-          - '{{ key "avi/serviceenginegroup/vcenter/cluster/ref" }}'
-        include: {{ key "avi/serviceenginegroup/vcenter/cluster/include" }}
-      max_se: {{ key "avi/serviceenginegroup/max_se" }}
-      buffer_se: {{ key "avi/serviceenginegroup/buffer_se" }}
-      se_name_prefix: {{ key "avi/serviceenginegroup/se_name_prefix" }}
+          - '{{ key "properties/avi/config/serviceenginegroup/vcenter/cluster/ref" }}'
+        include: {{ key "properties/avi/config/serviceenginegroup/vcenter/cluster/include" }}
+      max_se: {{ key "properties/avi/config/serviceenginegroup/max_se" }}
+      buffer_se: {{ key "properties/avi/config/serviceenginegroup/buffer_se" }}
+      se_name_prefix: {{ key "properties/avi/config/serviceenginegroup/se_name_prefix" }}
 
   network:
-    - name: "{{ key "avi/network/name" }}"
-      #cloud_ref: {{ key "avi/network/cloud_ref" }}
-      avi_api_update_method: {{ key "avi/network/update_method" }}
-      vcenter_dvs: {{ key "avi/network/vcenter_dvs" }}
-      dhcp_enabled: {{ key "avi/network/dhcp_enabled" }}
+    - name: "{{ key "properties/avi/config/network/name" }}"
+      #cloud_ref: {{ key "properties/avi/config/network/cloud_ref" }}
+      avi_api_update_method: {{ key "properties/avi/config/network/update_method" }}
+      vcenter_dvs: {{ key "properties/avi/config/network/vcenter_dvs" }}
+      dhcp_enabled: {{ key "properties/avi/config/network/dhcp_enabled" }}
       configured_subnets:
         - prefix:
             ip_addr:
-              addr: {{ key "avi/network/configured_subnets/prefix/ip_addr/addr" }}
-              type: '{{ key "avi/network/configured_subnets/prefix/ip_addr/type" }}'
-            mask: {{ key "avi/network/configured_subnets/prefix/mask" }}
+              addr: {{ key "properties/avi/config/network/configured_subnets/prefix/ip_addr/addr" }}
+              type: '{{ key "properties/avi/config/network/configured_subnets/prefix/ip_addr/type" }}'
+            mask: {{ key "properties/avi/config/network/configured_subnets/prefix/mask" }}
           static_ranges:
           - begin:
-              addr: {{ key "avi/network/configured_subnets/static_ranges/begin/addr" }}
-              type: '{{ key "avi/network/configured_subnets/static_ranges/begin/type" }}'
+              addr: {{ key "properties/avi/config/network/configured_subnets/static_ranges/begin/addr" }}
+              type: '{{ key "properties/avi/config/network/configured_subnets/static_ranges/begin/type" }}'
             end:
-              addr: {{ key "avi/network/configured_subnets/static_ranges/end/addr" }}
-              type: '{{ key "avi/network/configured_subnets/static_ranges/end/type" }}'
+              addr: {{ key "properties/avi/config/network/configured_subnets/static_ranges/end/addr" }}
+              type: '{{ key "properties/avi/config/network/configured_subnets/static_ranges/end/type" }}'
 
-  avi_cloud_discovery_wait: {{ key "avi/cloud_discovery_wait" }}
+  avi_cloud_discovery_wait: {{ key "properties/avi/config/cloud_discovery_wait" }}
   cloud:
-    - name: {{ key "avi/cloud/name"}}
-      vtype: {{ key "avi/cloud/vtype" }}
-      dhcp_enabled: {{ key "avi/cloud/dhcp_enabled" }}
-      license_type: '{{ key "avi/cloud/license_type" }}'
+    - name: {{ key "properties/avi/config/cloud/name"}}
+      vtype: {{ key "properties/avi/config/cloud/vtype" }}
+      dhcp_enabled: {{ key "properties/avi/config/cloud/dhcp_enabled" }}
+      license_type: '{{ key "properties/avi/config/cloud/license_type" }}'
       vcenter_configuration:
-        username: '{{ key "avi/vcenter/user" }}'
-        password: '{{ key "avi/vcenter/password" }}'
-        datacenter: '{{ key "avi/vcenter/datacenter" }}'
-        vcenter_dvs: {{ key "avi/vcenter/dvs" }}
-        privilege: '{{ key "avi/vcenter/privilege" }}'
-        vcenter_url: '{{ key "avi/vcenter/url" }}'
-        management_network: "{{ key "avi/vcenter/mgmt_network" }}"
+        username: '{{ key "properties/avi/creds/vcenter/user" }}'
+        password: '{{ key "properties/avi/creds/vcenter/password" }}'
+        datacenter: '{{ key "properties/avi/config/vcenter/datacenter" }}'
+        vcenter_dvs: {{ key "properties/avi/config/vcenter/dvs" }}
+        privilege: '{{ key "properties/avi/config/vcenter/privilege" }}'
+        vcenter_url: '{{ key "properties/avi/config/vcenter/url" }}'
+        management_network: "{{ key "properties/avi/config/vcenter/mgmt_network" }}"
         management_ip_subnet:
           ip_addr: 
-            addr: {{ key "avi/vcenter/management_ip_subnet/ip_addr/addr" }}
-            type: {{ key "avi/vcenter/management_ip_subnet/ip_addr/type" }}
-          mask: {{ key "avi/vcenter/management_ip_subnet/mask" }}
+            addr: {{ key "properties/avi/config/vcenter/management_ip_subnet/ip_addr/addr" }}
+            type: {{ key "properties/avi/config/vcenter/management_ip_subnet/ip_addr/type" }}
+          mask: {{ key "properties/avi/config/vcenter/management_ip_subnet/mask" }}
         
         
 

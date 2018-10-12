@@ -1,17 +1,17 @@
 ---
 - hosts: localhost
   vars:
-    packages: 
+    centos_packages:
+      - epel-release 
       - python-pip
-      - ssh
     pip_packages: [avisdk, pyvim, pyvmomi]
   tasks:
   - name: install packages
-    apt: name='{{ packages }}' state=latest
+    apt: name=python-pip state=latest
     when: ansible_distribution == 'Debian' or ansible_distribution == 'Ubuntu'
 
   - name: 'installing packages'
-    yum: name='{{ packages }}' state=latest
+    yum: name='{{ centos_packages }}' state=latest
     when: ansible_distribution == 'CentOS' or ansible_distribution == 'Red Hat Enterprise Linux'
     
   - name: 'install prerequisites: avisdk, pyvim, and pyvmomi'

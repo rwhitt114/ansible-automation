@@ -45,13 +45,7 @@ avi_config:
 
     - name: ext_multiline_hm
       failed_checks: 1
-      https_monitor:
-        http_request: |- \r\n GET /index.html HTTP/1.0
-          Connection: Close
-        http_response_code:
-        - HTTP_2XX
-        - HTTP_3XX
-      type: HEALTH_MONITOR_HTTP
+      https_monitor: '{"http_request": "GET /index.html HTTP/1.1", "\r\nConnection": "Close", "\r\nhttp_response_code": ["HTTP_2XX", "HTTP_3XX"], "type": "HEALTH_MONITOR_HTTP"}'
 
   httppolicyset:
     - name: ext-httppolicy

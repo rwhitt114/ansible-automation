@@ -27,5 +27,5 @@ ansible-playbook playbooks/prerequisites.yml
  ansible-playbook playbooks/initialize.yml
 
 ## Create applications:
- ansible-playbook playbooks/app/app.yml -e app={app-name}.yml
+ ansible-playbook playbooks/app/app.yml -e app={app-name}
 app-name.yml is the name of the config file in config/app. For example, to deploy the config /config/app/basic.yml, use "-e 'app=basic.yml'"

@@ -1,1 +1,0 @@
-../getConfigExtensive.sh: line 7: ../../../consul-template: No such file or directory

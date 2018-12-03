@@ -7,4 +7,4 @@
   gather_facts: no
 - import_playbook: deploy.yml
 - import_playbook: initialize.yml
-- import_playbook: apps/all_apps.yml
+- import_playbook: all_apps.yml

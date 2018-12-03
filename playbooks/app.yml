@@ -1,7 +1,7 @@
 - hosts: localhost
   connection: local
   vars:
-    avi_config_file: ../../config/apps/{{ app }}
+    avi_config_file: ../../config/apps/{{ app }}.yml
   roles:
     - role: avinetworks.avisdk
     - role: ../../roles/aviconfig

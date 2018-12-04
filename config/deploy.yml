@@ -3,7 +3,7 @@ ovftool_path: /usr/lib/vmware-ovftool
 datacenter: '{{ vcenter.datacenter }}'
 cluster: Arista
 mgmt_network: PG-988
-ova_path: '{{ playbook_dir }}/../config/software/17.2.9.ova' 
+ova_path: '{{ playbook_dir }}/../config/software/18.1.3.ova' 
 power_on: true
 vcenter_folder: rwhitt
 number_of_cpus: 8

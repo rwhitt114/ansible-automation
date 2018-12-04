@@ -4,7 +4,7 @@ avi_config:
       lb_algorithm: LB_ALGORITHM_ROUND_ROBIN
       servers:
         - ip:
-             addr: 192.168.38.3
+             addr: 10.90.88.10
              type: 'V4'
     - name: ext-pool-B
       lb_algorithm: LB_ALGORITHM_LEAST_CONNECTIONS
@@ -15,7 +15,7 @@ avi_config:
 
       servers:
         - ip:
-             addr: 192.168.38.1
+             addr: 10.90.88.11
              type: 'V4'
 
   healthmonitor:
@@ -93,7 +93,7 @@ avi_config:
       pool_ref: '/api/pool?name=ext-pool-A'
       vip:
         - ip_address:
-            addr: 192.168.38.92
+            addr: '10.90.88.204'
             type: 'V4'
           vip_id: '1'
       cloud_ref: '/api/cloud?name=Default-Cloud'
@@ -111,9 +111,9 @@ avi_config:
 
   sslkeyandcertificate:
     - name: ext-cert
-      key: "{{ lookup('file', '{{ playbook_dir }}/../../config/ssl/ext-cert.key') }}"
+      key: "{{ lookup('file', '{{ playbook_dir }}/../config/ssl/ext-cert.key') }}"
       certificate:
         self_signed: true
-        certificate: "{{ lookup('file', '{{ playbook_dir }}/../../config/ssl/ext-cert.crt')}}"
+        certificate: "{{ lookup('file', '{{ playbook_dir }}/../config/ssl/ext-cert.crt')}}"
       type: SSL_CERTIFICATE_TYPE_VIRTUALSERVICE
 

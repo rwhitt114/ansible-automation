@@ -9,7 +9,7 @@ avi_config:
         username: '{{ vcenter.username }}'
         password: '{{ vcenter.password }}'
         datacenter: '{{ vcenter.datacenter }}'
-        vcenter_dvs: false
+        vcenter_dvs: true
         privilege: 'WRITE_ACCESS'
         vcenter_url: '{{ vcenter.vcenter_url }}'
 

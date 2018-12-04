@@ -15,7 +15,7 @@ avi_config:
     - name: "PG-988"
       #cloud_ref: '/api/cloud?name=Default-Cloud'
       avi_api_update_method: PUT
-      vcenter_dvs: false
+      vcenter_dvs: true
       dhcp_enabled: false
       configured_subnets:
         - prefix:
@@ -31,7 +31,7 @@ avi_config:
               addr: 10.90.88.250
               type: 'V4'
   
-  avi_cloud_discovery_wait: 1          
+  avi_cloud_discovery_wait: 2          
   cloud:
     - name: Default-Cloud
       vtype: CLOUD_VCENTER
@@ -41,12 +41,12 @@ avi_config:
         username: '{{ vcenter.username }}'
         password: '{{ vcenter.password }}'
         datacenter: '{{ vcenter.datacenter }}'
-        vcenter_dvs: false
+        vcenter_dvs: true
         privilege: 'WRITE_ACCESS'
         vcenter_url: '{{ vcenter.vcenter_url }}'
         management_network: "/api/vimgrnwruntime?name=PG-988"
         management_ip_subnet:
           ip_addr: 
-            addr: 10.90.88.1
+            addr: 10.90.88.0
             type: V4
           mask: 24

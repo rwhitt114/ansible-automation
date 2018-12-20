@@ -1,7 +1,0 @@
----
-# tasks file for aviconfig
-
-- name: Applying avi config
-  import_role:
-    name: avinetworks.aviconfig
-

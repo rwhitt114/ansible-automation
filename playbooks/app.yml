@@ -2,7 +2,8 @@
   connection: local
   vars:
     avi_config_file: ../config/apps/{{ app }}.yml
+    avi_creds_file: ../creds.yml
   roles:
     - role: avinetworks.avisdk
-    - role: ../roles/aviconfig
+    - role: avinetworks.aviconfig
   gather_facts: no

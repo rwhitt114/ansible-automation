@@ -17,17 +17,17 @@
   name: Applying controller configs         
   vars:
     avi_config_file: ../config/init/controller.yml
-    # avi_creds_file: ../creds.yml
+    avi_creds_file: ../creds.yml
   roles:  
     - role: avinetworks.avisdk 
-    - role: ../roles/aviconfig
+    - role: avinetworks.aviconfig
   gather_facts: no
 
 - hosts: localhost
   name: Applying SE config
   roles: 
     - role: avinetworks.avisdk
-    - role: ../roles/aviconfig
+    - role: avinetworks.aviconfig
   vars:
     avi_config_file: ../config/init/se.yml
   gather_facts: no

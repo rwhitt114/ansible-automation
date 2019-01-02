@@ -1,0 +1,45 @@
+- hosts: localhost
+  connection: local
+  roles:
+    - avinetworks.avicontroller-vmware
+  vars:
+    state: present
+  vars_files: 
+    - ../deploy/{{ cloud }}/deploy.yml
+    - ../creds.yml
+  gather_facts: no
+  tasks:
+  - name: Deploy Avi Controllers
+    deploy_controller:
+      state: '{{ state }}'
+      ovftool_path: '{{ ovftool_path }}'
+      vcenter_host: '{{ vcenter.vcenter_url }}'
+      vcenter_user: '{{ vcenter.username }}'
+      vcenter_password: '{{ vcenter.password }}'
+      con_datacenter: '{{ datacenter }}'
+      con_cluster: '{{ cluster }}'
+      con_datastore: '{{ datastore | default(omit) }}'
+      con_disk_mode: '{{ disk_mode | default(omit) }}'
+      con_mgmt_network: '{{ mgmt_network }}'
+      con_ova_path: '{{ ova_path }}'
+      con_power_on: '{{ power_on }}'
+      con_vcenter_folder: '{{ vcenter_folder }}'
+      state: '{{ state }}'
+      con_disk_size: '{{ disk_size | default(omit) }}'
+      con_vm_name: '{{ item.name }}'
+      con_mgmt_ip: '{{ item.mgmt_ip }}'
+      con_mgmt_mask: '{{ item.mgmt_mask}}'
+      con_default_gw: '{{ item.default_gw }}'
+    with_items:
+     - "{{ controllers }}"
+
+  - name: Waiting for controller to initialize
+    uri:
+      url: 'https://{{ avi_credentials.controller }}'
+      status_code: 200
+      validate_certs: no
+    register: result
+    until: result['status']|default(0) == 200
+    retries: 20
+    delay: 30
+    when: state != "absent"

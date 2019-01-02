@@ -1,0 +1,127 @@
+avi_config:  
+  avi_cloud_discovery_wait: 120
+  cloud:
+    - name: Default-Cloud
+      vtype: CLOUD_VCENTER
+      dhcp_enabled: false
+      license_type: 'LIC_CORES'
+      vcenter_configuration:
+        username: '{{ vcenter.username }}'
+        password: '{{ vcenter.password }}'
+        datacenter: '{{ vcenter.datacenter }}'
+        vcenter_dvs: true
+        privilege: 'WRITE_ACCESS'
+        vcenter_url: '{{ vcenter.vcenter_url }}'
+
+  systemconfiguration:
+    - email_configuration:
+        smtp_type: SMTP_LOCAL_HOST
+        from_email: admin@avicontroller.net
+      global_tenant_config:
+        se_in_provider_context: true
+        tenant_access_to_provider_se: true
+        tenant_vrf: false
+      dns_configuration:
+        search_domain: avi.local
+        server_list:
+          - addr: 8.8.8.8
+            type: V4
+      ntp_servers:
+        - server:
+            type: DNS
+            addr: 0.us.pool.ntp.org
+        - server:
+            type: DNS
+            addr: 1.us.pool.ntp.org
+        - server:
+            type: DNS
+            addr: 2.us.pool.ntp.org
+        - server:
+            type: DNS
+            addr: 3.us.pool.ntp.org
+      portal_configuration:
+        allow_basic_authentication: true
+        disable_remote_cli_shell: false
+        enable_clickjacking_protection: true
+        enable_http: true
+        enable_https: true
+        password_strength_check: false
+        redirect_to_https: true
+        sslkeyandcertificate_refs:
+          - '/api/sslkeyandcertificate?name=System-Default-Portal-Cert'
+          - '/api/sslkeyandcertificate?name=System-Default-Portal-Cert-EC256'
+        sslprofile_ref: '/api/sslprofile?name=System-Standard-Portal'
+        use_uuid_from_input: false
+
+  cluster:
+    - avi_api_update_method: PUT
+      tenant: admin
+      name: cluster-0-1
+      virtual_ip:
+        type: V4
+        addr: 10.90.88.220
+      nodes:
+         - ip:
+             type: V4
+             addr: '{{ avi_credentials.controller }}'
+           name: ctlr01
+      #       - ip:
+      #           type: “V4"
+      #           addr: “10.144.73.56”
+      #         name: “10.144.73.56"
+      #       - ip:
+      #           type: “V4”
+      #           addr: “10.144.73.5"
+      #        name: “10.144.73.5”
+avi_config:
+  serviceenginegroup:
+    - name: Default-Group
+      cloud_ref: '/api/cloud?name=Default-Cloud'
+      vcenter_folder: rwhitt
+      vcenter_clusters:
+        cluster_refs:
+          - '/api/vimgrclusterruntime?name=Arista'
+        include: True
+      max_se: 4
+      buffer_se: 1
+      se_name_prefix: rwhitt
+    
+  network:
+    - name: "PG-988"
+      #cloud_ref: '/api/cloud?name=Default-Cloud'
+      avi_api_update_method: PUT
+      vcenter_dvs: true
+      dhcp_enabled: false
+      configured_subnets:
+        - prefix:
+            ip_addr:
+              addr: 10.90.88.0
+              type: 'V4'
+            mask: 24
+          static_ranges:
+          - begin:
+              addr: 10.90.88.246
+              type: 'V4'
+            end:
+              addr: 10.90.88.250
+              type: 'V4'
+  
+  avi_cloud_discovery_wait: 2          
+  cloud:
+    - name: Default-Cloud
+      vtype: CLOUD_VCENTER
+      dhcp_enabled: false
+      license_type: 'LIC_CORES'
+      vcenter_configuration:
+        username: '{{ vcenter.username }}'
+        password: '{{ vcenter.password }}'
+        datacenter: '{{ vcenter.datacenter }}'
+        vcenter_dvs: true
+        privilege: 'WRITE_ACCESS'
+        vcenter_url: '{{ vcenter.vcenter_url }}'
+        management_network: "/api/vimgrnwruntime?name=PG-988"
+        management_ip_subnet:
+          ip_addr: 
+            addr: 10.90.88.0
+            type: V4
+          mask: 24

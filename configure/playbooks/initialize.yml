@@ -1,0 +1,14 @@
+- hosts: localhost
+  name: Setting admin password
+  vars_files:
+    - ../credentials
+  tasks:
+    - name: Set admin password
+      avi_useraccount:
+        avi_credentials: '{{ avi_credentials }}'
+        old_password: '{{ old_password }}'
+        #api_version: '17.2.13'
+  roles:
+    - role: avinetworks.avisdk 
+  gather_facts: no
+  ignore_errors: yes

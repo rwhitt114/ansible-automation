@@ -1,0 +1,21 @@
+---
+- hosts: localhost
+  tasks:
+  - name: install avisdk package
+    apt: name=python-pip state=latest
+    when: ansible_distribution == 'Debian' or ansible_distribution == 'Ubuntu'
+  
+  - name: 'installing epel-release'
+    yum: name=epel-release state=latest
+    when: ansible_distribution == 'CentOS' or ansible_distribution == 'Red Hat Enterprise Linux'
+  
+  - name: 'installing pip'
+    yum: name=python-pip state=latest
+    when: ansible_distribution == 'CentOS' or ansible_distribution == 'Red Hat Enterprise Linux'
+    
+  - name: installing avisdk
+    pip:
+      name: avisdk
+
+  - name: 'install avisdk and aviconfig roles'
+    local_action: command ansible-galaxy install -r ../requirements.yml -p ../roles

@@ -1,0 +1,4 @@
+- src: avinetworks.avisdk
+
+- src: avinetworks.aviconfig
+  url: https://github.com/avinetworks/ansible-role-aviconfig.git

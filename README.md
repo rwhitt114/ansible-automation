@@ -29,5 +29,5 @@ This is an example ansible environment.
       
     5. Execute deployment playbook
       ```cd ~/ansible-automation/deploy/vmware/playbooks
-         ansible-playbook deploy.yml -e config=18.1.3
+         ansible-playbook deploy.yml -e config=18.1.3```
        

@@ -1,7 +1,0 @@
-- hosts: localhost
-  connection: local
-  gather_facts: no
-  vars:
-    cloud: none
-- import_playbook: env/{{ cloud }}/setup.yml
-- import_playbook: env/{{ cloud }}/deploy.yml

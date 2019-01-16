@@ -1,0 +1,52 @@
+avi_config:
+  avi_cloud_discovery_wait: 120
+  cloud:
+    - apic_mode: false
+      aws_configuration:
+        access_key_id: "{{ aws.access_key_id }}"
+        secret_access_key: "{{ aws.secret_access_key }}"
+        region: us-west-2
+        route53_integration: false
+        use_iam_roles: false
+        use_sns_sqs: false
+        vpc: AVI-WEST2-VPC
+        vpc_id: vpc-19295f7c
+        zones:
+        - availability_zone: us-west-2a
+          mgmt_network_name: 2A-public
+          mgmt_network_uuid: subnet-91f0b6f4
+        - availability_zone: us-west-2b
+          mgmt_network_name: 2B-ext
+          mgmt_network_uuid: subnet-842047f3
+        - availability_zone: us-west-2c
+          mgmt_network_name: 2C-ext
+          mgmt_network_uuid: subnet-4cea5215
+      dhcp_enabled: true
+      #dns_provider_ref: '/api/ipamdnsproviderprofile?name=avi-dns'
+      name: aws
+      vtype: CLOUD_AWS
+
+  serviceenginegroup:
+    - name: Default-Group
+      buffer_se: 0
+      se_name_prefix: aws_rwhitt
+      active_standby: false
+      auto_rebalance: false
+      auto_rebalance_interval: 300
+      auto_redistribute_active_standby_load: false
+      buffer_se: 0
+      cloud_ref: /api/cloud?name=aws
+      dedicated_dispatcher_core: false
+      disk_per_se: 10
+      ha_mode: HA_MODE_SHARED_PAIR
+      license_tier: ENTERPRISE_18
+      license_type: LIC_CORES
+      max_scaleout_per_vs: 4
+      max_se: 4
+      max_vs_per_se: 10
+      mem_reserve: true
+      memory_per_se: 2048
+      min_scaleout_per_vs: 2
+      min_se: 1
+      non_significant_log_throttle: 100
+

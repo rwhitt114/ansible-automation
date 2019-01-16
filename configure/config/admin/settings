@@ -1,0 +1,28 @@
+avi_config:
+  systemconfiguration:
+    - email_configuration:
+        smtp_type: SMTP_LOCAL_HOST
+        from_email: admin@avicontroller.net
+      global_tenant_config:
+        se_in_provider_context: true
+        tenant_access_to_provider_se: true
+        tenant_vrf: false
+      dns_configuration:
+        search_domain: avi.local
+        server_list:
+          - addr: 10.10.0.100
+            type: V4
+      ntp_configuration:
+        ntp_servers:
+          - server:
+              type: DNS
+              addr: 0.us.pool.ntp.org
+          - server:
+              type: DNS
+              addr: 1.us.pool.ntp.org
+      portal_configuration:
+        allow_basic_authentication: false
+       # sslkeyandcertificate_refs:
+       #   - '/api/sslkeyandcertificate?name=System-Default-Portal-Cert'
+       #   - '/api/sslkeyandcertificate?name=System-Default-Portal-Cert-EC256'
+

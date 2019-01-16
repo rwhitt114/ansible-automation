@@ -33,25 +33,11 @@ avi_config:
         - server:
             type: DNS
             addr: 1.us.pool.ntp.org
-        - server:
-            type: DNS
-            addr: 2.us.pool.ntp.org
-        - server:
-            type: DNS
-            addr: 3.us.pool.ntp.org
       portal_configuration:
-        allow_basic_authentication: true
-        disable_remote_cli_shell: false
-        enable_clickjacking_protection: true
-        enable_http: true
-        enable_https: true
-        password_strength_check: false
-        redirect_to_https: true
+        allow_basic_authentication: false
         sslkeyandcertificate_refs:
           - '/api/sslkeyandcertificate?name=System-Default-Portal-Cert'
           - '/api/sslkeyandcertificate?name=System-Default-Portal-Cert-EC256'
-        sslprofile_ref: '/api/sslprofile?name=System-Standard-Portal'
-        use_uuid_from_input: false
 
   cluster:
     - avi_api_update_method: PUT
@@ -59,7 +45,7 @@ avi_config:
       name: cluster-0-1
       virtual_ip:
         type: V4
-        addr: 10.90.88.220
+        addr: 10.90.88.228
       nodes:
          - ip:
              type: V4

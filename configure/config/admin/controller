@@ -1,0 +1,21 @@
+avi_config:
+  cluster:
+    - avi_api_update_method: PUT
+      tenant: admin
+      name: cluster-0-1
+      virtual_ip:
+        type: V4
+        addr: 10.90.88.228
+      nodes:
+         - ip:
+             type: V4
+             addr: '{{ avi_credentials.controller }}'
+           name: ctlr01
+      #       - ip:
+      #           type: ?~@~\V4"
+      #           addr: ?~@~\10.144.73.56?~@~]
+      #         name: ?~@~\10.144.73.56"
+      #       - ip:
+      #           type: ?~@~\V4?~@~]
+      #           addr: ?~@~\10.144.73.5"
+      #        name: ?~@~\10.144.73.5?~@~]

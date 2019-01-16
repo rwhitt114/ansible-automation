@@ -15,8 +15,8 @@ This is an example ansible environment.
          NOTE: the download link contains special characters so it needs to be enclosed with quotes
    
    2. Install dependencies
-      ```cd ansilbe-automation/deploy/<cloud>/playbooks
-      ansible-playbook prerequisites.yml```
+      `cd ansilbe-automation/deploy/<cloud>/playbooks`
+      `ansible-playbook prerequisites.yml```
  
     3. Create credentials file
       `cd avi-ansible-automation/deploy/vmware/`

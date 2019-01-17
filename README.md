@@ -15,16 +15,16 @@ This is an example ansible environment.
          NOTE: the download link contains special characters so it needs to be enclosed with quotes
    
    2. Install dependencies
-      `cd ansilbe-automation/deploy/<cloud>/playbooks`
+      `cd ~/ansilbe-automation/deploy/<cloud>/playbooks`
       `ansible-playbook prerequisites.yml`
       
    3. Create credentials file
-      `cd avi-ansible-automation/deploy/vmware/`
+      `cd ~/ansible-automation/deploy/vmware/`
       - edit `credentials` file
       -  **I recommend encrypting the credentials file with ansible vault
     
    4. Edit config files 
-      `cd deploy/cloud/<cloud>/config/`
+      `cd ~/ansible-automation/deploy/<cloud>/config/`
       - Create or edit a config file, there are two examples (18.1.3 and 17.2.14)
       
    5. Execute deployment playbook

@@ -17,17 +17,17 @@ This is an example ansible environment.
    2. Install dependencies
       `cd ansilbe-automation/deploy/<cloud>/playbooks`
       `ansible-playbook prerequisites.yml`
- 
-    3. Create credentials file
+      
+   3. Create credentials file
       `cd avi-ansible-automation/deploy/vmware/`
-      - edit 'credentials' file
+      - edit `credentials` file
       -  **I recommend encrypting the credentials file with ansible vault
     
-    4. Edit config files 
+   4. Edit config files 
       `cd deploy/cloud/<cloud>/config/`
       - Create or edit a config file, there are two examples (18.1.3 and 17.2.14)
       
-    5. Execute deployment playbook
+   5. Execute deployment playbook
       ```cd ~/ansible-automation/deploy/vmware/playbooks
          ansible-playbook deploy.yml -e config=18.1.3```
        

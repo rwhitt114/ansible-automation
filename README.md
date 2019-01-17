@@ -27,7 +27,7 @@ This is an example ansible environment.
       `cd ~/ansible-automation/deploy/<cloud>/config/`
       - Create or edit a config file, there are two examples (18.1.3 and 17.2.14)
       
-   5. Execute deployment playbook
-   `cd ~/ansible-automation/deploy/vmware/playbooks`
+   5. Execute deployment playbook  
+   `cd ~/ansible-automation/deploy/vmware/playbooks`  
    `ansible-playbook deploy.yml -e config=18.1.3`
        

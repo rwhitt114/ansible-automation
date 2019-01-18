@@ -1,0 +1,44 @@
+avi_config:
+  ## if you are connecting azure cloud via username/password
+  cloudconnectoruser:
+    - azure_userpass:
+        password: '{{ azure.password }}'
+        tenant_name: '{{ azure.tenant }}'
+        username: '{{azure.username }}'
+      name: azure_credentials
+      tenant_ref: /api/tenant?name=admin
+
+  ## if you are connecting azure cloud via
+  #cloudconnectoruser:
+  #  - azure_serviceprincipal:
+  #      application_id: '{{ azure.app_id }}'
+  #      authentication_token: '{{ azure.auth_token }}'
+  #      tenant_id: '{{ azure.tenant }}'
+  #    name: azure_application
+  #    tenant_ref: /api/tenant?name=admin
+
+  avi_cloud_discovery_wait: 120
+  cloud:
+    - apic_mode: false
+      azure_configuration:
+        cloud_credentials_ref: /api/cloudconnectoruser?name=azure_credentials
+        location: eastus
+        network_info:
+          - se_network_id: default
+            virtual_network_id: '/subscriptions/77d6aa12-ef65-44f8-b9f5-07e7f7e8b48b/resourceGroups/fse-rwhitt-rg/providers/Microsoft.Network/virtualNetworks/fse-rwhitt-rg-vnet'
+        resource_group: fse-rwhitt-rg
+        subscription_id: 77d6aa12-ef65-44f8-b9f5-07e7f7e8b48b
+        use_azure_dns: false
+        use_enhanced_ha: false
+        use_managed_disks: true
+        use_standard_alb: false
+      dhcp_enabled: false
+      enable_vip_static_routes: false
+      license_tier: ENTERPRISE_18
+      license_type: LIC_CORES
+      mtu: 1500
+      name: azure
+      prefer_static_routes: false
+      state_based_dns_registration: true
+      tenant_ref: /api/tenant?name=admin
+      vtype: CLOUD_AZURE

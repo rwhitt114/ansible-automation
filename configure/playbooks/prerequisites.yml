@@ -18,4 +18,4 @@
       name: avisdk
 
   - name: 'install avisdk and aviconfig roles'
-    local_action: command ansible-galaxy install -r ../requirements.yml -p ../roles
+    local_action: command ansible-galaxy install -r ../requirements.yml

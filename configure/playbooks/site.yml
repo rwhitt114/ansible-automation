@@ -1,33 +1,25 @@
 - hosts: localhost
   gather_facts: no
 
-- name: initialize the controller
+- name: setup controller
   import_playbook: initialize.yml
 
-- hosts: localhost
+#- hosts: localhost
+  #vars:
+  #  avi_config_file: ../config/administration/sysconfig
+  #  avi_creds_file: ../credentials
+  #roles:
+  #  - role: avinetworks.avisdk
+  #  - role: avinetworks.aviconfig
+  #gather_facts: no
+  import_playbook: admin.yml
 
-  vars:
-    avi_config_file: ../config/admin/settings
-    avi_creds_file: ../credentials
-  roles:
-    - role: avinetworks.avisdk
-    - role: avinetworks.aviconfig
-  gather_facts: no
-
-- hosts: localhost
-  vars:
-    avi_config_file: ../config/cloud/{{ cloud }}
-    avi_creds_file: ../credentials
-  roles:
-    - role: avinetworks.avisdk
-    - role: avinetworks.aviconfig
-  gather_facts: no
-
-- hosts: localhost
-  vars:
-    avi_config_file: ../config/admin/controller
-    avi_creds_file: ../credentials
-  roles:
-    - role: avinetworks.avisdk
-    - role: avinetworks.aviconfig
-  gather_facts: no
+#- hosts: localhost
+  #vars:
+  #  avi_config_file: ../config/cloud/{{ cloud }}
+  #  avi_creds_file: ../credentials
+  #roles:
+  #  - role: avinetworks.avisdk
+  #  - role: avinetworks.aviconfig
+  #gather_facts: no
+  import_playbook: infra.yml

@@ -15,14 +15,40 @@ avi_config:
       ntp_configuration:
         ntp_servers:
           - server:
-              type: DNS
-              addr: 0.us.pool.ntp.org
+              type: V4
+              addr: 10.10.5.27
           - server:
               type: DNS
               addr: 1.us.pool.ntp.org
       portal_configuration:
         allow_basic_authentication: false
-       # sslkeyandcertificate_refs:
-       #   - '/api/sslkeyandcertificate?name=System-Default-Portal-Cert'
-       #   - '/api/sslkeyandcertificate?name=System-Default-Portal-Cert-EC256'
+
+
+
+
+
+  cluster:
+    - avi_api_update_method: PUT
+      tenant: admin
+      name: cluster-0-1
+      virtual_ip:
+        type: V4
+        addr: 10.90.88.228
+      nodes:
+         - name: ctlr01
+           ip:
+             type: V4
+             addr: '{{ avi_credentials.controller }}'
+      #       - name: ctlr02
+      #         ip:
+      #           type: 
+      #           addr: 
+      #       - name: ctlr03
+      #         ip:
+      #           type: 
+      #           addr: 
+  
+
+
+
 

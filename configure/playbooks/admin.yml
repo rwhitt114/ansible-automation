@@ -1,7 +1,8 @@
 - hosts: localhost
   connection: local
   vars:
-    avi_config_file: ../config/admin/{{ config }}
+    config: sysconfig
+    avi_config_file: ../config/administration/{{ config }}
     avi_creds_file: ../credentials
   roles:
     - role: avinetworks.avisdk

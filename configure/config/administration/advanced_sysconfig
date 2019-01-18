@@ -1,0 +1,97 @@
+avi_config:
+  systemconfiguration:
+    - email_configuration:
+        smtp_type: SMTP_LOCAL_HOST
+        from_email: admin@avicontroller.net
+      global_tenant_config:
+        se_in_provider_context: true
+        tenant_access_to_provider_se: true
+        tenant_vrf: false
+      dns_configuration:
+        search_domain: avi.local
+        server_list:
+          - addr: 10.10.0.100
+            type: V4
+      ntp_configuration:
+        ntp_servers:
+          - server:
+              type: V4
+              addr: 10.10.5.27
+          - server:
+              type: DNS
+              addr: 1.us.pool.ntp.org
+      portal_configuration:
+        allow_basic_authentication: false
+       # sslkeyandcertificate_refs:
+       #   - '/api/sslkeyandcertificate?name=System-Default-Portal-Cert'
+       #   - '/api/sslkeyandcertificate?name=System-Default-Portal-Cert-EC256'
+####---------------this is for remote authentication configuration------------      
+#     admin_auth_configuration:
+#       allow_local_user_login: true
+#       auth_profile_ref: /api/authprofile?name=saml
+#       mapping_rules:
+#       - assign_role: ASSIGN_FROM_SELECT_LIST
+#         assign_tenant: ASSIGN_ALL
+#         index: 0
+#         role_refs:
+#         - /api/role?name=Application-Operator
+#       - group_match:
+#           criteria: AUTH_MATCH_CONTAINS
+#           groups:
+#           - Admins
+#         index: 2
+#         is_superuser: true
+#       - assign_role: ASSIGN_FROM_SELECT_LIST
+#         assign_tenant: ASSIGN_ALL
+#         attribute_match:
+#           criteria: AUTH_MATCH_CONTAINS
+#           name:
+#           values:
+#           - Engineering
+#         index: 3
+#         role_refs:
+#         - /api/role?name=Application-Admin
+
+
+
+
+
+  cluster:
+    - avi_api_update_method: PUT
+      tenant: admin
+      name: cluster-0-1
+      virtual_ip:
+        type: V4
+        addr: 10.90.88.228
+      nodes:
+         - name: ctlr01
+           ip:
+             type: V4
+             addr: '{{ avi_credentials.controller }}'
+      #       - name: ctlr02
+      #         ip:
+      #           type: 
+      #           addr: 
+      #       - name: ctlr03
+      #         ip:
+      #           type: 
+      #           addr: 
+  
+
+
+
+
+#  authprofile:
+#    - name: saml
+#      saml:
+#        idp:
+#          metadata: "{{ lookup('file', '../config/files/saml_metadata') }}"
+#        sp:
+#          org_display_name: Avi Networks
+#          org_name: Avi Networks
+#          org_url: avinetworks.com
+#          saml_entity_type: AUTH_SAML_CLUSTER_VIP
+#          tech_contact_email: rwhitt@avinetworks.com
+#          tech_contact_name: 'Robert Whittington'
+#      tenant_ref: /api/tenant?name=admin
+#      type: AUTH_PROFILE_SAML

@@ -12,9 +12,9 @@ This is an example ansible environment.
   To configure Avi Controller:
    1. **If you will run playbooks from a remote machine.
       - Configure `./inventory` file
-        - add remote host information. The inventory file has the following structure:
-      `[control]  
-       localhost ansible_connection=local`
+        - add remote host information. The inventory file has the following structure:  
+      `[control]`    
+      `localhost ansible_connection=local`
        Just replace *localhost ..* with your remote site information, and no changes will be required within the playbooks   
       
    2. Create credentials file  

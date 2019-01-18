@@ -1,10 +1,10 @@
-- hosts: localhost
+- hosts: control
   gather_facts: no
 
 - name: setup controller
   import_playbook: initialize.yml
 
-#- hosts: localhost
+#- hosts: control
   #vars:
   #  avi_config_file: ../config/administration/sysconfig
   #  avi_creds_file: ../credentials
@@ -14,7 +14,7 @@
   #gather_facts: no
   import_playbook: admin.yml
 
-#- hosts: localhost
+#- hosts: control
   #vars:
   #  avi_config_file: ../config/cloud/{{ cloud }}
   #  avi_creds_file: ../credentials

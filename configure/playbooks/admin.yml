@@ -1,5 +1,4 @@
-- hosts: localhost
-  connection: local
+- hosts: control
   vars:
     config: sysconfig
     avi_config_file: ../config/administration/{{ config }}

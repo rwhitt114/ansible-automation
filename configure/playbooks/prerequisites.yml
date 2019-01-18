@@ -1,5 +1,5 @@
 ---
-- hosts: localhost
+- hosts: control
   tasks:
   - name: install avisdk package
     apt: name=python-pip state=latest

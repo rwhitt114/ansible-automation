@@ -1,4 +1,4 @@
-- hosts: localhost
+- hosts: control
   name: Setting admin password
   vars_files:
     - ../credentials

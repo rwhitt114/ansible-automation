@@ -1,0 +1,3 @@
+#install avinetworks.avicontroller-vmware
+- name: avinetworks.avicontroller-vmware
+  src: https://github.com/avinetworks/ansible-role-avicontroller-vmware.git

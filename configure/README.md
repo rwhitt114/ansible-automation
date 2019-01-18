@@ -51,7 +51,4 @@ This is an example ansible environment.
         `ansible-playbook infra.yml -e cloud=azure'
       - Configure apps:  
         'ansible-playbook apps.yml -e app=myapp`
-     
-   `cd ~/ansible-automation/configuration/playbooks`  
-   `ansible-playbook infra -e cloud=18.1.3`
    

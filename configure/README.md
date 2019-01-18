@@ -39,7 +39,7 @@ This is an example ansible environment.
       - edit or create apps: `applications/`
       
    5. Execute config playbooks
-      - execute from the playbooks directory:
+      - execute from the playbooks directory:  
         `cd playbooks`
       - Install prereqs:  
         `ansible-playbook prerequisites.yml`

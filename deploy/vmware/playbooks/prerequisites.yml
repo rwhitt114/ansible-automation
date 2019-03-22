@@ -16,17 +16,26 @@
     when: ansible_distribution == 'CentOS' or ansible_distribution == 'Red Hat Enterprise Linux'
     
   - name: 'install prerequisites: avisdk, pyvim, and pyvmomi'
+    become: yes
     pip:
       name: '{{ pip_packages }}'
   
+  - name: 'install avisdk and aviconfig roles'
+    become: yes
+    local_action: command ansible-galaxy install -r ../requirements.yml -p ../roles
+
   - name: Check binary stats
     stat: path=/usr/lib/vmware-ovftool
     register: ovf_stat
-      
+  
+  - name: make ovftool executable
+    become: yes
+    shell: 'chmod +x ../roles/avinetworks.avicontroller-vmware/files/VMware-ovftool-4.1.0-2459827-lin.x86_64.bundle --eulas-agreed --required --console'
+    when: (not ovf_stat.stat.exists)
+  
   - name: installing ovftool
     become: yes
     shell: '../roles/avinetworks.avicontroller-vmware/files/VMware-ovftool-4.1.0-2459827-lin.x86_64.bundle --eulas-agreed --required --console'
     when: (not ovf_stat.stat.exists)
 
-  - name: 'install avisdk and aviconfig roles'
-    local_action: command ansible-galaxy install -r ../requirements.yml -p ../roles
+

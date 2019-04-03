@@ -1,5 +1,6 @@
 - hosts: control
   vars:
+    app: basic
     avi_config_file: ../config/applications/{{ app }}
     avi_creds_file: ../credentials
   roles:

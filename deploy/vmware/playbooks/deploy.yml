@@ -20,6 +20,7 @@
       vcenter_password: '{{ vcenter.password }}'
       con_datacenter: '{{ datacenter }}'
       con_cluster: '{{ cluster }}'
+      con_cluster_folder: '{{ cluster_folder | default(omit) }}'
       con_datastore: '{{ datastore | default(omit) }}'
       con_disk_mode: '{{ disk_mode | default(omit) }}'
       con_mgmt_network: '{{ mgmt_network }}'

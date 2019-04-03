@@ -28,14 +28,9 @@
     stat: path=/usr/lib/vmware-ovftool
     register: ovf_stat
   
-  - name: make ovftool executable
-    become: yes
-    shell: 'chmod +x ../roles/avinetworks.avicontroller-vmware/files/VMware-ovftool-4.1.0-2459827-lin.x86_64.bundle --eulas-agreed --required --console'
-    when: (not ovf_stat.stat.exists)
-  
   - name: installing ovftool
     become: yes
-    shell: '../roles/avinetworks.avicontroller-vmware/files/VMware-ovftool-4.1.0-2459827-lin.x86_64.bundle --eulas-agreed --required --console'
+    shell: 'sh ../roles/avinetworks.avicontroller-vmware/files/VMware-ovftool-4.3.0.bundle --eulas-agreed --required --console'
     when: (not ovf_stat.stat.exists)
 
 

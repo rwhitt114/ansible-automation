@@ -1,25 +1,5 @@
-- hosts: control
-  gather_facts: no
-
-- name: setup controller
-  import_playbook: initialize.yml
-
-#- hosts: control
-  #vars:
-  #  avi_config_file: ../config/administration/sysconfig
-  #  avi_creds_file: ../credentials
-  #roles:
-  #  - role: avinetworks.avisdk
-  #  - role: avinetworks.aviconfig
-  #gather_facts: no
-  import_playbook: admin.yml
-
-#- hosts: control
-  #vars:
-  #  avi_config_file: ../config/cloud/{{ cloud }}
-  #  avi_creds_file: ../credentials
-  #roles:
-  #  - role: avinetworks.avisdk
-  #  - role: avinetworks.aviconfig
-  #gather_facts: no
-  import_playbook: infra.yml
+---
+- import_playbook: initialize.yml
+- import_playbook: admin.yml
+- import_playbook: vmware.yml
+- import_playbook: app.yml 

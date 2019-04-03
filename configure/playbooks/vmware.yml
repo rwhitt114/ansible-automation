@@ -1,0 +1,16 @@
+---
+- hosts: control
+  vars:
+    avi_creds_file: ../credentials
+  roles:
+    - role: avinetworks.avisdk
+  gather_facts: no
+  tasks:
+    - name: Setup vmware cloud
+      include_role:
+        name: avinetworks.aviconfig
+      with_items:
+        - '../config/infrastructure/vmware/controller'
+        - '../config/infrastructure/vmware/se'
+      loop_control:
+        loop_var: avi_config_file
